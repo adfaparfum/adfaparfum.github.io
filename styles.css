@@ -1,0 +1,84 @@
+/* Styles for Adfa Parfum Website */
+
+
+.popup {
+    z-index: 9999; /* Pastikan popup di atas efek blur */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #f0d68a; /* Light golden text */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #f0d68a; /* Light golden */
+}
+
+/* Styles for Welcome Popup */
+.popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #333; /* Darker background for popup */
+    border: 2px solid #f0d68a; /* Golden border */
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Pastikan popup di atas efek blur */
+    animation: fadeIn 0.5s; /* Animation for popup */
+}
+
+.popup h2 {
+    font-size: 35px;
+}
+
+.popup p {
+    font-size: 20px;
+}
+
+.popup button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f0d68a; /* Golden button */
+    color: #1a1a1a; /* Dark text */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Button hover effect */
+}
+
+.popup button:hover {
+    background-color: #d4b65c; /* Darker golden on hover */
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Styles for Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: #f0d68a; /* Light golden */
+    color: #1a1a1a; /* Dark text */
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #333; /* Dark border */
+    transition: transform 0.3s; /* Animation effect */
+}
+
+.grid-item:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}

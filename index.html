@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <title>Adfa Parfum</title>
+</head>
+<body>
+    <h1>Welcome to Adfa Parfum</h1>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">10</div>
+        <div class="grid-item">11</div>
+        <div class="grid-item">12</div>
+        <div class="grid-item">13</div>
+        <div class="grid-item">14</div>
+        <div class="grid-item">15</div>
+    </div>
+    <div id="welcome-popup" class="popup">
+        <img src="logo.png" alt="Adfa Parfum Logo" />
+        <p>TEMUKAN AROMA<br>YANG AKAN MENEMANIMU<br>DI SETIAP SAAT,<br>DI SETIAP CERITA</p>
+        <button id="close-popup">LIHAT SEKARANG</button>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        document.getElementById('close-popup').onclick = function() {
+            document.getElementById('welcome-popup').style.display = 'none';
+        };
+    </script>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .grid-item {
+            background-color: #f0d68a; /* Light golden */
+            color: #1a1a1a; /* Dark text */
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #333; /* Dark border */
+            transition: transform 0.3s; /* Animation effect */
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+    </style>
+</body>
+</html>
