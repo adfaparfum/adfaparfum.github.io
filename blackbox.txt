@@ -1,7 +1,0 @@
-Instruksi untuk Melanjutkan Task:
-
-1. Buka file `index.html` di browser untuk memeriksa tampilan popup sambutan.
-2. Pastikan bahwa popup sambutan terlihat jelas tanpa efek blur.
-3. Jika ada masalah dengan tampilan popup, periksa file `styles.css` dan `scripts.js` untuk memastikan tidak ada efek blur yang tersisa.
-4. Jika perlu, lakukan perubahan tambahan pada file `styles.css` atau `scripts.js` untuk memperbaiki tampilan popup.
-5. Setelah semua perubahan selesai, simpan file dan uji kembali di browser.

@@ -3,59 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <title>Adfa Parfum</title>
+    <title>ADFA Parfum - Luxury Fragrances</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to Adfa Parfum</h1>
-    <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
-        <div class="grid-item">7</div>
-        <div class="grid-item">8</div>
-        <div class="grid-item">9</div>
-        <div class="grid-item">10</div>
-        <div class="grid-item">11</div>
-        <div class="grid-item">12</div>
-        <div class="grid-item">13</div>
-        <div class="grid-item">14</div>
-        <div class="grid-item">15</div>
-    </div>
-    <div id="welcome-popup" class="popup">
-        <img src="logo.png" alt="Adfa Parfum Logo" />
-        <p>TEMUKAN AROMA<br>YANG AKAN MENEMANIMU<br>DI SETIAP SAAT,<br>DI SETIAP CERITA</p>
-        <button id="close-popup">LIHAT SEKARANG</button>
-    </div>
-    <script src="scripts.js"></script>
-    <script>
-        document.getElementById('close-popup').onclick = function() {
-            document.getElementById('welcome-popup').style.display = 'none';
-        };
-    </script>
-    <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <img src="images/logo_adfa.jpg" alt="ADFA Logo">
+            </div>
+            <div class="nav-links">
+                <a href="#">Shop</a>
+                <a href="#">Collections</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <span class="cart-icon">Cart (0)</span>
+            </div>
+        </nav>
+    </header>
 
-        .grid-item {
-            background-color: #f0d68a; /* Light golden */
-            color: #1a1a1a; /* Dark text */
-            padding: 20px;
-            text-align: center;
-            border: 2px solid #333; /* Dark border */
-            transition: transform 0.3s; /* Animation effect */
-        }
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Luxury Fragrances</h1>
+                <p>Crafted with the finest ingredients</p>
+                <a href="#products" class="btn">Shop Now</a>
+            </div>
+        </section>
 
-        .grid-item:hover {
-            transform: scale(1.05); /* Scale effect on hover */
-        }
-    </style>
+        <section id="products" class="products">
+            <h2>Our Collection</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="images/products/BG_Black&Wood/Feb_Man.webp" alt="Feb Man">
+                    <h3>Feb Man</h3>
+                    <p>Rp70.000</p>
+                </div>
+                <div class="product-item">
+                    <img src="images/products/BG_Black&Wood/Sept_Romance.webp" alt="Sept Romance">
+                    <h3>Sept Romance</h3>
+                    <p>Rp70.000</p>
+                </div>
+                <div class="product-item">
+                    <img src="images/products/BG_Black&Wood/Castanea.webp" alt="Castanea">
+                    <h3>Castanea</h3>
+                    <p>Rp75.000</p>
+                </div>
+                <div class="product-item">
+                    <img src="images/products/BG_Black&Wood/Fagus.webp" alt="Fagus">
+                    <h3>Fagus</h3>
+                    <p>Rp80.000</p>
+                </div>
+                <div class="product-item">
+                    <img src="images/products/BG_Black&Wood/Quercus.webp" alt="Quercus">
+                    <h3>Quercus</h3>
+                    <p>Rp85.000</p>
+                </div>
+                <div class="product-item">
+                    <img src="images/products/BG_Black&Wood/Vatika_Rassak.webp" alt="Vatika Rassak">
+                    <h3>Vatika Rassak</h3>
+                    <p>Rp90.000</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ADFA Parfum</h4>
+                <p>Luxury fragrances crafted with care</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
