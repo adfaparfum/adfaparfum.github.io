@@ -81,6 +81,72 @@ function openProductModal(name, price, imgSrc) {
     });
 }
 
+// Cart functionality
+let cart = [];
+const cartIcon = document.querySelector('.cart-icon');
+
+function updateCartIcon() {
+    cartIcon.textContent = `Cart (${cart.length})`;
+}
+
+function addToCart(product) {
+    cart.push(product);
+    updateCartIcon();
+    showCartNotification(`${product.name} added to cart`);
+}
+
+function showCartNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'cart-notification';
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.classList.add('fade-out');
+        setTimeout(() => notification.remove(), 500);
+    }, 2000);
+}
+
+// Initialize cart icon click
+cartIcon.addEventListener('click', showCartModal);
+
+function showCartModal() {
+    const cartModal = document.createElement('div');
+    cartModal.className = 'cart-modal';
+    cartModal.innerHTML = `
+        <div class="cart-content">
+            ${cart.length === 0 ? '<p>Your cart is empty</p>' : 
+                cart.map(item => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div>
+                            <h4>${item.name}</h4>
+                            <p>${item.price}</p>
+                        </div>
+                        <button class="remove-item" data-id="${item.id}">&times;</button>
+                    </div>
+                `).join('')}
+            ${cart.length > 0 ? '<button class="btn checkout-btn">Checkout</button>' : ''}
+        </div>
+    `;
+    
+    document.body.appendChild(cartModal);
+    cartModal.style.display = 'block';
+    
+    // Close modal when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!cartModal.contains(e.target) && e.target !== cartIcon) {
+            cartModal.style.display = 'none';
+        }
+    });
+}
+
+function checkout() {
+    alert(`Checkout completed for ${cart.length} items! Total: Rp${cart.length * 70000 + 10000}`);
+    cart = [];
+    updateCartIcon();
+}
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
