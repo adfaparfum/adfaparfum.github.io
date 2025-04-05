@@ -1,0 +1,39 @@
+// Base layout styles
+body {
+  font-family: $main-font;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $base-spacing;
+}
+
+// Responsive grid
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $base-spacing;
+}
+
+// Typography
+h1, h2, h3 {
+  font-family: $heading-font;
+  color: $primary-color;
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .container {
+    width: 95%;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
