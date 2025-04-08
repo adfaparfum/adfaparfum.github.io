@@ -1,107 +1,92 @@
- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADFA Parfum - Luxury Fragrances</title>
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/popup.css" rel="stylesheet">
-    <link href="css/buttons.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adfa Parfum</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Inter&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">
-                <img src="images/logo_adfa.jpg" alt="ADFA Logo">
-            </div>
-            <div class="nav-links">
-                <a href="#">Shop</a>
-                <a href="#">Collections</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-    <section class="hero">
-        <div class="hero-section">
-            <div class="subheadline">
-                TEMUKAN AROMA<br>YANG AKAN MENEMANIMU,
-            </div>
-            <div class="headline">
-                <span class="highlight">DI SETIAP LANGKAH,<br>DI SETIAP CERITA.</span>
-            </div>
-            <div class="buttons">
-                <a href="#products" class="btn btn-outline-gold">Lihat Produk</a>
-                <button id="beliButton" class="btn btn-gold">Beli Sekarang <i>🛒</i></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Popup Structure -->
-    <div class="popup-overlay" id="popup">
-        <div class="popup-content">
-            <button class="popup-close" aria-label="Close popup">&times;</button>
-            <h3>Pilih Marketplace</h3>
-            <div class="marketplace-buttons">
-                <a href="https://shopee.co.id/adfaparfum" target="_blank" class="btn-shopee">Shopee</a>
-                <a href="https://tokopedia.com/adfaparfum" target="_blank" class="btn-tokopedia">Tokopedia</a>
-                <a href="https://tiktok.com/@adfaparfum" target="_blank" class="btn-tiktok">TikTok Shop</a>
-                <a href="https://wa.me/6281234567890" target="_blank" class="btn-whatsapp">Chat WhatsApp</a>
-            </div>
-        </div>
+  <!-- Header -->
+  <header id="navbar">
+    <div class="logo">
+      <img src="images/logo_adfa.jpg" alt="Adfa Parfum" />
     </div>
+    <nav class="desktop-nav">
+      <a href="#hero">Beranda</a>
+      <a href="#produk">Produk</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#footer">Kontak</a>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const popup = document.getElementById('popup');
-        const beliButton = document.getElementById('beliButton');
-        const closeButton = document.querySelector('.popup-close');
+  <!-- Mobile Menu -->
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="#hero">Beranda</a>
+    <a href="#produk">Produk</a>
+    <a href="#tentang">Tentang Kami</a>
+    <a href="#footer">Kontak</a>
+  </div>
 
-        // Show popup
-        beliButton.addEventListener('click', function() {
-            popup.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <img src="images/logo_adfa.jpg" class="hero-logo" alt="Adfa Parfum Logo"/>
+    <h1>Temukan aroma yang akan menemanimu,</h1>
+    <h2>di setiap langkah, di setiap cerita.</h2>
+    <div class="buttons">
+      <button class="btn btn-produk" onclick="location.href='#produk'">Lihat Produk</button>
+      <button class="btn btn-beli" onclick="togglePopup()">Beli Sekarang</button>
+    </div>
+  </section>
 
-        // Hide popup
-        function hidePopup() {
-            popup.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
+  <!-- Produk Section -->
+  <section class="produk" id="produk">
+    <h2 class="section-title">Produk Unggulan</h2>
+    <div class="produk-grid">
+      <div class="produk-item">Produk 1</div>
+      <div class="produk-item">Produk 2</div>
+      <div class="produk-item">Produk 3</div>
+    </div>
+    <div class="lihat-semua">
+      <a href="produk.html" class="btn btn-produk">Lihat Semua Varian</a>
+    </div>
+  </section>
 
-        // Close handlers
-        closeButton.addEventListener('click', hidePopup);
-        
-        popup.addEventListener('click', function(e) {
-            if (e.target === popup) hidePopup();
-        });
+  <!-- Tentang Kami -->
+  <section class="tentang" id="tentang">
+    <div class="tentang-container">
+      <h2 class="section-title">Tentang Kami</h2>
+      <p>Adfa Parfum adalah brand lokal yang hadir dari kasih sayang keluarga dan semangat menghadirkan aroma berkualitas tinggi, aman, dan terjangkau. Dengan filosofi hidup yang reflektif dan mendalam, kami percaya bahwa setiap aroma menyimpan kisah yang mampu menguatkan langkahmu. Dari Deli Serdang untuk Indonesia dan dunia.</p>
+    </div>
+  </section>
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && popup.classList.contains('active')) {
-                hidePopup();
-            }
-        });
-    });
-    </script>
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="sosial">
+      <a href="https://instagram.com/adfaparfum" target="_blank">Instagram</a>
+      <a href="https://facebook.com/adfaparfum" target="_blank">Facebook</a>
+      <a href="https://tiktok.com/@adfaparfum" target="_blank">TikTok</a>
+    </div>
+    <p>&copy; 2025 Adfa Parfum. All rights reserved.</p>
+  </footer>
 
-        <section id="products" class="products">
-            <h2>Our Collection</h2>
-            <div class="product-grid">
-                <!-- Product items remain unchanged -->
-            </div>
-        </section>
-    </main>
+  <!-- Popup Marketplace -->
+  <div class="popup" id="popupMarketplace">
+    <div class="popup-content">
+      <h3>Pilih Marketplace</h3>
+      <a href="https://shopee.co.id/adfaparfum" class="shopee" target="_blank">Shopee</a>
+      <a href="https://tokopedia.com/adfaparfum" class="tokopedia" target="_blank">Tokopedia</a>
+      <a href="https://tiktok.com/@adfaparfum" class="tiktok" target="_blank">TikTok Shop</a>
+      <a href="https://wa.me/6281234567890" class="whatsapp" target="_blank">Chat via WhatsApp</a>
+      <button class="popup-close" onclick="togglePopup()">Tutup</button>
+    </div>
+  </div>
 
-    <footer class="footer">
-        <!-- Footer content remains unchanged -->
-    </footer>
-
-    <script src="js/navigation.js"></script>
-    <script src="js/main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,354 @@
+:root {
+    --gold: #d9b45c;
+    --black: #000;
+    --white: #fff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--black);
+    color: var(--white);
+  }
+  
+  /* Header */
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    border-bottom: none;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(0, 0, 0, 0.85);
+    border-bottom: 1px solid var(--gold);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+header.scrolled .logo {
+    opacity: 1;
+}
+  
+  .logo img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+  }
+  
+  /* Desktop nav */
+  .desktop-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+.desktop-nav a {
+    text-decoration: none;
+    color: var(--gold);
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header.scrolled .desktop-nav a {
+    color: var(--white);
+}
+  
+  .desktop-nav a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    background: var(--gold);
+    transition: 0.3s;
+  }
+  
+  .desktop-nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* Menu Toggle */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+  
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: var(--gold);
+    display: block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Mobile nav */
+.nav-mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--black);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+  
+.nav-mobile a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    transition: color 0.3s ease;
+}
+
+header.scrolled .nav-mobile a {
+    color: var(--white);
+}
+  
+.nav-mobile.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+  /* Hero */
+  .hero {
+    height: 100vh;
+    background: url("images/background_hero_adfa.webp") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .hero-logo {
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    animation: breathing 4s ease-in-out infinite;
+    margin-bottom: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .hero h2 {
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-top: 0.5rem;
+  }
+  
+  /* Buttons */
+  .buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid var(--gold);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .btn-beli {
+    background: var(--gold);
+    color: var(--black);
+  }
+  
+  .btn-beli:hover {
+    filter: brightness(1.1);
+  }
+  
+  .btn-produk {
+    background: var(--black);
+    color: var(--white);
+  }
+  
+  .btn-produk:hover {
+    background: var(--gold);
+    color: var(--black);
+  }
+  
+  /* Produk Section */
+  .produk {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+  
+  .produk-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .produk-item {
+    background: #111;
+    border: 1px solid var(--gold);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 200px;
+  }
+  
+  /* Tentang Kami */
+  .tentang {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 2rem;
+    background: #111;
+  }
+  
+  .tentang-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Footer */
+  footer {
+    min-height: 100vh;
+    background: var(--black);
+    color: var(--gold);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+  
+  footer a {
+    color: var(--gold);
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+  
+  /* Popup */
+  .popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .popup.active {
+    display: flex;
+  }
+  
+  .popup-content {
+    background: #111;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  .popup-content a {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .popup-content .shopee { background: #ee4d2d; }
+  .popup-content .tokopedia { background: #03ac0e; }
+  .popup-content .tiktok { background: #000; }
+  .popup-content .whatsapp { background: #25d366; }
+  
+  .popup-close {
+    margin-top: 1rem;
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* Animations */
+  @keyframes breathing {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+@media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    body {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  }
+  
