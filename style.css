@@ -227,6 +227,10 @@ header.scrolled .nav-mobile a {
     text-align: center;
     margin-top: 60px;
   }
+
+  .produk {
+    animation: fadeIn 1s ease forwards;
+  }
   
   .section-title {
     font-size: 2rem;
@@ -257,6 +261,13 @@ header.scrolled .nav-mobile a {
     padding: 4rem 2rem;
     background: #111;
     margin-top: 60px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .tentang.fade-in {
+    opacity: 1;
+    animation: fadeIn 0.5s ease forwards;
   }
   
   .tentang-container {
@@ -276,7 +287,14 @@ footer {
     align-items: center;
     padding: 4rem 2rem;
     margin-top: 60px;
-  }
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+footer.fade-in {
+    opacity: 1;
+    animation: fadeIn 0.5s ease forwards;
+}
   
   footer a {
     color: var(--gold);
@@ -333,11 +351,33 @@ footer {
     cursor: pointer;
   }
   
-  /* Animations */
-  @keyframes breathing {
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi untuk section utama */
+.produk, .tentang, footer {
+    opacity: 1; /* Pastikan section tetap terlihat */
+    transform: translateY(0);
+}
+
+/* Animasi hanya saat scroll */
+.scrolled-into-view {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes breathing {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
-  }
+}
   
 @media (max-width: 768px) {
     .desktop-nav {
