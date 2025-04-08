@@ -12,12 +12,6 @@ function handleScroll() {
     }
 }
 
-// Initialize scroll state
-handleScroll();
-
-// Add scroll event listener
-window.addEventListener('scroll', handleScroll);
-
 // Mobile menu toggle
 menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active');
@@ -36,3 +30,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
 function togglePopup() {
     popup.classList.toggle('active');
 }
+
+// Initialize
+window.addEventListener('scroll', handleScroll);
+handleScroll(); // Run once on load

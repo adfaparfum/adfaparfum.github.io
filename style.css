@@ -13,22 +13,24 @@
   
   /* Header */
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
-    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0); /* Fully transparent */
+    padding: 0.75rem 2rem;
     z-index: 1000;
-    border-bottom: none;
-    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+    height: 60px;
+    box-sizing: border-box;
+    transition: background 0.3s ease, border-bottom 0.3s ease;
 }
 
 header.scrolled {
     background: rgba(0, 0, 0, 0.85);
     border-bottom: 1px solid var(--gold);
-    backdrop-filter: blur(8px);
 }
 
 .logo {
@@ -155,6 +157,9 @@ header.scrolled .nav-mobile a {
     justify-content: center;
     text-align: center;
     padding: 2rem;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
   }
   
   .hero-logo {
@@ -217,9 +222,10 @@ header.scrolled .nav-mobile a {
   
   /* Produk Section */
   .produk {
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     padding: 4rem 2rem;
     text-align: center;
+    margin-top: 60px;
   }
   
   .section-title {
@@ -245,11 +251,12 @@ header.scrolled .nav-mobile a {
   
   /* Tentang Kami */
   .tentang {
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     display: flex;
     align-items: center;
     padding: 4rem 2rem;
     background: #111;
+    margin-top: 60px;
   }
   
   .tentang-container {
@@ -259,8 +266,8 @@ header.scrolled .nav-mobile a {
   }
   
   /* Footer */
-  footer {
-    min-height: 100vh;
+footer {
+    min-height: calc(100vh - 60px);
     background: var(--black);
     color: var(--gold);
     display: flex;
@@ -268,6 +275,7 @@ header.scrolled .nav-mobile a {
     justify-content: center;
     align-items: center;
     padding: 4rem 2rem;
+    margin-top: 60px;
   }
   
   footer a {
