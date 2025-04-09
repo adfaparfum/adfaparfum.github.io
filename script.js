@@ -26,11 +26,24 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
     });
 });
 
-// Popup toggle
+// Simple popup toggle
 function togglePopup() {
     popup.classList.toggle('active');
 }
 
+// Update navigation visibility
+function updateNav() {
+    if (window.scrollY === 0) {
+        document.body.classList.add('at-top');
+    } else {
+        document.body.classList.remove('at-top');
+    }
+}
+
 // Initialize
-window.addEventListener('scroll', handleScroll);
+window.addEventListener('scroll', () => {
+    handleScroll();
+    updateNav();
+});
 handleScroll(); // Run once on load
+updateNav(); // Run once on load

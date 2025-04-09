@@ -42,12 +42,19 @@ header.scrolled .logo {
     opacity: 1;
 }
   
-  .logo img {
+.logo img {
     height: 48px;
     width: 48px;
     border-radius: 50%;
     border: 2px solid var(--gold);
-  }
+    animation: gentleGlow 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.logo img:hover {
+    animation: gentleGlow 1.5s ease-in-out infinite;
+    transform: scale(1.1);
+}
   
   /* Desktop nav */
   .desktop-nav {
@@ -162,14 +169,33 @@ header.scrolled .nav-mobile a {
     z-index: 1;
   }
   
-  .hero-logo {
+.hero-logo {
     width: 100px;
     height: 100px;
     border: 3px solid var(--gold);
     border-radius: 50%;
-    animation: breathing 4s ease-in-out infinite;
+    animation: 
+        breathing 4s ease-in-out infinite,
+        gentleGlow 3s ease-in-out infinite;
     margin-bottom: 1rem;
-  }
+    transition: all 0.3s ease;
+}
+
+@keyframes gentleGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(217, 180, 92, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(217, 180, 92, 0.8);
+    }
+}
+
+.hero-logo:hover {
+    animation: 
+        breathing 4s ease-in-out infinite,
+        gentleGlow 1.5s ease-in-out infinite;
+    transform: scale(1.05);
+}
   
   .hero h1 {
     font-size: 2rem;
@@ -201,14 +227,81 @@ header.scrolled .nav-mobile a {
     font-family: 'Inter', sans-serif;
   }
   
-  .btn-beli {
+.btn-beli {
     background: var(--gold);
     color: var(--black);
-  }
-  
-  .btn-beli:hover {
-    filter: brightness(1.1);
-  }
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-beli:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(217, 180, 92, 0.3);
+}
+
+.btn-beli::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.btn-beli:hover::before {
+    left: 100%;
+}
+
+@keyframes elegantPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(217, 180, 92, 0.3);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 8px rgba(217, 180, 92, 0.1);
+    }
+}
+
+.btn-beli.pulse {
+    animation: elegantPulse 3s ease-in-out infinite;
+}
+
+/* Simple Popup Animation */
+.popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Button Hover Effects */
+.btn-beli:hover {
+    background: #e6c35c;
+    transform: translateY(-2px);
+}
+
+.btn-produk:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+/* Hide Home nav when at top */
+body.at-top .desktop-nav a[href="#hero"] {
+    display: none;
+}
   
   .btn-produk {
     background: var(--black);
