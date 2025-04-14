@@ -43,17 +43,10 @@ header.scrolled .logo {
 }
   
 .logo img {
-    height: 48px;
-    width: 48px;
-    border-radius: 50%;
-    border: 2px solid var(--gold);
-    animation: gentleGlow 3s ease-in-out infinite;
+    height: 32px;
+    width: auto;
+    filter: drop-shadow(0 0 1px var(--gold));
     transition: all 0.3s ease;
-}
-
-.logo img:hover {
-    animation: gentleGlow 1.5s ease-in-out infinite;
-    transform: scale(1.1);
 }
   
   /* Desktop nav */
