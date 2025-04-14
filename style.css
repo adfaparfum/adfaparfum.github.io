@@ -4,12 +4,30 @@
     --white: #fff;
   }
   
-  body {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     margin: 0;
     font-family: 'Plus Jakarta Sans', sans-serif;
     background: var(--black);
     color: var(--white);
-  }
+}
+
+/* Logo link styling */
+a.logo {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 38px; /* 80% dari ukuran asli */
+    width: auto;
+    padding-top: 8px;
+    filter: drop-shadow(0 0 1px var(--gold));
+    transition: all 0.3s ease;
+}
   
   /* Header */
 header {
@@ -313,7 +331,7 @@ body.at-top .desktop-nav a[href="#hero"] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 80px 0 40px; /* Added top padding for navbar */
+    padding: 40px 0 40px; /* Added top padding for navbar */
 }
 
   .produk {
@@ -481,12 +499,24 @@ footer.fade-in {
 }
   
 @media (max-width: 768px) {
-    .desktop-nav {
-      display: none;
+    header {
+        justify-content: center;
+        padding: 0.75rem 1rem;
     }
-  
+
+    .desktop-nav {
+        display: none;
+    }
+
     .menu-toggle {
-      display: flex;
+        position: absolute;
+        right: 1rem;
+        display: flex;
+    }
+
+    a.logo {
+        position: relative;
+        z-index: 1001;
     }
 
     /* Hide scrollbar for Chrome, Safari and Opera */
