@@ -742,11 +742,11 @@ footer.fade-in {
     /* no color override, keep gold */
 }
 .sosial a[href*="tiktok.com"]:hover {
-    color: white;
+    color: var(--black);
     font-weight: 700;
 }
 .sosial a[href*="tiktok.com"]:hover::after {
-    background-color: white;
+    background-color: var(--black);
 }
 
 
