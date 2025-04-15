@@ -410,6 +410,33 @@ footer {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+footer > div > strong {
+    font-size: 1.125rem; /* increase font size by 2px approx from 16px */
+    position: relative;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+footer > div > strong::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px; /* increased from 60px to 180px */
+    height: 2px;
+    background-color: var(--gold);
+    border-radius: 1px;
+}
+
+@media (max-width: 767px) {
+    footer p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
 footer.fade-in {
     opacity: 1;
     animation: fadeIn 0.5s ease forwards;
@@ -640,6 +667,88 @@ footer.fade-in {
         font-size: 0.8rem;
     }
 }
+
+/* Sosial links horizontal layout for all views */
+.sosial {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .sosial {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    .sosial a {
+        width: auto;
+        text-align: left;
+    }
+}
+
+/* Social media link base styles */
+.sosial a {
+    position: relative;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+    display: inline-block;
+    width: 110px; /* fixed width for alignment */
+    text-align: center;
+}
+
+.sosial a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+.sosial a:hover::after {
+    width: 100%;
+}
+
+/* Instagram */
+.sosial a[href*="instagram.com"] {
+    /* no color override, keep gold */
+}
+.sosial a[href*="instagram.com"]:hover {
+    color: #E1306C;
+    font-weight: 700;
+}
+
+/* Facebook */
+.sosial a[href*="facebook.com"] {
+    /* no color override, keep gold */
+}
+.sosial a[href*="facebook.com"]:hover {
+    color: #1877F2;
+    font-weight: 700;
+}
+
+/* TikTok */
+.sosial a[href*="tiktok.com"] {
+    /* no color override, keep gold */
+}
+.sosial a[href*="tiktok.com"]:hover {
+    color: white;
+    font-weight: 700;
+}
+.sosial a[href*="tiktok.com"]:hover::after {
+    background-color: white;
+}
+
 
 /* iPad Responsive Styles */
 @media (min-width: 768px) and (max-width: 1024px) {
