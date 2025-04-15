@@ -498,7 +498,7 @@ footer.fade-in {
     50% { transform: scale(1.05); }
 }
   
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     header {
         justify-content: center;
         padding: 0.75rem 1rem;
@@ -614,7 +614,7 @@ footer.fade-in {
 }
 
 /* Mobile View for Produk Grid */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .produk-container {
         grid-template-columns: 1fr; /* 1 produk dalam satu baris untuk mobile */
         gap: 1rem;
@@ -638,6 +638,67 @@ footer.fade-in {
     .produk-item button {
         padding: 0.5rem;
         font-size: 0.8rem;
+    }
+}
+
+/* iPad Responsive Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Produk container grid with 2 columns for iPad */
+    .produk-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* Produk item adjustments */
+    .produk-item {
+        padding: 1.5rem;
+        border-radius: 12px;
+        font-size: 1rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .produk-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .produk-item p {
+        font-size: 1rem;
+    }
+
+    .produk-item button {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    /* Navigation adjustments */
+    .desktop-nav {
+        gap: 1.2rem;
+    }
+
+    .desktop-nav a {
+        font-size: 1rem;
+    }
+
+    /* Hero section adjustments */
+    .hero {
+        padding: 3rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 3rem 2rem;
     }
 }
   
