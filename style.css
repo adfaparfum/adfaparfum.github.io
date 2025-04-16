@@ -463,7 +463,8 @@ footer.fade-in {
     display: flex;
   }
   
-  .popup-content {
+.popup-content {
+    transition: border 0.3s ease; /* Add transition for smooth effect */
     background: #111;
     padding: 2rem;
     border-radius: 12px;
@@ -482,10 +483,17 @@ footer.fade-in {
     text-decoration: none;
   }
   
-  .popup-content .shopee { background: #ee4d2d; }
-  .popup-content .tokopedia { background: #03ac0e; }
-  .popup-content .tiktok { background: #000; }
-  .popup-content .whatsapp { background: #25d366; }
+.popup-content .shopee { background: #ee4d2d; transition: outline 0.3s ease; }
+.popup-content .shopee:hover { outline: 2px solid var(--gold); }
+
+.popup-content .tokopedia { background: #03ac0e; transition: outline 0.3s ease; }
+.popup-content .tokopedia:hover { outline: 2px solid var(--gold); }
+
+.popup-content .tiktok { background: #000; transition: outline 0.3s ease; }
+.popup-content .tiktok:hover { outline: 2px solid var(--gold); }
+
+.popup-content .whatsapp { background: #25d366; transition: outline 0.3s ease; }
+.popup-content .whatsapp:hover { outline: 2px solid var(--gold); }
   
   .popup-close {
     margin-top: 1rem;
