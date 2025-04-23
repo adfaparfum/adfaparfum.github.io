@@ -382,6 +382,7 @@ body.at-top .desktop-nav a[href="#hero"] {
     margin-top: 60px;
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
+    overflow-y: hidden;
   }
 
   .tentang.fade-in {
@@ -878,4 +879,3 @@ body[style*="background-color: white"] #footer p {
     transform: scale(1.1);
     transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
-  
