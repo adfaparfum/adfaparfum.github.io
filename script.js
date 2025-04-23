@@ -40,11 +40,29 @@ function updateNav() {
     }
 }
 
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+// Show or hide the scroll to top button based on scroll position
+function toggleScrollToTopBtn() {
+    if (window.scrollY > 0) {
+        scrollToTopBtn.classList.add('visible');
+    } else {
+        scrollToTopBtn.classList.remove('visible');
+    }
+}
+
+// Scroll to top when button is clicked
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // Initialize
 window.addEventListener('scroll', () => {
     handleScroll();
     updateNav();
+    toggleScrollToTopBtn();
 });
 handleScroll(); // Run once on load
 updateNav(); // Run once on load
+toggleScrollToTopBtn(); // Run once on load
 
