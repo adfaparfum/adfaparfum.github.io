@@ -588,8 +588,8 @@ footer.fade-in {
 }
 
 .produk-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(217, 180, 92, 0.4);
+    /* transform: translateY(-5px); */
+    box-shadow: 0 15px 30px rgba(217, 180, 92, 0.4);
 }
 
 .produk-item img {
