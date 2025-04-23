@@ -325,7 +325,7 @@ body.at-top .desktop-nav a[href="#hero"] {
   }
   
   /* Produk Section */
-.produk {
+.unggulan {
     min-height: calc(100vh - 60px); /* Full view minus navbar */
     display: flex;
     flex-direction: column;
@@ -334,7 +334,7 @@ body.at-top .desktop-nav a[href="#hero"] {
     padding: 40px 0 40px; /* Added top padding for navbar */
 }
 
-  .produk {
+  .unggulan {
     animation: fadeIn 1s ease forwards;
   }
   
