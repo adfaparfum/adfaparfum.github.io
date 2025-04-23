@@ -757,6 +757,20 @@ footer.fade-in {
     background-color: var(--white);
 }
 
+/* Override TikTok hover color to black only in katalog.html */
+body[style*="background-color: white"] .sosial a[href*="tiktok.com"]:hover {
+    color: black !important;
+    font-weight: 700;
+}
+body[style*="background-color: white"] .sosial a[href*="tiktok.com"]:hover::after {
+    background-color: black !important;
+}
+
+/* Override hover colors and animation for katalog.html */
+.katalog-page .sosial a:hover {
+    /* Reverted to default styles, no override */
+}
+
 
 /* iPad Responsive Styles */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -817,6 +831,16 @@ footer.fade-in {
     footer {
         padding: 3rem 2rem;
     }
+}
+
+/* Change strong color to gold only in katalog.html */
+body[style*="background-color: white"] #footer > div > strong {
+    color: var(--gold);
+}
+
+/* Change copyright paragraph color to gold only in katalog.html */
+body[style*="background-color: white"] #footer p {
+    color: var(--gold);
 }
 
 /* Scroll to Top Button */
