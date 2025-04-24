@@ -69,6 +69,29 @@
       margin: 0 auto;
       box-sizing: border-box;
     }
+    .cpc-product-name,
+    .cpc-product-category {
+      border: none;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6px;
+      width: 100%;
+      height: 28px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    @media (max-width: 768px) {
+      .cpc-product-name,
+      .cpc-product-category {
+        padding: 0;
+      }
+    }
     .product-placeholder {
       position: absolute;
       width: 40px;
@@ -208,6 +231,31 @@
     }
     window.addEventListener('resize', adjustProductCardWidth);
     window.addEventListener('load', adjustProductCardWidth);
+
+    // Adjust font size to fit within placeholder on all screen sizes
+    function fitTextToPlaceholder() {
+      const elements = document.querySelectorAll('.cpc-product-name, .cpc-product-category');
+      elements.forEach(el => {
+        const maxWidth = el.clientWidth;
+        const maxHeight = el.clientHeight;
+        el.style.whiteSpace = 'nowrap';
+
+        let fontSize = 8; // start from minimum font size 8px
+        el.style.fontSize = fontSize + 'px';
+
+        // Increase font size until it reaches max width or max height
+        while (fontSize < 100) { // arbitrary max font size limit
+          el.style.fontSize = (fontSize + 1) + 'px';
+          if (el.scrollWidth > maxWidth || el.scrollHeight > maxHeight) {
+            el.style.fontSize = fontSize + 'px'; // revert to last fitting size
+            break;
+          }
+          fontSize++;
+        }
+      });
+    }
+    window.addEventListener('resize', fitTextToPlaceholder);
+    window.addEventListener('load', fitTextToPlaceholder);
   </script>
 </head>
 <body style="background-color: white; color: black; padding-top: 60px;">
@@ -249,128 +297,8 @@
           <img src="../assets/images/products/BG_Ingredients/24_Women.webp" alt="24 Women" />
         </div>
         <div class="cpc-info">
-          <h2 class="cpc-product-name">24 Women</h2>
-          <p class="cpc-product-category">Floral</p>
-          <p class="cpc-product-price">Rp 100.000</p>
-        </div>
-        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
-        <button class="cpc-button-buy">Beli Sekarang</button>
-      </div>
-      <div class="clean-product-card">
-        <div class="cpc-image-area">
-          <img src="../assets/images/products/BG_Ingredients/27_Girl.webp" alt="27 Girl" />
-        </div>
-        <div class="cpc-info">
-          <h2 class="cpc-product-name">27 Girl</h2>
-          <p class="cpc-product-category">Fruity Floral</p>
-          <p class="cpc-product-price">Rp 100.000</p>
-        </div>
-        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
-        <button class="cpc-button-buy">Beli Sekarang</button>
-      </div>
-      <div class="clean-product-card">
-        <div class="cpc-image-area">
-          <img src="../assets/images/products/BG_Ingredients/Castanea.webp" alt="Castanea" />
-        </div>
-        <div class="cpc-info">
-          <h2 class="cpc-product-name">Castanea</h2>
-          <p class="cpc-product-category">Woody</p>
-          <p class="cpc-product-price">Rp 100.000</p>
-        </div>
-        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
-        <button class="cpc-button-buy">Beli Sekarang</button>
-      </div>
-      <div class="clean-product-card">
-        <div class="cpc-image-area">
-          <img src="../assets/images/products/BG_Ingredients/Costata.webp" alt="Costata" />
-        </div>
-        <div class="cpc-info">
-          <h2 class="cpc-product-name">Costata</h2>
-          <p class="cpc-product-category">Citrus</p>
-          <p class="cpc-product-price">Rp 100.000</p>
-        </div>
-        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
-        <button class="cpc-button-buy">Beli Sekarang</button>
-      </div>
-      <div class="clean-product-card">
-        <div class="cpc-image-area">
-          <img src="../assets/images/products/BG_Ingredients/Fagus.webp" alt="Fagus" />
-        </div>
-        <div class="cpc-info">
-          <h2 class="cpc-product-name">Fagus</h2>
-          <p class="cpc-product-category">Green Woody</p>
-          <p class="cpc-product-price">Rp 100.000</p>
-        </div>
-        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
-        <button class="cpc-button-buy">Beli Sekarang</button>
-      </div>
-      <div class="clean-product-card">
-        <div class="cpc-image-area">
-          <img src="../assets/images/products/BG_Ingredients/Feb_Man.webp" alt="Feb Man" />
-        </div>
-        <div class="cpc-info">
           <h2 class="cpc-product-name">Feb Man</h2>
-          <p class="cpc-product-category">Aromatic</p>
-          <p class="cpc-product-price">Rp 100.000</p>
-        </div>
-        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
-        <button class="cpc-button-buy">Beli Sekarang</button>
-      </div>
-      <div class="clean-product-card">
-        <div class="cpc-image-area">
-          <img src="../assets/images/products/BG_Ingredients/MW_Royal.webp" alt="MW Royal" />
-        </div>
-        <div class="cpc-info">
-          <h2 class="cpc-product-name">MW Royal</h2>
-          <p class="cpc-product-category">Oriental</p>
-          <p class="cpc-product-price">Rp 100.000</p>
-        </div>
-        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
-        <button class="cpc-button-buy">Beli Sekarang</button>
-      </div>
-      <div class="clean-product-card">
-        <div class="cpc-image-area">
-          <img src="../assets/images/products/BG_Ingredients/NG_Inspiration.webp" alt="NG Inspiration" />
-        </div>
-        <div class="cpc-info">
-          <h2 class="cpc-product-name">NG Inspiration</h2>
-          <p class="cpc-product-category">Floral Woody</p>
-          <p class="cpc-product-price">Rp 100.000</p>
-        </div>
-        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
-        <button class="cpc-button-buy">Beli Sekarang</button>
-      </div>
-      <div class="clean-product-card">
-        <div class="cpc-image-area">
-          <img src="../assets/images/products/BG_Ingredients/NN_Good_Women.webp" alt="NN Good Women" />
-        </div>
-        <div class="cpc-info">
-          <h2 class="cpc-product-name">NN Good Women</h2>
-          <p class="cpc-product-category">Floral Gourmand</p>
-          <p class="cpc-product-price">Rp 100.000</p>
-        </div>
-        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
-        <button class="cpc-button-buy">Beli Sekarang</button>
-      </div>     
-      <div class="clean-product-card">
-        <div class="cpc-image-area">
-          <img src="../assets/images/products/BG_Ingredients/Quercus.webp" alt="Quercus" />
-        </div>
-        <div class="cpc-info">
-          <h2 class="cpc-product-name">Quercus</h2>
-          <p class="cpc-product-category">Oakmoss</p>
-          <p class="cpc-product-price">Rp 100.000</p>
-        </div>
-        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
-        <button class="cpc-button-buy">Beli Sekarang</button>
-      </div>
-      <div class="clean-product-card">
-        <div class="cpc-image-area">
-          <img src="../assets/images/products/BG_Ingredients/RN_Original.webp" alt="RN Original" />
-        </div>
-        <div class="cpc-info">
-          <h2 class="cpc-product-name">RN Original</h2>
-          <p class="cpc-product-category">Woody Aromatic</p>
+          <p class="cpc-product-category">Fresh Woody Aquatic</p>
           <p class="cpc-product-price">Rp 100.000</p>
         </div>
         <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
@@ -382,7 +310,7 @@
         </div>
         <div class="cpc-info">
           <h2 class="cpc-product-name">Sept Romance</h2>
-          <p class="cpc-product-category">Floral Oriental</p>
+          <p class="cpc-product-category">Floral Fruity Gourmand</p>
           <p class="cpc-product-price">Rp 100.000</p>
         </div>
         <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
@@ -390,11 +318,11 @@
       </div>
       <div class="clean-product-card">
         <div class="cpc-image-area">
-          <img src="../assets/images/products/BG_Ingredients/SW_Best.webp" alt="SW Best" />
+          <img src="../assets/images/products/BG_Ingredients/NG_Inspiration.webp" alt="NG Inspiration" />
         </div>
         <div class="cpc-info">
-          <h2 class="cpc-product-name">SW Best</h2>
-          <p class="cpc-product-category">Oriental Gourmand</p>
+          <h2 class="cpc-product-name">NG Inspiration</h2>
+          <p class="cpc-product-category">Sweet Gourmand Powdery</p>
           <p class="cpc-product-price">Rp 100.000</p>
         </div>
         <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
@@ -406,7 +334,115 @@
         </div>
         <div class="cpc-info">
           <h2 class="cpc-product-name">Three One</h2>
-          <p class="cpc-product-category">Woody Aromatic</p>
+          <p class="cpc-product-category">Oriental Gourmand Spicy</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Costata.webp" alt="Costata" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Costata</h2>
+          <p class="cpc-product-category">Aromatic Woody</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Fagus.webp" alt="Fagus" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Fagus</h2>
+          <p class="cpc-product-category">Fresh Green Floral Woody</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/RN_Original.webp" alt="RN Original" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">RN Original</h2>
+          <p class="cpc-product-category">Spicy Woody Oriental</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Quercus.webp" alt="Quercus" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Quercus</h2>
+          <p class="cpc-product-category">Woody Floral Musk</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/MW_Royal.webp" alt="MW Royal" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">MW Royal</h2>
+          <p class="cpc-product-category">Woody Amber Aromatic</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/24_Women.webp" alt="24 Women" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">24 Women</h2>
+          <p class="cpc-product-category">Fruity Sweet Gourmand</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Castanea.webp" alt="Castanea" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Castanea</h2>
+          <p class="cpc-product-category">Woody Floral Sweet</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/27_Girl.webp" alt="27 Girl" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">27 Girl</h2>
+          <p class="cpc-product-category">Floral Green Fresh</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/NN_Good_Women.webp" alt="NN Good Women" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">NN Good Women</h2>
+          <p class="cpc-product-category">Oriental Floral Gourmand</p>
           <p class="cpc-product-price">Rp 100.000</p>
         </div>
         <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
@@ -418,7 +454,19 @@
         </div>
         <div class="cpc-info">
           <h2 class="cpc-product-name">Vatika Rassak</h2>
-          <p class="cpc-product-category">Woody Aromatic</p>
+          <p class="cpc-product-category">Sweet Spicy Gourmand</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/SW_Best.webp" alt="SW Best" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">SW Best</h2>
+          <p class="cpc-product-category">Woody Aromatic Fresh</p>
           <p class="cpc-product-price">Rp 100.000</p>
         </div>
         <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
