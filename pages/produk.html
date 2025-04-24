@@ -31,6 +31,7 @@
       }
     }
     .clean-product-card {
+      position: relative;
       border: 1px solid var(--cpc-border-color);
       padding: 16px;
       display: flex;
@@ -45,6 +46,28 @@
       min-height: 420px;
       margin: 0 auto;
       box-sizing: border-box;
+    }
+    .product-placeholder {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .product-placeholder.left {
+      top: 0;
+      left: 0;
+      border-top-left-radius: 4px;
+      border-bottom-right-radius: 0;
+    }
+    .product-placeholder.right {
+      top: 0;
+      right: 0;
+      border-top-right-radius: 4px;
+      border-bottom-left-radius: 0;
     }
     .cpc-image-area {
       position: relative;
@@ -72,9 +95,9 @@
       color: var(--cpc-text-color);
     }
     .cpc-image-area img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       z-index: 1;
       display: block;
       margin: 0 auto;
@@ -173,6 +196,8 @@
     <h2 class="section-title" style="text-align: center;">Temukan Aromamu Disini</h2>
     <div class="produk-container">
       <div class="clean-product-card">
+        <div class="product-placeholder left"></div>
+        <div class="product-placeholder right"></div>
         <div class="cpc-image-area">
           <img src="../assets/images/products/BG_Ingredients/24_Women.webp" alt="24 Women" />
         </div>
