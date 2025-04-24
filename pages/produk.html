@@ -28,6 +28,28 @@
     @media (max-width: 768px) {
       .produk-container {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0 5px;
+      }
+      .clean-product-card {
+        width: 100%;
+        min-height: auto;
+        padding: 12px;
+      }
+      .cpc-product-name {
+        font-size: 1.1rem;
+      }
+      .cpc-product-category,
+      .cpc-product-price {
+        font-size: 1rem;
+      }
+      .cpc-button-reason,
+      .cpc-button-buy {
+        font-size: 0.9rem;
+        padding: 10px 0;
+      }
+      .cpc-image-area {
+        height: 140px;
       }
     }
     .clean-product-card {
@@ -165,6 +187,28 @@
       --mp-button-hover-bg: #f9f5e7;
     }
   </style>
+  <script>
+    // Adjust product card width to fit exactly two per row on mobile without horizontal scroll
+    function adjustProductCardWidth() {
+      const container = document.querySelector('.produk-container');
+      const cards = document.querySelectorAll('.clean-product-card');
+      if (window.innerWidth <= 768 && container && cards.length > 0) {
+        const containerWidth = container.clientWidth;
+        const gap = parseInt(getComputedStyle(container).gap) || 0;
+        // Calculate width for two cards per row minus gap
+        const cardWidth = (containerWidth - gap) / 2;
+        cards.forEach(card => {
+          card.style.width = cardWidth + 'px';
+        });
+      } else {
+        cards.forEach(card => {
+          card.style.width = '';
+        });
+      }
+    }
+    window.addEventListener('resize', adjustProductCardWidth);
+    window.addEventListener('load', adjustProductCardWidth);
+  </script>
 </head>
 <body style="background-color: white; color: black; padding-top: 60px;">
 
