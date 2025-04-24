@@ -6,21 +6,144 @@
   <title>Produk - Adfa Parfum</title>
   <link rel="stylesheet" href="../style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Inter&display=swap" rel="stylesheet">
+  <style>
+    /* Clean Product Card Styles - White and Gold Theme */
+    :root {
+      --cpc-border-color: #d4af37; /* gold */
+      --cpc-bg-color: #fff;
+      --cpc-text-color: #000;
+      --cpc-button-reason-bg: #f9f5e7; /* light gold */
+      --cpc-button-reason-bg-hover: #f1e9c9;
+      --cpc-button-buy-bg: #d4af37; /* gold */
+      --cpc-button-buy-bg-hover: #b38a1f;
+      --cpc-button-buy-color: #000;
+    }
+    .produk-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      justify-content: center;
+      padding: 0 10px;
+    }
+    @media (max-width: 768px) {
+      .produk-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .clean-product-card {
+      border: 1px solid var(--cpc-border-color);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-sizing: border-box;
+      border-radius: 4px;
+      background-color: var(--cpc-bg-color);
+      color: var(--cpc-text-color);
+      width: 280px;
+      min-height: 420px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .cpc-image-area {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      border: 1px solid var(--cpc-border-color);
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f5e7;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .cpc-image-label {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      background-color: rgba(255,255,255,0.8);
+      padding: 2px 6px;
+      border-radius: 2px;
+      z-index: 2;
+      color: var(--cpc-text-color);
+    }
+    .cpc-image-area img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      z-index: 1;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+    }
+    .cpc-info {
+      margin-bottom: 16px;
+      width: 100%;
+    }
+    .cpc-product-name {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin: 0 0 8px 0;
+      color: var(--cpc-text-color);
+    }
+    .cpc-product-category,
+    .cpc-product-price {
+      font-size: 1.125rem;
+      margin: 0 0 6px 0;
+      color: var(--cpc-text-color);
+    }
+    .cpc-button-reason {
+      width: 100%;
+      padding: 12px 0;
+      background-color: var(--cpc-button-reason-bg);
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-bottom: 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      color: var(--cpc-text-color);
+    }
+    .cpc-button-reason:hover,
+    .cpc-button-reason:focus {
+      background-color: var(--cpc-button-reason-bg-hover);
+      outline: none;
+    }
+    .cpc-button-buy {
+      width: 100%;
+      padding: 12px 0;
+      background-color: var(--cpc-button-buy-bg);
+      color: var(--cpc-button-buy-color);
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    .cpc-button-buy:hover,
+    .cpc-button-buy:focus {
+      background-color: var(--cpc-button-buy-bg-hover);
+      outline: none;
+    }
+    /* Marketplace Button Styles */
+    :root {
+      --mp-button-border-color: #d4af37;
+      --mp-button-bg-color: #fff;
+      --mp-button-text-color: #000;
+      --mp-button-hover-bg: #f9f5e7;
+    }
+  </style>
 </head>
 <body style="background-color: white; color: black; padding-top: 60px;">
 
   <!-- Header -->
   <header id="navbar">
-  <style>
-    section {
-      background-color: white;
-      color: black;
-    }
-    #tentang, #footer {
-      background-color: white;
-      color: black;
-    }
-  </style>
     <div class="logo">
       <a href="https://www.adfaparfum.com">
         <img src="../assets/images/logo_adfa_navbar.png" alt="Adfa Parfum" />
@@ -49,98 +172,185 @@
   <section class="produk" id="produk">
     <h2 class="section-title" style="text-align: center;">Temukan Aromamu Disini</h2>
     <div class="produk-container">
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/24_Women.webp" alt="24 Women"/>
-        <h3>24 Women</h3>
-        <p>Kategori: Floral</p>
-        <p>Deskripsi: Aroma segar dan feminin dengan sentuhan bunga.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/24_Women.webp" alt="24 Women" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">24 Women</h2>
+          <p class="cpc-product-category">Floral</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/27_Girl.webp" alt="27 Girl"/>
-        <h3>27 Girl</h3>
-        <p>Kategori: Fruity Floral</p>
-        <p>Deskripsi: Aroma manis dan ceria dengan buah-buahan segar.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/27_Girl.webp" alt="27 Girl" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">27 Girl</h2>
+          <p class="cpc-product-category">Fruity Floral</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/Castanea.webp" alt="Castanea"/>
-        <h3>Castanea</h3>
-        <p>Kategori: Woody</p>
-        <p>Deskripsi: Aroma hangat dan alami dari kayu kastanye.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Castanea.webp" alt="Castanea" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Castanea</h2>
+          <p class="cpc-product-category">Woody</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/Costata.webp" alt="Costata"/>
-        <h3>Costata</h3>
-        <p>Kategori: Citrus</p>
-        <p>Deskripsi: Aroma segar dan energik dari jeruk dan lemon.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Costata.webp" alt="Costata" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Costata</h2>
+          <p class="cpc-product-category">Citrus</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/Fagus.webp" alt="Fagus"/>
-        <h3>Fagus</h3>
-        <p>Kategori: Green Woody</p>
-        <p>Deskripsi: Aroma hijau dan alami dari daun dan kayu.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Fagus.webp" alt="Fagus" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Fagus</h2>
+          <p class="cpc-product-category">Green Woody</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/Feb_Man.webp" alt="Feb Man"/>
-        <h3>Feb Man</h3>
-        <p>Kategori: Aromatic</p>
-        <p>Deskripsi: Aroma maskulin dengan sentuhan herbal dan rempah.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Feb_Man.webp" alt="Feb Man" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Feb Man</h2>
+          <p class="cpc-product-category">Aromatic</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/MW_Royal.webp" alt="MW Royal"/>
-        <h3>MW Royal</h3>
-        <p>Kategori: Oriental</p>
-        <p>Deskripsi: Aroma mewah dan elegan dengan rempah dan kayu.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/MW_Royal.webp" alt="MW Royal" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">MW Royal</h2>
+          <p class="cpc-product-category">Oriental</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/NG_Inspiration.webp" alt="NG Inspiration"/>
-        <h3>NG Inspiration</h3>
-        <p>Kategori: Floral Woody</p>
-        <p>Deskripsi: Aroma inspiratif dengan bunga dan kayu.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/NG_Inspiration.webp" alt="NG Inspiration" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">NG Inspiration</h2>
+          <p class="cpc-product-category">Floral Woody</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/NN_Good_Women.webp" alt="NN Good Women"/>
-        <h3>NN Good Women</h3>
-        <p>Kategori: Floral Gourmand</p>
-        <p>Deskripsi: Aroma unik dari almond, tuberose, dan vanilla.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/NN_Good_Women.webp" alt="NN Good Women" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">NN Good Women</h2>
+          <p class="cpc-product-category">Floral Gourmand</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>     
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Quercus.webp" alt="Quercus" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Quercus</h2>
+          <p class="cpc-product-category">Oakmoss</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/Quercus.webp" alt="Quercus"/>
-        <h3>Quercus</h3>
-        <p>Kategori: Oakmoss</p>
-        <p>Deskripsi: Aroma alami dan segar dari lumut ek.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/RN_Original.webp" alt="RN Original" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">RN Original</h2>
+          <p class="cpc-product-category">Woody Aromatic</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/RN_Original.webp" alt="RN Original"/>
-        <h3>RN Original</h3>
-        <p>Kategori: Woody Aromatic</p>
-        <p>Deskripsi: Aroma klasik dengan kayu dan herbal.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Sept_Romance.webp" alt="Sept Romance" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Sept Romance</h2>
+          <p class="cpc-product-category">Floral Oriental</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/Sept_Romance.webp" alt="Sept Romance"/>
-        <h3>Sept Romance</h3>
-        <p>Kategori: Floral Oriental</p>
-        <p>Deskripsi: Aroma romantis dengan bunga dan rempah.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/SW_Best.webp" alt="SW Best" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">SW Best</h2>
+          <p class="cpc-product-category">Oriental Gourmand</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/SW_Best.webp" alt="SW Best"/>
-        <h3>SW Best</h3>
-        <p>Kategori: Oriental Gourmand</p>
-        <p>Deskripsi: Aroma khas almond, coffee, dan leather.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Three_One.webp" alt="Three One" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Three One</h2>
+          <p class="cpc-product-category">Woody Aromatic</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/Three_One.webp" alt="Three One"/>
-        <h3>Three One</h3>
-        <p>Kategori: Woody Aromatic</p>
-        <p>Deskripsi: Aroma segar dan maskulin dengan kayu dan rempah.</p>
-      </div>
-      <div class="produk-item">
-        <img src="../assets/images/products/BG_Ingredients/Vatika_Rassak.webp" alt="Vatika Rassak"/>
-        <h3>Vatika Rassak</h3>
-        <p>Kategori: Woody Aromatic</p>
-        <p>Deskripsi: Aroma oud dan musk dengan sentuhan floral.</p>
-      </div>
-      <div class="produk-item">
-        <button class="btn" onclick="location.href='produk.html'">Lihat Produk Kami <br> di Marketplace</button>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="../assets/images/products/BG_Ingredients/Vatika_Rassak.webp" alt="Vatika Rassak" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Vatika Rassak</h2>
+          <p class="cpc-product-category">Woody Aromatic</p>
+          <p class="cpc-product-price">Rp 100.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
     </div>
   </section>
