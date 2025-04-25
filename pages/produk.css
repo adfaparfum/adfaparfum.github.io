@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--black);
+  color: var(--white);
+}
+
 /* Clean Product Card Styles - White and Gold Theme */
 :root {
   --cpc-border-color: #d4af37; /* gold */
