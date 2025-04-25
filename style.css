@@ -116,6 +116,19 @@ header.scrolled .desktop-nav a {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: center;
 }
+
+/* Change background of toggle menu button spans to black in mobile */
+@media (max-width: 767px) {
+  .menu-toggle span {
+    background: var(--gold);
+  }
+  /* Change background of the toggle menu button itself to black */
+  .menu-toggle {
+    background-color: var(--black);
+    border-radius: 4px;
+    padding: 6px;
+  }
+}
   
   .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);

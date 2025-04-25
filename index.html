@@ -26,24 +26,24 @@
         <img src="assets/images/logo_adfa_navbar.png" alt="Adfa Parfum" />
       </a>
     </div>
-    <nav class="desktop-nav">
+    <nav class="desktop-nav" role="navigation" aria-label="Primary Navigation">
       <a href="#hero">Beranda</a>
       <a href="pages/produk.html">Produk</a>
       <a href="#tentang">Tentang Kami</a>
       <a href="#footer">Kontak</a>
     </nav>
-    <div class="menu-toggle" id="menu-toggle">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </header>
 
   <!-- Mobile Menu -->
-  <div class="nav-mobile" id="mobileMenu">
+  <nav class="nav-mobile" id="mobileMenu" role="navigation" aria-label="Mobile Navigation" hidden>
       <a href="#hero">Beranda</a>
       <a href="pages/produk.html">Produk</a>
       <a href="#tentang">Tentang Kami</a>
       <a href="#footer">Kontak</a>
-  </div>
+  </nav>
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
@@ -56,33 +56,500 @@
     </div>
   </section>
 
-  <!-- Unggulan Section -->
-  <section class="unggulan" id="produk">
-    <h2 class="section-title">Produk Unggulan</h2>
+  <style>
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--black);
+  color: var(--white);
+}
+
+  /* Clean Product Card Styles - White and Gold Theme */
+:root {
+  --cpc-border-color: #d9b45c; /* gold */
+  --cpc-bg-color: #fff;
+  --cpc-text-color: #000;
+  --cpc-button-reason-bg: #f9f5e7; /* light gold */
+  --cpc-button-reason-bg-hover: #afa88d;
+  --cpc-button-buy-bg: #d9b45c; /* gold */
+  --cpc-button-buy-bg-hover: #b38a1f;
+  --cpc-button-buy-color: #000;
+}
+
+/* Set product section background to white and text to black */
+.produk {
+  background-color: white;
+  color: black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.produk-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .produk-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 5px;
+  }
+  .clean-product-card {
+    width: 100%;
+    min-height: auto;
+    padding: 12px;
+  }
+  .cpc-product-name {
+    font-size: 1.1rem;
+  }
+  .cpc-product-category,
+  .cpc-product-price {
+    font-size: 1rem;
+  }
+  .cpc-button-reason,
+  .cpc-button-buy {
+    font-size: 0.9rem;
+    padding: 10px 0;
+  }
+  .cpc-image-area {
+    height: 140px;
+  }
+}
+
+.clean-product-card {
+  position: relative;
+  border: none;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: var(--cpc-bg-color);
+  color: var(--cpc-text-color);
+  width: 280px;
+  min-height: 420px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.cpc-product-name,
+.cpc-product-category {
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  width: 100%;
+  height: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .cpc-product-name,
+  .cpc-product-category {
+    padding: 0;
+  }
+}
+
+.product-placeholder {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.product-placeholder.left {
+  top: 0;
+  left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 0;
+}
+
+.product-placeholder.right {
+  top: 0;
+  right: 0;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 0;
+}
+
+.cpc-image-area {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border: none;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cpc-image-label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: rgba(255,255,255,0.8);
+  padding: 2px 6px;
+  border-radius: 2px;
+  z-index: 2;
+  color: var(--cpc-text-color);
+}
+
+.cpc-image-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  box-shadow: none;
+  filter: none;
+  border-radius: 8px;
+}
+
+.cpc-info {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.cpc-product-name {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0 0 8px 0;
+  color: var(--cpc-text-color);
+}
+
+.cpc-product-category,
+.cpc-product-price {
+  font-size: 1.125rem;
+  margin: 0 0 6px 0;
+  color: var(--cpc-text-color);
+}
+
+.cpc-button-reason {
+  width: 100%;
+  padding: 12px 0;
+  background-color: var(--cpc-button-reason-bg);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  color: var(--cpc-text-color);
+}
+
+.cpc-button-reason:hover,
+.cpc-button-reason:focus {
+  background-color: var(--cpc-button-reason-bg-hover);
+  outline: none;
+}
+
+.cpc-button-buy {
+  width: 100%;
+  padding: 12px 0;
+  background-color: var(--cpc-button-buy-bg);
+  color: var(--cpc-button-buy-color);
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cpc-button-buy:hover,
+.cpc-button-buy:focus {
+  background-color: var(--cpc-button-buy-bg-hover);
+  outline: none;
+}
+
+.gold-text {
+  color: var(--cpc-border-color);
+  font-weight: 700;
+  font-size: 2.1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .gold-text {
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+  </style>
+
+  <!-- Produk Section -->
+  <section class="produk" id="produk">
+    <h2 class="section-title gold-text" style="text-align: center;">Temukan Aromamu Disini</h2>
     <div class="produk-container">
-      <div class="produk-item">
-        <img src="assets/images/products/BG_Black&Wood/Vatika_Rassak.webp" alt="Vatika Rassak"/>
-        <h3>Vatika Rassak</h3>
-        <p>Kategori: Woody Aromatic</p>
-        <p>Deskripsi: Aroma oud dan musk dengan sentuhan floral.</p>
+      <div class="clean-product-card">
+        <div class="product-placeholder left"></div>
+        <div class="product-placeholder right"></div>
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/24_Women.webp" alt="24 Women" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Feb Man</h2>
+          <p class="cpc-product-category">Fresh Woody Aquatic</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="assets/images/products/BG_Black&Wood/NN_Good_Women.webp" alt="NN Good Women"/>
-        <h3>NN Good Women</h3>
-        <p>Kategori: Floral Gourmand</p>
-        <p>Deskripsi: Aroma unik dari almond, tuberose, dan vanilla.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/Sept_Romance.webp" alt="Sept Romance" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Sept Romance</h2>
+          <p class="cpc-product-category">Floral Fruity Gourmand</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-        <img src="assets/images/products/BG_Black&Wood/SW_Best.webp" alt="SW Best"/>
-        <h3>SW Best</h3>
-        <p>Kategori: Oriental Gourmand</p>
-        <p>Deskripsi: Aroma khas almond, coffee, dan leather.</p>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/NG_Inspiration.webp" alt="NG Inspiration" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">NG Inspiration</h2>
+          <p class="cpc-product-category">Sweet Gourmand Powdery</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
-      <div class="produk-item">
-      <button class="btn" onclick="location.href='pages/produk.html'">Lihat Produk Lainnya</button>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/Three_One.webp" alt="Three One" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Three One</h2>
+          <p class="cpc-product-category">Oriental Gourmand Spicy</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/Costata.webp" alt="Costata" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Costata</h2>
+          <p class="cpc-product-category">Aromatic Woody</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/Fagus.webp" alt="Fagus" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Fagus</h2>
+          <p class="cpc-product-category">Fresh Green Floral Woody</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/RN_Original.webp" alt="RN Original" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">RN Original</h2>
+          <p class="cpc-product-category">Spicy Woody Oriental</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/Quercus.webp" alt="Quercus" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Quercus</h2>
+          <p class="cpc-product-category">Woody Floral Musk</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/MW_Royal.webp" alt="MW Royal" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">MW Royal</h2>
+          <p class="cpc-product-category">Woody Amber Aromatic</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/24_Women.webp" alt="24 Women" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">24 Women</h2>
+          <p class="cpc-product-category">Fruity Sweet Gourmand</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/Castanea.webp" alt="Castanea" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Castanea</h2>
+          <p class="cpc-product-category">Woody Floral Sweet</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/27_Girl.webp" alt="27 Girl" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">27 Girl</h2>
+          <p class="cpc-product-category">Floral Green Fresh</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/NN_Good_Women.webp" alt="NN Good Women" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">NN Good Women</h2>
+          <p class="cpc-product-category">Oriental Floral Gourmand</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/Vatika_Rassak.webp" alt="Vatika Rassak" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">Vatika Rassak</h2>
+          <p class="cpc-product-category">Sweet Spicy Gourmand</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
+      </div>
+      <div class="clean-product-card">
+        <div class="cpc-image-area">
+          <img src="assets/images/products/BG_Ingredients/SW_Best.webp" alt="SW Best" />
+        </div>
+        <div class="cpc-info">
+          <h2 class="cpc-product-name">SW Best</h2>
+          <p class="cpc-product-category">Woody Aromatic Fresh</p>
+          <p class="cpc-product-price">Rp 70.000</p>
+        </div>
+        <button class="cpc-button-reason">Alasan Memilih<br />Aroma Ini</button>
+        <button class="cpc-button-buy">Beli Sekarang</button>
       </div>
     </div>
   </section>
+  <script>
+    // Adjust product card width to fit exactly two per row on mobile without horizontal scroll
+    function adjustProductCardWidth() {
+      const container = document.querySelector('.produk-container');
+      const cards = document.querySelectorAll('.clean-product-card');
+      if (window.innerWidth <= 768 && container && cards.length > 0) {
+        const containerWidth = container.clientWidth;
+        const gap = parseInt(getComputedStyle(container).gap) || 0;
+        // Calculate width for two cards per row minus gap
+        const cardWidth = (containerWidth - gap) / 2;
+        cards.forEach(card => {
+          card.style.width = cardWidth + 'px';
+        });
+      } else {
+        cards.forEach(card => {
+          card.style.width = '';
+        });
+      }
+    }
+    window.addEventListener('resize', adjustProductCardWidth);
+    window.addEventListener('load', adjustProductCardWidth);
+
+    // Adjust font size to fit within placeholder on all screen sizes
+    function fitTextToPlaceholder() {
+      const elements = document.querySelectorAll('.cpc-product-name, .cpc-product-category');
+      elements.forEach(el => {
+        const maxWidth = el.clientWidth;
+        const maxHeight = el.clientHeight;
+        el.style.whiteSpace = 'nowrap';
+
+        let fontSize = 8; // start from minimum font size 8px
+        el.style.fontSize = fontSize + 'px';
+
+        // Increase font size until it reaches max width or max height
+        while (fontSize < 100) { // arbitrary max font size limit
+          el.style.fontSize = (fontSize + 1) + 'px';
+          if (el.scrollWidth > maxWidth || el.scrollHeight > maxHeight) {
+            el.style.fontSize = fontSize + 'px'; // revert to last fitting size
+            break;
+          }
+          fontSize++;
+        }
+      });
+    }
+    window.addEventListener('resize', fitTextToPlaceholder);
+    window.addEventListener('load', fitTextToPlaceholder);
+  </script>
 
   <!-- Tentang Kami -->
   <section class="tentang" id="tentang">
@@ -98,29 +565,26 @@
       <strong>Temukan Kami</strong>
     </div>
     <div class="sosial">
-      <a href="https://instagram.com/adfaparfum" target="_blank">Instagram</a>
-      <a href="https://facebook.com/adfaparfum" target="_blank">Facebook</a>
-      <a href="https://tiktok.com/@adfaparfum" target="_blank">TikTok</a>
+      <a href="https://instagram.com/adfaparfum" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://facebook.com/adfaparfum" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://tiktok.com/@adfaparfum" target="_blank" rel="noopener noreferrer">TikTok</a>
     </div>
     <p>&copy; 2025 Adfa Parfum. All rights reserved.</p>
   </footer>
 
   <!-- Popup Marketplace -->
-  <div class="popup" id="popupMarketplace">
+  <div class="popup" id="popupMarketplace" role="dialog" aria-modal="true" aria-labelledby="popupTitle" hidden>
     <div class="popup-content">
-      <h3>Pilih Marketplace</h3>
-      <a href="https://shopee.co.id/adfaparfum" class="shopee" target="_blank">Shopee</a>
-      <a href="https://tokopedia.com/adfaparfum" class="tokopedia" target="_blank">Tokopedia</a>
-      <a href="https://tiktok.com/@adfaparfum" class="tiktok" target="_blank">TikTok Shop</a>
-      <a href="https://wa.me/6281234567890" class="whatsapp" target="_blank">Chat via WhatsApp</a>
-      <button class="popup-close" onclick="togglePopup()">Tutup</button>
+      <h3 id="popupTitle">Pilih Marketplace</h3>
+      <a href="https://shopee.co.id/adfaparfum" class="shopee" target="_blank" rel="noopener noreferrer">Shopee</a>
+      <a href="https://tokopedia.com/adfaparfum" class="tokopedia" target="_blank" rel="noopener noreferrer">Tokopedia</a>
+      <a href="https://tiktok.com/@adfaparfum" class="tiktok" target="_blank" rel="noopener noreferrer">TikTok Shop</a>
+      <a href="https://wa.me/6281234567890" class="whatsapp" target="_blank" rel="noopener noreferrer">Chat via WhatsApp</a>
+      <button class="popup-close" onclick="togglePopup()" aria-label="Close popup">Tutup</button>
     </div>
   </div>
 
   <button id="scrollToTopBtn" title="Scroll to top" aria-label="Scroll to top">&#8679;</button>
   <script src="script.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
