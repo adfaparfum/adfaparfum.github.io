@@ -7,12 +7,12 @@ body {
 
 /* Clean Product Card Styles - White and Gold Theme */
 :root {
-  --cpc-border-color: #d4af37; /* gold */
+  --cpc-border-color: #d9b45c; /* gold */
   --cpc-bg-color: #fff;
   --cpc-text-color: #000;
   --cpc-button-reason-bg: #f9f5e7; /* light gold */
-  --cpc-button-reason-bg-hover: #f1e9c9;
-  --cpc-button-buy-bg: #d4af37; /* gold */
+  --cpc-button-reason-bg-hover: #afa88d;
+  --cpc-button-buy-bg: #d9b45c; /* gold */
   --cpc-button-buy-bg-hover: #b38a1f;
   --cpc-button-buy-color: #000;
 }
