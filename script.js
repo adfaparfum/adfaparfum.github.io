@@ -14,8 +14,15 @@ function handleScroll() {
 
 // Mobile menu toggle
 menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
+    const isActive = menuToggle.classList.toggle('active');
     mobileMenu.classList.toggle('show');
+    if (isActive) {
+        mobileMenu.hidden = false;
+        menuToggle.setAttribute('aria-expanded', 'true');
+    } else {
+        mobileMenu.hidden = true;
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
 });
 
 // Close mobile menu when clicking links
@@ -23,6 +30,8 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
     link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
         mobileMenu.classList.remove('show');
+        mobileMenu.hidden = true;
+        menuToggle.setAttribute('aria-expanded', 'false');
     });
 });
 
@@ -37,6 +46,19 @@ function updateNav() {
         document.body.classList.add('at-top');
     } else {
         document.body.classList.remove('at-top');
+    }
+}
+
+function toggleNavbarVisibility() {
+    console.log('toggleNavbarVisibility called, scrollY:', window.scrollY);
+    if (window.scrollY === 0) {
+        header.classList.remove('visible');
+        menuToggle.classList.remove('visible');
+        console.log('Removed visible class from navbar and menu toggle');
+    } else {
+        header.classList.add('visible');
+        menuToggle.classList.add('visible');
+        console.log('Added visible class to navbar and menu toggle');
     }
 }
 
@@ -61,8 +83,9 @@ window.addEventListener('scroll', () => {
     handleScroll();
     updateNav();
     toggleScrollToTopBtn();
+    toggleNavbarVisibility();
 });
 handleScroll(); // Run once on load
 updateNav(); // Run once on load
 toggleScrollToTopBtn(); // Run once on load
-
+toggleNavbarVisibility(); // Run once on load

@@ -122,11 +122,29 @@ header.scrolled .desktop-nav a {
   .menu-toggle span {
     background: var(--gold);
   }
-  /* Change background of the toggle menu button itself to black */
+  /* Change background of the toggle menu button itself to transparent */
   .menu-toggle {
-    background-color: var(--black);
-    border-radius: 4px;
-    padding: 6px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+  .menu-toggle.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  /* Hide navbar initially and fade in on scroll */
+  header#navbar {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+  header#navbar.visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
   
