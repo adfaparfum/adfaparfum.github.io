@@ -235,3 +235,14 @@ body {
     text-overflow: ellipsis;
   }
 }
+
+body {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
