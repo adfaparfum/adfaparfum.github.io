@@ -142,6 +142,26 @@ function disableUnavailableButtons() {
     }
 }
 
+// Add event listeners to "Alasan Memilih Aroma Ini" buttons to open variant pages
+function setupReasonButtons() {
+    const reasonButtons = document.querySelectorAll('.cpc-button-reason');
+    reasonButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.clean-product-card');
+            if (!card) return;
+            const productNameEl = card.querySelector('.cpc-product-name');
+            if (!productNameEl) return;
+            let productName = productNameEl.textContent.trim().toLowerCase();
+            // Convert product name to filename format: lowercase, spaces and special chars replaced with hyphens
+            productName = productName.replace(/&/g, 'and');
+            productName = productName.replace(/[^a-z0-9]+/g, '-');
+            productName = productName.replace(/^-+|-+$/g, '');
+            const pageUrl = `pages/${productName}.html`;
+            window.location.href = pageUrl;
+        });
+    });
+}
+
 // Initialize
 window.addEventListener('scroll', () => {
     handleScroll();
