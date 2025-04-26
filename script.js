@@ -71,6 +71,11 @@ function toggleScrollToTopBtn() {
     }
 }
 
+// Scroll to top on button click
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // Detect if product section is in view and toggle class on body
 function checkProductSectionInView() {
     if (!productSection) return;
