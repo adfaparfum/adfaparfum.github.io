@@ -170,6 +170,15 @@ header.scrolled .desktop-nav a {
     opacity: 1;
     pointer-events: auto;
   }
+  /* Show navbar and menu toggle when menu-open class is active */
+  header#navbar.menu-open {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  .menu-toggle.menu-open {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
 }
   
   .menu-toggle.active span:nth-child(1) {

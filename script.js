@@ -17,6 +17,8 @@ function handleScroll() {
 menuToggle.addEventListener('click', () => {
     const isActive = menuToggle.classList.toggle('active');
     mobileMenu.classList.toggle('show');
+    header.classList.toggle('menu-open', isActive);
+    menuToggle.classList.toggle('menu-open', isActive);
     if (isActive) {
         mobileMenu.hidden = false;
         menuToggle.setAttribute('aria-expanded', 'true');
@@ -25,6 +27,20 @@ menuToggle.addEventListener('click', () => {
         menuToggle.setAttribute('aria-expanded', 'false');
     }
 });
+
+// Update toggleNavbarVisibility to keep navbar visible when menu is active
+function toggleNavbarVisibility() {
+    if (menuToggle.classList.contains('active')) {
+        header.classList.add('visible');
+        menuToggle.classList.add('visible');
+    } else if (window.scrollY === 0) {
+        header.classList.remove('visible');
+        menuToggle.classList.remove('visible');
+    } else {
+        header.classList.add('visible');
+        menuToggle.classList.add('visible');
+    }
+}
 
 // Close mobile menu when clicking links
 document.querySelectorAll('.nav-mobile a').forEach(link => {
