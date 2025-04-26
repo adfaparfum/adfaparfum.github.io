@@ -9,10 +9,19 @@ html {
 }
 
 body {
-    margin: 0;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: var(--black);
-    color: var(--white);
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--black);
+  color: var(--white);
+}
+
+/* Soon stamp style for popup marketplace buttons */
+.soon-stamp {
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 700;
+  margin-left: 6px;
+  user-select: none;
 }
 
 /* When product section is active, ensure navbar is fixed at top and product section is below it */

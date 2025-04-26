@@ -103,6 +103,24 @@ function unifyFontSize(selector) {
     });
 }
 
+// Disable click for Tokopedia and TikTok Shop buttons and show alert
+function disableUnavailableButtons() {
+    const tokopediaBtn = document.querySelector('.tokopedia');
+    const tiktokBtn = document.querySelector('.tiktok');
+    if (tokopediaBtn) {
+        tokopediaBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Tokopedia shop is coming soon! 😊');
+        });
+    }
+    if (tiktokBtn) {
+        tiktokBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('TikTok Shop is coming soon! 😊');
+        });
+    }
+}
+
 // Initialize
 window.addEventListener('scroll', () => {
     handleScroll();
@@ -119,6 +137,7 @@ window.addEventListener('load', () => {
     checkProductSectionInView();
     unifyFontSize('.cpc-product-category');
     unifyFontSize('.cpc-product-name');
+    disableUnavailableButtons();
 });
 window.addEventListener('resize', () => {
     unifyFontSize('.cpc-product-category');
