@@ -2,6 +2,7 @@ const menuToggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobileMenu');
 const popup = document.getElementById('popupMarketplace');
 const header = document.getElementById('navbar');
+const productSection = document.getElementById('produk');
 
 // Handle scroll effect
 function handleScroll() {
@@ -50,15 +51,12 @@ function updateNav() {
 }
 
 function toggleNavbarVisibility() {
-    console.log('toggleNavbarVisibility called, scrollY:', window.scrollY);
     if (window.scrollY === 0) {
         header.classList.remove('visible');
         menuToggle.classList.remove('visible');
-        console.log('Removed visible class from navbar and menu toggle');
     } else {
         header.classList.add('visible');
         menuToggle.classList.add('visible');
-        console.log('Added visible class to navbar and menu toggle');
     }
 }
 
@@ -73,10 +71,18 @@ function toggleScrollToTopBtn() {
     }
 }
 
-// Scroll to top when button is clicked
-scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+// Detect if product section is in view and toggle class on body
+function checkProductSectionInView() {
+    if (!productSection) return;
+    const rect = productSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    // Check if product section top is within viewport
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+        document.body.classList.add('product-active');
+    } else {
+        document.body.classList.remove('product-active');
+    }
+}
 
 // Initialize
 window.addEventListener('scroll', () => {
@@ -84,8 +90,12 @@ window.addEventListener('scroll', () => {
     updateNav();
     toggleScrollToTopBtn();
     toggleNavbarVisibility();
+    checkProductSectionInView();
 });
-handleScroll(); // Run once on load
-updateNav(); // Run once on load
-toggleScrollToTopBtn(); // Run once on load
-toggleNavbarVisibility(); // Run once on load
+window.addEventListener('load', () => {
+    handleScroll();
+    updateNav();
+    toggleScrollToTopBtn();
+    toggleNavbarVisibility();
+    checkProductSectionInView();
+});

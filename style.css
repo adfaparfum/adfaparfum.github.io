@@ -15,6 +15,21 @@ body {
     color: var(--white);
 }
 
+/* When product section is active, ensure navbar is fixed at top and product section is below it */
+body.product-active header#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
+    border-bottom: 1px solid var(--gold);
+}
+
+body.product-active .produk {
+    padding-top: 60px; /* height of navbar to avoid overlap */
+    margin-top: 0;
+}
+
 /* Logo link styling */
 a.logo {
     display: inline-block;
