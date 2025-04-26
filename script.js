@@ -84,6 +84,25 @@ function checkProductSectionInView() {
     }
 }
 
+// Set all elements of a given selector to the smallest font size among them
+function unifyFontSize(selector) {
+    const elements = document.querySelectorAll(selector);
+    if (elements.length === 0) return;
+
+    let smallestFontSize = Infinity;
+    elements.forEach(el => {
+        const style = window.getComputedStyle(el);
+        const fontSize = parseFloat(style.fontSize);
+        if (fontSize < smallestFontSize) {
+            smallestFontSize = fontSize;
+        }
+    });
+
+    elements.forEach(el => {
+        el.style.fontSize = smallestFontSize + 'px';
+    });
+}
+
 // Initialize
 window.addEventListener('scroll', () => {
     handleScroll();
@@ -98,4 +117,10 @@ window.addEventListener('load', () => {
     toggleScrollToTopBtn();
     toggleNavbarVisibility();
     checkProductSectionInView();
+    unifyFontSize('.cpc-product-category');
+    unifyFontSize('.cpc-product-name');
+});
+window.addEventListener('resize', () => {
+    unifyFontSize('.cpc-product-category');
+    unifyFontSize('.cpc-product-name');
 });
