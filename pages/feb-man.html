@@ -12,6 +12,7 @@
     }
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
       background-color: #ffffff;
       color: #000000;
@@ -35,10 +36,11 @@
     }
     /* Header */
     header {
-      background-color: #ffffff;
-      padding: 1rem 0;
+      background-color: #000000;
+      padding: 0;
+      margin: 0;
       text-align: center;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #333;
       flex-shrink: 0;
     }
     header img {
@@ -201,6 +203,9 @@
       gap: 1rem;
       padding-bottom: 0.5rem;
       -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-padding: 1rem;
     }
     .related-card {
       flex: 0 0 auto;
@@ -213,17 +218,21 @@
       padding: 0.5rem;
       cursor: pointer;
       transition: box-shadow 0.3s ease;
+      scroll-snap-align: start;
     }
     @media (max-width: 600px) {
       .related-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        overflow-x: auto;
         gap: 1rem;
-        overflow-x: visible;
-        padding-bottom: 0;
+        padding-bottom: 0.5rem;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 1rem;
       }
       .related-card {
-        width: 100%;
+        width: 80vw;
+        min-width: 140px;
+        scroll-snap-align: start;
       }
     }
     .related-card:hover, .related-card:focus {
@@ -288,7 +297,9 @@
         <img src="../assets/images/navigation/back_button.png" alt="Back" />
       </button>
       <div class="logo-container">
-        <img src="../assets/images/logo_adfa_navbar.png" alt="Adfa Parfum Logo" />
+        <a href="https://adfaparfum.com" target="_self" rel="noopener noreferrer">
+          <img src="../assets/images/logo_adfa_navbar.png" alt="Adfa Parfum Logo" style="filter: none;" />
+        </a>
       </div>
     </nav>
   </header>
@@ -477,16 +488,19 @@
     .back-button {
       position: absolute;
       left: 10px;
-      background: none;
+      background-color: #d9b45c;
+      border-radius: 50%;
       border: none;
-      padding: 0;
+      padding: 6px;
       cursor: pointer;
       display: none;
-      filter: invert(72%) sepia(100%) saturate(749%) hue-rotate(36deg) brightness(95%) contrast(90%);
+      filter: none;
+      box-shadow: 0 0 5px rgba(217, 180, 92, 0.7);
     }
     .back-button img {
       width: 24px;
       height: 24px;
+      display: block;
     }
     .logo-container img {
       height: 40px;
