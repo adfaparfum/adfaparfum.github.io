@@ -237,19 +237,20 @@
         font-size: 1.1rem;
         border-radius: 8px;
       }
-      /* Sticky buttons at bottom on mobile */
-      .sticky-cta {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #fff;
-        padding: 1rem 1.5rem;
-        box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
-        display: flex;
-        gap: 1rem;
-        z-index: 1000;
-      }
+    /* Sticky buttons at bottom on mobile */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      background: #fff;
+      padding: 1rem 1.5rem;
+      box-shadow: none;
+      display: flex;
+      gap: 1rem;
+      z-index: 1000;
+    }
       }
     section[aria-label="Gambar produk Feb Man"] {
       display: flex;
@@ -329,6 +330,7 @@
         </section>
       </div>
     </section>
+    <div style="height: 60px; width: 100%;"></div>
   </main>
   <script>
     // Randomize related products list on page load
@@ -371,73 +373,139 @@
         const scale = Math.min(currentWidth / baseWidth, 1);
 
         // Scale font sizes
-        const productTitle = document.querySelector('.product-title');
-        if (productTitle) {
+      const productTitle = document.querySelector('.product-title');
+      if (productTitle) {
+        if(window.innerWidth <= 600) {
+          productTitle.style.fontSize = `${1.8 * 1.75 * scale}rem`;
+        } else {
           productTitle.style.fontSize = `${1.75 * scale}rem`;
         }
-        const productSubtitle = document.querySelector('.product-subtitle');
-        if (productSubtitle) {
+      }
+      const productSubtitle = document.querySelector('.product-subtitle');
+      if (productSubtitle) {
+        if(window.innerWidth <= 600) {
+          productSubtitle.style.fontSize = `${1.8 * 1 * scale}rem`;
+        } else {
           productSubtitle.style.fontSize = `${1 * scale}rem`;
         }
-        const priceSection = document.querySelector('.price-section');
-        if (priceSection) {
+      }
+      const priceSection = document.querySelector('.price-section');
+      if (priceSection) {
+        if(window.innerWidth <= 600) {
+          priceSection.style.fontSize = `${1.8 * 1 * scale}rem`;
+        } else {
           priceSection.style.fontSize = `${1 * scale}rem`;
         }
-        const originalPrice = document.querySelector('.original-price');
-        if (originalPrice) {
+      }
+      const originalPrice = document.querySelector('.original-price');
+      if (originalPrice) {
+        if(window.innerWidth <= 600) {
+          originalPrice.style.fontSize = `${1.8 * 0.875 * scale}rem`;
+        } else {
           originalPrice.style.fontSize = `${0.875 * scale}rem`;
         }
-        const discountLabel = document.querySelector('.discount-label');
-        if (discountLabel) {
+      }
+      const discountLabel = document.querySelector('.discount-label');
+      if (discountLabel) {
+        if(window.innerWidth <= 600) {
+          discountLabel.style.fontSize = `${1.8 * 1 * scale}rem`;
+        } else {
           discountLabel.style.fontSize = `${1 * scale}rem`;
         }
-        const discountedPrice = document.querySelector('.discounted-price');
-        if (discountedPrice) {
+      }
+      const discountedPrice = document.querySelector('.discounted-price');
+      if (discountedPrice) {
+        if(window.innerWidth <= 600) {
+          discountedPrice.style.fontSize = `${1.8 * 2 * scale}rem`;
+        } else {
           discountedPrice.style.fontSize = `${2 * scale}rem`;
         }
-        const descriptionTitle = document.querySelector('.description-title');
-        if (descriptionTitle) {
+      }
+      const descriptionTitle = document.querySelector('.description-title');
+      if (descriptionTitle) {
+        if(window.innerWidth <= 600) {
+          descriptionTitle.style.fontSize = `${1.8 * 1.25 * scale}rem`;
+        } else {
           descriptionTitle.style.fontSize = `${1.25 * scale}rem`;
         }
-        const descriptionText = document.querySelectorAll('.description-text');
-        descriptionText.forEach(el => {
+      }
+      const descriptionText = document.querySelectorAll('.description-text');
+      descriptionText.forEach(el => {
+        if(window.innerWidth <= 600) {
+          el.style.fontSize = `${1.6 * scale}rem`;
+        } else {
           el.style.fontSize = `${1 * scale}rem`;
-        });
-        // Scale notes strong text and list items
-        const notesStrong = document.querySelectorAll('.description-text strong');
-        notesStrong.forEach(el => {
+        }
+      });
+      // Scale notes strong text and list items
+      const notesStrong = document.querySelectorAll('.description-text strong');
+      notesStrong.forEach(el => {
+        if(window.innerWidth <= 600) {
+          el.style.fontSize = `${1.6 * scale}rem`;
+        } else {
           el.style.fontSize = `${1 * scale}rem`;
-        });
-        const notesListItems = document.querySelectorAll('.description-section ul li');
-        notesListItems.forEach(el => {
+        }
+      });
+      const notesListItems = document.querySelectorAll('.description-section ul li');
+      notesListItems.forEach(el => {
+        if(window.innerWidth <= 600) {
+          el.style.fontSize = `${1.6 * scale}rem`;
+        } else {
           el.style.fontSize = `${1 * scale}rem`;
-        });
-        const readMore = document.querySelector('.read-more');
-        if (readMore) {
+        }
+      });
+      const readMore = document.querySelector('.read-more');
+      if (readMore) {
+        if(window.innerWidth <= 600) {
+          readMore.style.fontSize = `${1.75 * scale}rem`;
+        } else {
           readMore.style.fontSize = `${0.875 * scale}rem`;
         }
-        const ctaButtons = document.querySelectorAll('.btn');
-        ctaButtons.forEach(btn => {
+      }
+      const ctaButtons = document.querySelectorAll('.btn');
+      ctaButtons.forEach(btn => {
+        if(window.innerWidth <= 600) {
+          btn.style.fontSize = `${2 * scale}rem`;
+          btn.style.padding = `${1.5 * scale}rem ${3 * scale}rem`;
+        } else {
           btn.style.fontSize = `${1 * scale}rem`;
           btn.style.padding = `${0.75 * scale}rem ${1.5 * scale}rem`;
-        });
-        const heroImage = document.querySelector('.hero img');
-        if (heroImage) {
+        }
+      });
+      const heroImage = document.querySelector('.hero img');
+      if (heroImage) {
+        if(window.innerWidth <= 600) {
+          heroImage.style.width = `${600 * scale}px`;
+          heroImage.style.height = `${600 * scale}px`;
+        } else {
           heroImage.style.width = `${300 * scale}px`;
           heroImage.style.height = `${300 * scale}px`;
         }
-        const relatedCards = document.querySelectorAll('.related-card');
-        relatedCards.forEach(card => {
+      }
+      const relatedCards = document.querySelectorAll('.related-card');
+      relatedCards.forEach(card => {
+        if(window.innerWidth <= 600) {
+          card.style.width = `${280 * scale}px`;
+        } else {
           card.style.width = `${140 * scale}px`;
-        });
-        const relatedName = document.querySelectorAll('.related-name');
-        relatedName.forEach(name => {
+        }
+      });
+      const relatedName = document.querySelectorAll('.related-name');
+      relatedName.forEach(name => {
+        if(window.innerWidth <= 600) {
+          name.style.fontSize = `${1.8 * scale}rem`;
+        } else {
           name.style.fontSize = `${0.9 * scale}rem`;
-        });
-        const relatedPrice = document.querySelectorAll('.related-price');
-        relatedPrice.forEach(price => {
+        }
+      });
+      const relatedPrice = document.querySelectorAll('.related-price');
+      relatedPrice.forEach(price => {
+        if(window.innerWidth <= 600) {
+          price.style.fontSize = `${1.7 * scale}rem`;
+        } else {
           price.style.fontSize = `${0.85 * scale}rem`;
-        });
+        }
+      });
       }
       scaleElements();
       window.removeEventListener('resize', scaleElements);
