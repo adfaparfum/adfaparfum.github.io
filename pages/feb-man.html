@@ -51,7 +51,7 @@
     main {
       flex-grow: 1;
       margin: 2rem 0 4rem 0;
-      padding: 0 2rem;
+      padding: 0 4rem; /* Increased left and right padding to double */
       display: flex;
       flex-direction: column;
       gap: 2rem;
@@ -67,6 +67,19 @@
       margin-top: 0;
       margin-bottom: 0.5rem;
       text-align: left;
+    }
+    .product-category {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #d9b45c; /* Changed color to gold highlight */
+      margin-top: 0;
+      margin-bottom: 0.1rem; /* Further reduced margin-bottom to bring closer to product title */
+      text-align: left;
+    }
+    @media (max-width: 600px) {
+      .product-category {
+        text-align: center;
+      }
     }
     .product-subtitle {
       font-weight: 400;
@@ -179,6 +192,7 @@
     .btn-buy {
       background-color: #d9b45c;
       color: #000000;
+      font-size: 16px; /* Set font size to 16px */
     }
     .btn-buy:hover, .btn-buy:focus {
       background-color: #b38a1f;
@@ -224,20 +238,40 @@
         padding: 0 0.5rem;
       }
       .cta-buttons {
-        flex-direction: column;
+        flex-direction: row; /* Changed from column to row to keep buttons side by side */
         gap: 1rem;
         justify-content: center;
         padding: 0 1rem;
       }
       .btn {
-        width: 100%;
+        flex: 1 1 50%; /* Make buttons take equal width side by side */
         justify-content: center;
         min-width: unset;
         padding: 1rem 0;
         font-size: 1.1rem;
         border-radius: 8px;
       }
+      .btn-chat, .btn-buy {
+        font-size: 1rem !important; /* Increase font size to max that fits in button */
+        white-space: nowrap; /* Prevent text wrapping to keep text in one line */
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     /* Sticky buttons at bottom on mobile */
+    @media (max-width: 600px) {
+      .btn {
+        font-size: 0.25rem; /* 25% font size for mobile only */
+      }
+      .btn-chat {
+        color: #000000 !important;
+      }
+      .chat-icon {
+        width: 40px !important;
+        height: 40px !important;
+        fill: currentColor !important;
+        display: inline-block !important;
+      }
+    }
     .sticky-cta {
       position: fixed;
       bottom: 0;
@@ -301,32 +335,60 @@
       <div>
         <section class="product-title-section">
           <h1 class="product-title">Feb Man</h1>
+          <p class="product-category">Aquatic</p>
           <!-- Optional subtitle can be added here if needed -->
         </section>
         <section class="price-section" aria-label="Harga produk">
           <div class="discounted-price">Rp 70.000</div>
+          <section class="cta-buttons sticky-cta" aria-label="Tombol aksi produk" style="margin-top: 1rem;">
+<button class="btn btn-chat" type="button" aria-label="Tanya via WA">
+              Tanya via WA
+            </button>
+            <button class="btn btn-buy" type="button" aria-label="Beli Sekarang">Beli Sekarang</button>
+          </section>
         </section>
-        <section class="description-section" aria-label="Deskripsi produk">
-          <h2 class="description-title">Deskripsi Produk</h2>
-          <p class="description-text">
-            Feb Man by Adfa Parfum adalah parfum yang dirancang khusus untuk mereka yang menginginkan kesegaran dan ketangguhan dalam satu botol. Parfum ini dibuka dengan sentuhan awal dari bergamot, lotus, dan litchi yang memberikan aroma segar dan eksotis. Di bagian tengah, keharuman sea notes, Brazilian rosewood, dan orange menciptakan aroma yang maskulin dan energik. Diakhiri dengan sentuhan dasar tonka bean, musk, amber, dan benzoin, memberikan keharuman yang hangat dan memikat.
-          </p>
-          <p class="description-text"><strong>Notes :</strong></p>
-          <ul>
-            <li><strong>Top :</strong> Bergamot, Lotus, Litchi</li>
-            <li><strong>Mid :</strong> Sea Notes, Brazilian Rosewood, Orange</li>
-            <li><strong>Base :</strong> Tonka Bean, Musk, Amber, Benzoin</li>
-          </ul>
-          <a href="#" class="read-more" aria-label="Baca selengkapnya tentang produk">Baca Selengkapnya</a>
-        </section>
-        <section class="cta-buttons sticky-cta" aria-label="Tombol aksi produk">
-          <button class="btn btn-chat" type="button" aria-label="Tanya via WA">
-            <svg class="chat-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M2 2h20v16H6l-4 4V2z"/>
-            </svg>
-            Tanya via WA
-          </button>
-          <button class="btn btn-buy" type="button" aria-label="Beli Sekarang">Beli Sekarang</button>
+        <section class="description-section" aria-label="Deskripsi produk" style="display: flex; flex-direction: column;">
+          <h2 class="description-title collapsible-header" tabindex="0" role="button" aria-expanded="false" aria-controls="reason-content" style="margin-top: 1rem; flex: 1 1 auto;">
+            Alasan Memilih Aroma Ini
+            <span class="toggle-icon" aria-hidden="true">&#9656;</span>
+          </h2>
+          <div id="reason-content" class="collapsible-content" hidden style="flex: 1 1 auto;">
+            <p class="description-text">
+              Bayangkan hembusan angin pagi yang segar, membawa semangat baru saat kamu melangkah keluar dari pintu rumah.
+              Itu kesan pertama dari Feb Man — ringan, bersih, dan penuh energi.
+            </p>
+            <p class="description-text">
+              Seiring waktu berjalan, aromanya berubah. Seperti ombak yang datang satu demi satu, wangi ini membawa kesan kuat dan bebas, membuat setiap langkah terasa lebih pasti.
+              Ada rasa petualangan, ada ketegasan dalam setiap hembusan aroma.
+            </p>
+            <p class="description-text">
+              Dan ketika hari mulai beranjak senja, wangi itu menghangat. Bukan sekadar keharuman, tapi seperti genggaman erat — tenang, dalam, dan meninggalkan jejak yang sulit dilupakan.
+            </p>
+            <p class="description-text">
+              Feb Man bukan hanya parfum.
+              Ia adalah perjalanan, dari awal yang segar hingga akhir yang penuh wibawa.
+            </p>
+          </div>
+          <h2 class="description-title collapsible-header" tabindex="0" role="button" aria-expanded="false" aria-controls="description-content" style="flex: 1 1 auto;">
+            Deskripsi Produk
+            <span class="toggle-icon" aria-hidden="true">&#9656;</span>
+          </h2>
+          <div id="description-content" class="collapsible-content" hidden style="flex: 1 1 auto;">
+            <p class="description-text">
+              Feb Man by Adfa Parfum adalah parfum yang dirancang khusus untuk mereka yang menginginkan kesegaran dan ketangguhan dalam satu botol. Parfum ini dibuka dengan sentuhan awal dari bergamot, lotus, dan litchi yang memberikan aroma segar dan eksotis. Di bagian tengah, keharuman sea notes, Brazilian rosewood, dan orange menciptakan aroma yang maskulin dan energik. Diakhiri dengan sentuhan dasar tonka bean, musk, amber, dan benzoin, memberikan keharuman yang hangat dan memikat.
+            </p>
+          </div>
+          <h2 class="description-title collapsible-header" tabindex="0" role="button" aria-expanded="false" aria-controls="notes-content" style="margin-top: 1rem; flex: 1 1 auto;">
+            Notes
+            <span class="toggle-icon" aria-hidden="true">&#9656;</span>
+          </h2>
+          <div id="notes-content" class="collapsible-content" hidden style="flex: 1 1 auto;">
+            <ul>
+              <li><strong>Top :</strong> Bergamot, Lotus, Litchi</li>
+              <li><strong>Mid :</strong> Sea Notes, Brazilian Rosewood, Orange</li>
+              <li><strong>Base :</strong> Tonka Bean, Musk, Amber, Benzoin</li>
+            </ul>
+          </div>
         </section>
       </div>
     </section>
@@ -622,6 +684,98 @@
         display: block;
       }
     }
+    /* Collapsible styles */
+    .collapsible-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      color: #000000;
+      font-weight: 700;
+      font-size: 1.25rem;
+      /* Removed border-bottom as per user feedback */
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background-color: #f0e6b6; /* light background similar to button */
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    /* Removed mobile full-width collapsible header styles as per user request to cancel */
+    .collapsible-header:hover, .collapsible-header:focus {
+      background-color: #d9b45c; /* highlight background on hover/focus */
+      color: #000000;
+      outline: none;
+    }
+    .collapsible-header:focus {
+      outline: 2px solid #d9b45c;
+      outline-offset: 2px;
+    }
+    .collapsible-header[aria-expanded="true"] {
+      /* Keep font color black when expanded as per user feedback */
+      color: #000000;
+    }
+    .toggle-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      font-size: 1.25rem;
+      color: #000000; /* Changed arrow color to black as per user feedback */
+      user-select: none;
+      margin-left: 0.5rem;
+    }
+    .collapsible-header[aria-expanded="true"] .toggle-icon {
+      transform: rotate(90deg);
+    }
+    .collapsible-content {
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      max-height: 0;
+      padding-left: 0.5rem;
+      margin-top: 0.5rem;
+      color: #222222;
+      font-size: 1rem;
+    }
+    .collapsible-content[hidden] {
+      display: none;
+      max-height: 0;
+      padding: 0;
+      margin: 0;
+    }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+      collapsibleHeaders.forEach(header => {
+        const toggleIcon = header.querySelector('.toggle-icon');
+        header.addEventListener('click', () => {
+          const expanded = header.getAttribute('aria-expanded') === 'true';
+          header.setAttribute('aria-expanded', String(!expanded));
+          const contentId = header.getAttribute('aria-controls');
+          const content = document.getElementById(contentId);
+          if (!expanded) {
+            content.hidden = false;
+            content.style.maxHeight = content.scrollHeight + 'px';
+            // Add fade-in class to toggle icon after fade-out
+            toggleIcon.classList.remove('fade-in');
+            setTimeout(() => {
+              toggleIcon.classList.add('fade-in');
+            }, 150);
+          } else {
+            content.style.maxHeight = '0';
+            // Remove fade-in class to start fade-out
+            toggleIcon.classList.remove('fade-in');
+            setTimeout(() => {
+              content.hidden = true;
+            }, 300);
+          }
+        });
+        header.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            header.click();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
