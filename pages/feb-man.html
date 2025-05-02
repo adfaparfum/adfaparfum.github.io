@@ -51,46 +51,21 @@
     main {
       flex-grow: 1;
       max-width: 720px;
-      margin: 2rem auto 4rem;
+      margin: 2rem 0 4rem 2rem;
       padding: 0 2rem;
       display: flex;
       flex-direction: column;
       gap: 2rem;
     }
-    /* Hero section */
-    .hero {
-      background-color: transparent;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .hero img {
-      width: 100%;
-      height: auto;
-      max-height: 320px;
-      object-fit: cover;
-      border-radius: 12px;
-      clip-path: inset(0 round 12px);
-      box-shadow: none;
-      border: none;
-      display: block;
-      margin: 0;
-      background-color: transparent;
-    }
-    .hero-right-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 1rem;
-    }
     /* Product title */
+    .product-title-section {
+      margin-top: 0;
+      padding-top: 0;
+    }
     .product-title {
       font-size: 1.75rem;
       font-weight: 700;
+      margin-top: 0;
       margin-bottom: 0.5rem;
       text-align: left;
     }
@@ -275,25 +250,43 @@
       .hero {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
+        padding: 0 1rem;
       }
       .hero img {
         width: 100%;
         height: auto;
         max-height: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       }
       .hero-right-content {
         width: 100%;
+        padding: 0 0.5rem;
+      }
+      .product-title {
+        font-size: 1.5rem;
+        text-align: left;
+      }
+      .price-section {
+        text-align: left;
+      }
+      .description-section {
+        padding: 0 0.5rem;
       }
       .cta-buttons {
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 1rem;
         justify-content: center;
+        padding: 0 1rem;
       }
       .btn {
         width: 100%;
         justify-content: center;
         min-width: unset;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        border-radius: 8px;
       }
       /* Sticky buttons at bottom on mobile */
       .sticky-cta {
@@ -302,12 +295,30 @@
         left: 0;
         right: 0;
         background: #fff;
-        padding: 0.75rem 1rem;
-        box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+        padding: 1rem 1.5rem;
+        box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
         display: flex;
-        gap: 0.75rem;
+        gap: 1rem;
         z-index: 1000;
       }
+      }
+    section[aria-label="Gambar produk Feb Man"] {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+    section[aria-label="Gambar produk Feb Man"] > img {
+      width: 50%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+      margin-left: 0;
+      align-self: flex-start;
+    }
+    section[aria-label="Gambar produk Feb Man"] > div {
+      flex-grow: 1;
     }
   </style>
 </head>
@@ -325,9 +336,9 @@
     </nav>
   </header>
   <main>
-    <section class="hero" aria-label="Gambar produk Feb Man">
+    <section aria-label="Gambar produk Feb Man">
       <img src="../assets/images/products/BG_Black&Wood/Feb_Man.webp" alt="Produk Feb Man" />
-      <div class="hero-right-content">
+      <div>
         <section class="product-title-section">
           <h1 class="product-title">Feb Man</h1>
           <!-- Optional subtitle can be added here if needed -->
@@ -486,8 +497,52 @@
         });
       }
       scaleElements();
+      window.removeEventListener('resize', scaleElements);
       window.addEventListener('resize', scaleElements);
+
+      // Additional JS for mobile responsiveness
+      function handleMobileLayout() {
+        const hero = document.querySelector('.hero');
+        const ctaButtons = document.querySelector('.cta-buttons');
+        if (window.innerWidth <= 600) {
+          hero.style.display = 'flex';
+          hero.style.flexDirection = 'column';
+          hero.style.gap = '1rem';
+          ctaButtons.style.flexDirection = 'column';
+          ctaButtons.style.gap = '0.75rem';
+          ctaButtons.style.justifyContent = 'center';
+          ctaButtons.querySelectorAll('.btn').forEach(btn => {
+            btn.style.width = '100%';
+            btn.style.justifyContent = 'center';
+            btn.style.minWidth = 'unset';
+          });
+        } else {
+          hero.style.display = 'grid';
+          hero.style.gridTemplateColumns = '1fr 1fr';
+          hero.style.gap = '2rem';
+          const heroRightContent = document.querySelector('.hero-right-content');
+          if (heroRightContent) {
+            heroRightContent.style.display = 'flex';
+            heroRightContent.style.flexDirection = 'column';
+            heroRightContent.style.justifyContent = 'center';
+            heroRightContent.style.gap = '1rem';
+          }
+          ctaButtons.style.flexDirection = 'row';
+          ctaButtons.style.gap = '1rem';
+          ctaButtons.style.justifyContent = 'flex-start';
+          ctaButtons.querySelectorAll('.btn').forEach(btn => {
+            btn.style.width = 'auto';
+            btn.style.minWidth = '140px';
+          });
+        }
+      }
+      handleMobileLayout();
+      window.removeEventListener('resize', handleMobileLayout);
+      window.addEventListener('resize', handleMobileLayout);
     });
+
+    // Remove JS layout toggling to rely on CSS media queries for mobile layout
+      // This simplifies responsiveness and avoids inline style conflicts
   </script>
   <style>
     .navbar {
@@ -515,7 +570,7 @@
       background-color: #d9b45c;
       border-radius: 50%;
       border: none;
-      padding: 6px;
+      padding: 3px;
       cursor: pointer;
       display: none;
       filter: none;
