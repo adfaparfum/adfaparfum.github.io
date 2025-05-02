@@ -52,9 +52,17 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
     });
 });
 
-// Simple popup toggle
+// Simple popup toggle for hero section
 function togglePopup() {
     popup.classList.toggle('active');
+}
+
+// Product popup toggle
+function toggleProductPopup(popupId) {
+    const productPopup = document.getElementById(popupId);
+    if (productPopup) {
+        productPopup.classList.toggle('active');
+    }
 }
 
 // Update navigation visibility
@@ -63,16 +71,6 @@ function updateNav() {
         document.body.classList.add('at-top');
     } else {
         document.body.classList.remove('at-top');
-    }
-}
-
-function toggleNavbarVisibility() {
-    if (window.scrollY === 0) {
-        header.classList.remove('visible');
-        menuToggle.classList.remove('visible');
-    } else {
-        header.classList.add('visible');
-        menuToggle.classList.add('visible');
     }
 }
 
