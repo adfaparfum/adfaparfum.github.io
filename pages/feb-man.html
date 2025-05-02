@@ -104,6 +104,24 @@
       max-width: none;
       margin-left: 0;
       margin-right: 0;
+      text-align: left;
+    }
+    .description-section ul li {
+      text-align: left;
+      list-style-position: inside;
+    }
+    @media (max-width: 600px) {
+      .description-section ul,
+      .description-section ul li {
+        padding-left: 0;
+        margin-left: 0;
+      }
+    }
+    /* Also remove left padding and margin on desktop */
+    .description-section ul,
+    .description-section ul li {
+      padding-left: 0;
+      margin-left: 0;
     }
     .description-title {
       font-weight: 700;
@@ -171,76 +189,6 @@
       width: 20px;
       height: 20px;
       fill: currentColor;
-    }
-    /* Related products */
-    .related-products {
-      max-width: 720px;
-      margin: 0 auto 3rem;
-      padding: 0 1rem;
-    }
-    .related-title {
-      font-weight: 700;
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: #d9b45c;
-    }
-    .related-list {
-      display: flex;
-      overflow-x: auto;
-      gap: 1rem;
-      padding-bottom: 0.5rem;
-      scroll-snap-type: x mandatory;
-      scroll-padding: 1rem;
-    }
-    .related-card {
-      flex: 0 0 auto;
-      width: 140px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      background-color: #fff;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 0.5rem;
-      cursor: pointer;
-      transition: box-shadow 0.3s ease;
-      scroll-snap-align: start;
-    }
-    @media (max-width: 600px) {
-      .related-list {
-        display: flex;
-        overflow-x: auto;
-        gap: 1rem;
-        padding-bottom: 0.5rem;
-        scroll-snap-type: x mandatory;
-        scroll-padding: 1rem;
-      }
-      .related-card {
-        width: 80vw;
-        min-width: 140px;
-        scroll-snap-align: start;
-      }
-    }
-    .related-card:hover, .related-card:focus {
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      outline: none;
-    }
-    .related-card img {
-      width: 100%;
-      height: 100px;
-      object-fit: contain;
-      margin-bottom: 0.5rem;
-      border-radius: 4px;
-    }
-    .related-name {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-      color: #000;
-    }
-    .related-price {
-      font-size: 0.85rem;
-      color: #555;
     }
     /* Responsive */
     @media (max-width: 600px) {
@@ -381,31 +329,6 @@
         </section>
       </div>
     </section>
-    <section class="related-products" aria-label="Produk lainnya">
-      <h2 class="related-title">Produk Lainnya</h2>
-      <div class="related-list">
-        <div class="related-card" tabindex="0" role="link" onclick="location.href='27-girl.html'">
-          <img src="../assets/images/products/BG_Ingredients/27_Girl.webp" alt="27 Girl" />
-          <div class="related-name">27 Girl</div>
-          <div class="related-price">Rp 70.000</div>
-        </div>
-        <div class="related-card" tabindex="0" role="link" onclick="location.href='castanea.html'">
-          <img src="../assets/images/products/BG_Ingredients/Castanea.webp" alt="Castanea" />
-          <div class="related-name">Castanea</div>
-          <div class="related-price">Rp 70.000</div>
-        </div>
-        <div class="related-card" tabindex="0" role="link" onclick="location.href='costata.html'">
-          <img src="../assets/images/products/BG_Ingredients/Costata.webp" alt="Costata" />
-          <div class="related-name">Costata</div>
-          <div class="related-price">Rp 70.000</div>
-        </div>
-        <div class="related-card" tabindex="0" role="link" onclick="location.href='fagus.html'">
-          <img src="../assets/images/products/BG_Ingredients/Fagus.webp" alt="Fagus" />
-          <div class="related-name">Fagus</div>
-          <div class="related-price">Rp 70.000</div>
-        </div>
-      </div>
-    </section>
   </main>
   <script>
     // Randomize related products list on page load
@@ -480,6 +403,15 @@
         descriptionText.forEach(el => {
           el.style.fontSize = `${1 * scale}rem`;
         });
+        // Scale notes strong text and list items
+        const notesStrong = document.querySelectorAll('.description-text strong');
+        notesStrong.forEach(el => {
+          el.style.fontSize = `${1 * scale}rem`;
+        });
+        const notesListItems = document.querySelectorAll('.description-section ul li');
+        notesListItems.forEach(el => {
+          el.style.fontSize = `${1 * scale}rem`;
+        });
         const readMore = document.querySelector('.read-more');
         if (readMore) {
           readMore.style.fontSize = `${0.875 * scale}rem`;
@@ -513,43 +445,59 @@
 
       // Additional JS for mobile responsiveness
       function handleMobileLayout() {
-        const hero = document.querySelector('.hero');
-        const ctaButtons = document.querySelector('.cta-buttons');
-        if (window.innerWidth <= 600) {
-          hero.style.display = 'flex';
-          hero.style.flexDirection = 'column';
-          hero.style.gap = '1rem';
-          ctaButtons.style.flexDirection = 'column';
-          ctaButtons.style.gap = '0.75rem';
-          ctaButtons.style.justifyContent = 'center';
-          ctaButtons.querySelectorAll('.btn').forEach(btn => {
-            btn.style.width = '100%';
-            btn.style.justifyContent = 'center';
-            btn.style.minWidth = 'unset';
-          });
-        } else {
-          hero.style.display = 'grid';
-          hero.style.gridTemplateColumns = '1fr 1fr';
-          hero.style.gap = '2rem';
-          const heroRightContent = document.querySelector('.hero-right-content');
-          if (heroRightContent) {
-            heroRightContent.style.display = 'flex';
-            heroRightContent.style.flexDirection = 'column';
-            heroRightContent.style.justifyContent = 'center';
-            heroRightContent.style.gap = '1rem';
+        const productSection = document.querySelector('section[aria-label="Gambar produk Feb Man"]');
+        if (!productSection) return;
+
+        function updateLayout() {
+          if (window.innerWidth <= 600) {
+            productSection.style.flexDirection = 'column';
+            const img = productSection.querySelector('img');
+            if (img) {
+              img.style.marginLeft = 'auto';
+              img.style.marginRight = 'auto';
+              img.style.width = '100%';
+            }
+            const rightContent = productSection.querySelector('div');
+            if (rightContent) {
+              rightContent.style.width = '100%';
+              rightContent.style.paddingLeft = '0';
+            }
+            const productTitle = productSection.querySelector('.product-title');
+            if (productTitle) {
+              productTitle.style.textAlign = 'center';
+            }
+            const priceSection = productSection.querySelector('.price-section');
+            if (priceSection) {
+              priceSection.style.textAlign = 'center';
+            }
+          } else {
+            productSection.style.flexDirection = 'row';
+            const img = productSection.querySelector('img');
+            if (img) {
+              img.style.marginLeft = '';
+              img.style.marginRight = '';
+              img.style.width = '40%';
+            }
+            const rightContent = productSection.querySelector('div');
+            if (rightContent) {
+              rightContent.style.width = '60%';
+              rightContent.style.paddingLeft = '2rem';
+            }
+            const productTitle = productSection.querySelector('.product-title');
+            if (productTitle) {
+              productTitle.style.textAlign = 'left';
+            }
+            const priceSection = productSection.querySelector('.price-section');
+            if (priceSection) {
+              priceSection.style.textAlign = 'left';
+            }
           }
-          ctaButtons.style.flexDirection = 'row';
-          ctaButtons.style.gap = '1rem';
-          ctaButtons.style.justifyContent = 'flex-start';
-          ctaButtons.querySelectorAll('.btn').forEach(btn => {
-            btn.style.width = 'auto';
-            btn.style.minWidth = '140px';
-          });
         }
+
+        window.addEventListener('resize', updateLayout);
+        updateLayout();
       }
       handleMobileLayout();
-      window.removeEventListener('resize', handleMobileLayout);
-      window.addEventListener('resize', handleMobileLayout);
     });
 
     // Remove JS layout toggling to rely on CSS media queries for mobile layout
