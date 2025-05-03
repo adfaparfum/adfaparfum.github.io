@@ -651,6 +651,38 @@ body {
       }
     }
   </script>
+  <script>
+    // Add click event listeners to Tokopedia and TikTok Shop links in product popups
+    document.addEventListener('DOMContentLoaded', function () {
+      // Select all Tokopedia and TikTok Shop links inside product popups
+      const popupIds = [
+        'popupMarketplaceFebMan', 'popupMarketplaceSeptRomance', 'popupMarketplaceNGInspiration',
+        'popupMarketplaceThreeOne', 'popupMarketplaceCostata', 'popupMarketplaceFagus',
+        'popupMarketplaceRNOriginal', 'popupMarketplaceQuercus', 'popupMarketplaceMWRoyal',
+        'popupMarketplace24Women', 'popupMarketplaceCastanea', 'popupMarketplace27Girl',
+        'popupMarketplaceNNGoodWomen', 'popupMarketplaceVatikaRassak', 'popupMarketplaceSWBest'
+      ];
+      popupIds.forEach(popupId => {
+        const popup = document.getElementById(popupId);
+        if (popup) {
+          const tokopediaLink = popup.querySelector('a.tokopedia');
+          const tiktokLink = popup.querySelector('a.tiktok');
+          if (tokopediaLink) {
+            tokopediaLink.addEventListener('click', function (e) {
+              e.preventDefault();
+              alert('Tokopedia shop coming soon');
+            });
+          }
+          if (tiktokLink) {
+            tiktokLink.addEventListener('click', function (e) {
+              e.preventDefault();
+              alert('TikTok shop coming soon');
+            });
+          }
+        }
+      });
+    });
+  </script>
 
   <!-- Tentang Kami -->
   <section class="tentang" id="tentang">
