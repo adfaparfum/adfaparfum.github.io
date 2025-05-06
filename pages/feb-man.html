@@ -397,10 +397,10 @@ a {
   <div id="buy-popup-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:2000; justify-content:center; align-items:center;">
     <div id="buy-popup" role="dialog" aria-modal="true" aria-labelledby="buy-popup-title" style="background:#000000; border-radius:8px; padding:1.5rem; width:90%; max-width:400px; box-shadow:0 4px 12px rgba(0,0,0,0.3); display:flex; flex-direction:column; gap:1rem; color:#d9b45c;">
       <h2 id="buy-popup-title" style="margin:0 0 1rem 0; font-size:1.25rem; font-weight:700; text-align:center; color:#d9b45c;">Mau Beli Dimana?</h2>
-      <button style="background:#FE5722; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer;">Shopee</button>
-      <button style="background:#03AC0E; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer;">Tokopedia</button>
-      <button style="background:#69C9D0; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer;">TikTok Shop</button>
-      <button style="background:#25D366; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer;">Chat via Whatsapp</button>
+          <a href="https://s.shopee.co.id/xHDL3T59" target="_blank" rel="noopener noreferrer" style="background:#FE5722; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Shopee</a>
+          <a href="https://tokopedia.com/adfaparfum" target="_blank" rel="noopener noreferrer" class="soon" style="background:#03AC0E; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Tokopedia <span style="font-size: 0.75rem; font-weight: normal;">soon 😊</span></a>
+          <a href="https://tiktok.com/@adfaparfum" target="_blank" rel="noopener noreferrer" class="soon tiktok-shop" style="background:#000000; color:#ffffff; border: 2px solid #ffffff; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">TikTok Shop <span style="font-size: 0.75rem; font-weight: normal;">soon 😊</span></a>
+          <a href="https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Feb%20Man%20by%20Adfa%20Parfum%20masih%20ready%3F" target="_blank" rel="noopener noreferrer" style="background:#25D366; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Chat via Whatsapp</a>
       <button id="buy-popup-close" style="background:#d9b45c; color:#000000; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; margin-top:1rem;">Tutup</button>
     </div>
   </div>
@@ -429,6 +429,23 @@ a {
           }
         });
       }
+
+      // Add alert for soon buttons Tokopedia and TikTok Shop
+      const soonButtons = document.querySelectorAll('#buy-popup a.soon');
+      soonButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (button.classList.contains('soon')) {
+            if (button.textContent.includes('Tokopedia')) {
+              alert('Tokopedia coming soon');
+            } else if (button.textContent.includes('TikTok Shop')) {
+              alert('TikTok Shop coming soon');
+            } else {
+              alert('Fitur ini akan segera hadir. Terima kasih atas kesabaran Anda!');
+            }
+          }
+        });
+      });
     });
   </script>
   <style>
@@ -537,6 +554,20 @@ a {
       max-height: 0;
       padding: 0;
       margin: 0;
+    }
+  </style>
+  <style>
+    /* Popup buttons hover effect with gold outline */
+    #buy-popup button:hover,
+    #buy-popup button:focus,
+    #buy-popup a:hover,
+    #buy-popup a:focus {
+      outline: 2px solid #d9b45c !important;
+      outline-offset: 2px;
+      box-shadow: 0 0 8px #d9b45c;
+      transition: box-shadow 0.3s ease;
+      /* Removed background-color and color changes as per user feedback */
+      text-decoration: none;
     }
   </style>
   <script>
