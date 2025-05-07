@@ -229,16 +229,15 @@ a {
       }
       .product-title {
         font-size: 1.5rem;
-        text-align: left;
+        text-align: center;
       }
       .price-section {
-        text-align: left;
+        text-align: center;
       }
       .description-section {
         padding: 0 0.5rem;
       }
       .cta-buttons {
-        flex-direction: row; /* Changed from column to row to keep buttons side by side */
         gap: 1rem;
         justify-content: center;
         padding: 0 1rem;
@@ -257,8 +256,22 @@ a {
         overflow: hidden;
         text-overflow: ellipsis;
       }
+      /* New styles to put product image on top and fill screen width on mobile */
+      section[aria-label="Gambar produk Feb Man"] {
+        flex-direction: column !important;
+      }
+      section[aria-label="Gambar produk Feb Man"] > img {
+        width: 100% !important;
+        aspect-ratio: auto !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        margin-bottom: 1rem;
+      }
+      section[aria-label="Gambar produk Feb Man"] > div {
+        width: 100% !important;
+        padding-left: 0 !important;
+      }
     /* Sticky buttons at bottom on mobile */
-    @media (max-width: 600px) {
       .btn {
         font-size: 0.25rem; /* 25% font size for mobile only */
       }
@@ -271,7 +284,6 @@ a {
         fill: currentColor !important;
         display: inline-block !important;
       }
-    }
     .sticky-cta {
       position: fixed;
       bottom: 0;
@@ -446,27 +458,53 @@ a {
           }
         });
       });
+
+      // Sticky navbar toggle on scroll for desktop only
+      const navbar = document.querySelector('.navbar');
+
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (!navbar) return;
+
+        if (currentScroll > lastScrollTop && currentScroll > 50) {
+          // Scrolling down - remove sticky
+          navbar.classList.remove('sticky-active');
+        } else if (currentScroll < lastScrollTop) {
+          // Scrolling up - add sticky
+          navbar.classList.add('sticky-active');
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      });
     });
   </script>
   <style>
+    header {
+      background-color: #000000;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      border-bottom: 1px solid #333;
+      flex-shrink: 0;
+      transition: top 0.3s ease;
+      z-index: 10000;
+    }
+    header.sticky-active {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      left: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
     .navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: relative;
       height: 60px;
-      background-color: #000000;
-      border-bottom: 1px solid #333;
-      z-index: 10000;
-      transition: top 0.3s ease;
+      background-color: transparent;
+      border-bottom: none;
       padding: 0 1rem;
-    }
-    .navbar.sticky-active {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      left: 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
     .back-button {
       position: absolute;
@@ -497,6 +535,12 @@ a {
       }
       .back-button {
         display: block;
+      }
+    }
+    @media (max-width: 600px) {
+      .navbar.sticky-active {
+        position: relative !important;
+        box-shadow: none !important;
       }
     }
     /* Collapsible styles */
