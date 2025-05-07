@@ -458,24 +458,31 @@ a {
           }
         });
       });
+    });
+    // Sticky navbar toggle on scroll for desktop only
+    const header = document.querySelector('header');
 
-      // Sticky navbar toggle on scroll for desktop only
-      const navbar = document.querySelector('.navbar');
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (!header) return;
 
-      let lastScrollTop = 0;
-      window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        if (!navbar) return;
+      console.log('Scroll event fired, currentScroll:', currentScroll, 'lastScrollTop:', lastScrollTop);
 
-        if (currentScroll > lastScrollTop && currentScroll > 50) {
-          // Scrolling down - remove sticky
-          navbar.classList.remove('sticky-active');
-        } else if (currentScroll < lastScrollTop) {
-          // Scrolling up - add sticky
-          navbar.classList.add('sticky-active');
+      if (currentScroll > 50) {
+        // Always add sticky-active when scrolled beyond 50px
+        if (!header.classList.contains('sticky-active')) {
+          console.log('Adding sticky-active');
+          header.classList.add('sticky-active');
         }
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-      });
+      } else {
+        // Remove sticky-active when at top
+        if (header.classList.contains('sticky-active')) {
+          console.log('Removing sticky-active');
+          header.classList.remove('sticky-active');
+        }
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
   </script>
   <style>
@@ -486,15 +493,20 @@ a {
       text-align: center;
       border-bottom: 1px solid #333;
       flex-shrink: 0;
-      transition: top 0.3s ease;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       z-index: 10000;
+      position: relative;
+      width: 100%;
     }
     header.sticky-active {
       position: fixed;
       top: 0;
-      width: 100%;
       left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #000000;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      z-index: 100000;
     }
     .navbar {
       display: flex;
