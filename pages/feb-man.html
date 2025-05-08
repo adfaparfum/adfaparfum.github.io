@@ -405,6 +405,12 @@ a {
         </div>
       </section>
     </main>
+    <section id="related-products-section" style="background-color: #000000; padding: 2rem 4rem; color: #d9b45c;">
+      <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">Mungkin Kamu Suka Aroma Yang Ini Juga</h2>
+      <div id="related-products-container" style="display: grid; gap: 1.5rem;">
+        <!-- Product cards will be injected here by JavaScript -->
+      </div>
+    </section>
   <div id="buy-popup-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:2000; justify-content:center; align-items:center;">
     <div id="buy-popup" role="dialog" aria-modal="true" aria-labelledby="buy-popup-title" style="background:#000000; border-radius:8px; padding:1.5rem; width:90%; max-width:400px; box-shadow:0 4px 12px rgba(0,0,0,0.3); display:flex; flex-direction:column; gap:1rem; color:#d9b45c;">
       <h2 id="buy-popup-title" style="margin:0 0 1rem 0; font-size:1.25rem; font-weight:700; text-align:center; color:#d9b45c;">Mau Beli Dimana?</h2>
@@ -629,6 +635,232 @@ a {
             header.click();
           }
         });
+      });
+    });
+  </script>
+  <style>
+    /* Related products section styles */
+    #related-products-section {
+      background-color: #000000;
+      color: #d9b45c;
+      padding: 2rem 4rem;
+    }
+    #related-products-section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    #related-products-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 1rem;
+    }
+    @media (max-width: 768px) {
+      #related-products-container {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 0.5rem;
+      }
+    }
+    .related-product-card {
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      padding: 1rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease;
+      color: #d9b45c;
+      border: 1px solid #d9b45c;
+    }
+    .related-product-card:hover,
+    .related-product-card:focus {
+      transform: scale(1.02);
+      outline: none;
+      border-color: #fff;
+      color: #fff;
+    }
+    .related-product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+      object-fit: cover;
+      max-height: 180px;
+    }
+    .related-product-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .related-product-category {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #d9b45c;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.9rem;
+    }
+    .related-product-price {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #d9b45c;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const products = [
+        {
+          name: "24 Women",
+          category: "Fruity Sweet Gourmand",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/24_Women.webp",
+          page: "24-women.html"
+        },
+        {
+          name: "27 Girl",
+          category: "Floral Green Fresh",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/27_Girl.webp",
+          page: "27-girl.html"
+        },
+        {
+          name: "Castanea",
+          category: "Woody Floral Sweet",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Castanea.webp",
+          page: "castanea.html"
+        },
+        {
+          name: "Costata",
+          category: "Aromatic Woody",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Costata.webp",
+          page: "costata.html"
+        },
+        {
+          name: "Fagus",
+          category: "Fresh Green Floral Woody",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Fagus.webp",
+          page: "fagus.html"
+        },
+        {
+          name: "MW Royal",
+          category: "Woody Amber Aromatic",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/MW_Royal.webp",
+          page: "mw-royal.html"
+        },
+        {
+          name: "NG Inspiration",
+          category: "Sweet Gourmand Powdery",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/NG_Inspiration.webp",
+          page: "ng-inspiration.html"
+        },
+        {
+          name: "NN Good Women",
+          category: "Oriental Floral Gourmand",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/NN_Good_Women.webp",
+          page: "nn-good-women.html"
+        },
+        {
+          name: "Quercus",
+          category: "Woody Floral Musk",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Quercus.webp",
+          page: "quercus.html"
+        },
+        {
+          name: "RN Original",
+          category: "Spicy Woody Oriental",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/RN_Original.webp",
+          page: "rn-original.html"
+        },
+        {
+          name: "Sept Romance",
+          category: "Floral Fruity Gourmand",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Sept_Romance.webp",
+          page: "sept-romance.html"
+        },
+        {
+          name: "SW Best",
+          category: "Woody Aromatic Fresh",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/SW_Best.webp",
+          page: "sw-best.html"
+        },
+        {
+          name: "Three One",
+          category: "Oriental Gourmand Spicy",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Three_One.webp",
+          page: "three-one.html"
+        },
+        {
+          name: "Vatika Rassak",
+          category: "Sweet Spicy Gourmand",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Vatika_Rassak.webp",
+          page: "vatika-rassak.html"
+        }
+      ];
+
+      // Exclude current product "Feb Man"
+      const filteredProducts = products.filter(p => p.name !== "Feb Man");
+
+      // Function to get 4 random unique products using Fisher-Yates shuffle
+      function getRandomProducts(arr, num) {
+        const arrayCopy = arr.slice();
+        for (let i = arrayCopy.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arrayCopy[i], arrayCopy[j]] = [arrayCopy[j], arrayCopy[i]];
+        }
+        return arrayCopy.slice(0, num);
+      }
+
+      const selectedProducts = getRandomProducts(filteredProducts, 4);
+
+      const container = document.getElementById('related-products-container');
+
+      selectedProducts.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'related-product-card';
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-pressed', 'false');
+        card.addEventListener('click', () => {
+          window.location.href = product.page;
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+          }
+        });
+
+        card.innerHTML = `
+          <img src="${product.image}" alt="Produk ${product.name}" />
+          <div class="related-product-name">${product.name}</div>
+          <div class="related-product-category">${product.category}</div>
+          <div class="related-product-price">${product.price}</div>
+        `;
+
+        container.appendChild(card);
       });
     });
   </script>
