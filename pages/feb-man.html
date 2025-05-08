@@ -10,6 +10,9 @@
     * {
       box-sizing: border-box;
     }
+    html {
+      overflow-x: hidden;
+    }
     body {
       margin: 0;
       padding: 0;
@@ -406,7 +409,7 @@ a {
         </div>
       </section>
     </main>
-    <section id="related-products-section" style="background-color: #000000; padding: 2rem 4rem; color: #d9b45c;">
+    <section id="related-products-section" style="background-color: #000000; color: #d9b45c;">
       <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">Mungkin Kamu Suka Aroma Yang Ini Juga</h2>
       <div id="related-products-container" style="display: grid; gap: 1.5rem;">
         <!-- Product cards will be injected here by JavaScript -->
@@ -640,11 +643,16 @@ a {
     });
   </script>
   <style>
-    /* Related products section styles */
+    /* Related Products Section */
     #related-products-section {
-      background-color: #000000;
+      background-color: #000;
       color: #d9b45c;
       padding: 2rem 4rem;
+    }
+    @media (max-width: 768px) {
+      #related-products-section {
+        padding: 1rem 1rem 2rem 1rem;
+      }
     }
     #related-products-section h2 {
       font-size: 1.75rem;
@@ -659,18 +667,9 @@ a {
       box-sizing: border-box;
       padding: 0 1rem;
     }
-    @media (max-width: 768px) {
-      #related-products-container {
-        grid-template-columns: repeat(2, 1fr);
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0 auto;
-        max-width: 100%;
-      }
-    }
     .related-product-card {
       background-color: #1a1a1a;
+      border: 1px solid #d9b45c;
       border-radius: 8px;
       padding: 1rem;
       cursor: pointer;
@@ -678,9 +677,11 @@ a {
       flex-direction: column;
       align-items: center;
       text-align: center;
-      transition: transform 0.3s ease;
       color: #d9b45c;
-      border: 1px solid #d9b45c;
+      transition: transform 0.3s ease;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
     }
     .related-product-card:hover,
     .related-product-card:focus {
@@ -692,10 +693,10 @@ a {
     .related-product-card img {
       width: 100%;
       height: auto;
+      max-height: 180px;
       border-radius: 6px;
       margin-bottom: 0.75rem;
       object-fit: cover;
-      max-height: 180px;
     }
     .related-product-name {
       font-weight: 700;
@@ -706,18 +707,26 @@ a {
       text-overflow: ellipsis;
     }
     .related-product-category {
-      font-size: 1rem;
+      font-size: 0.9rem;
       margin-bottom: 0.5rem;
       color: #d9b45c;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-size: 0.9rem;
     }
     .related-product-price {
       font-weight: 700;
       font-size: 1rem;
       color: #d9b45c;
+    }
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      #related-products-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 0.5rem 0 0;
+        margin: 0 auto;
+        max-width: 100%;
+      }
     }
     @media (max-width: 480px) {
       .related-product-card {
