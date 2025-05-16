@@ -907,6 +907,20 @@ a {
       // Exclude current product "24 Women" only
       const filteredProducts = products.filter(p => p.name !== "24 Women");
 
+      // Retrieve recent products from localStorage or initialize
+      let recentProducts = JSON.parse(localStorage.getItem('recentProducts24Women')) || {};
+
+      // Decrement counts and remove products that are no longer recent
+      for (const key in recentProducts) {
+        recentProducts[key]--;
+        if (recentProducts[key] <= 0) {
+          delete recentProducts[key];
+        }
+      }
+
+      // Filter out recent products from filteredProducts
+      const availableProducts = filteredProducts.filter(p => !(p.name in recentProducts));
+
       // Function to get 4 random unique products using Fisher-Yates shuffle
       function getRandomProducts(arr, num) {
         const arrayCopy = arr.slice();
@@ -917,7 +931,21 @@ a {
         return arrayCopy.slice(0, num);
       }
 
-      const selectedProducts = getRandomProducts(filteredProducts, 4);
+      // If availableProducts less than 4, allow recent products to fill the gap
+      let selectedProducts = [];
+      if (availableProducts.length >= 4) {
+        selectedProducts = getRandomProducts(availableProducts, 4);
+      } else {
+        selectedProducts = getRandomProducts(filteredProducts, 4);
+      }
+
+      // Update recentProducts with selected products, set count to 2
+      selectedProducts.forEach(p => {
+        recentProducts[p.name] = 2;
+      });
+
+      // Save updated recentProducts to localStorage
+      localStorage.setItem('recentProducts24Women', JSON.stringify(recentProducts));
 
       const container = document.getElementById('related-products-container');
 
