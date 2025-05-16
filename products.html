@@ -347,21 +347,26 @@ a {
       </nav>
     </header>
     <main style="padding-top: 60px;">
-      <section aria-label="Gambar produk Feb Man">
-        <img src="../assets/images/products/BG_Black&Wood/24_Women.webp" alt="Produk 24 Women" />
-        <div>
+      <section aria-label="Product Selector" style="margin-bottom: 1rem;">
+        <label for="product-select" style="font-weight: 700; font-size: 1.25rem;">Pilih Produk:</label>
+        <select id="product-select" aria-label="Pilih produk parfum" style="font-size: 1rem; padding: 0.5rem; margin-left: 0.5rem;">
+          <!-- Options will be populated dynamically -->
+        </select>
+      </section>
+      <section aria-label="Gambar produk" id="product-main-section" style="display: flex; flex-direction: row; align-items: flex-start; gap: 1rem;">
+        <img id="product-image" src="" alt="Produk" style="width: 40%; aspect-ratio: 1 / 1; object-fit: cover; flex-shrink: 0; display: block; margin-left: 0; align-self: flex-start; border-radius: 0;" />
+        <div style="flex-grow: 1; flex-shrink: 0; flex-basis: 60%; width: 60%; min-width: 0; padding-left: 2rem;">
           <section class="product-title-section">
-            <h1 class="product-title">24 Women</h1>
-            <p class="product-category">Fruity Sweet Gourmand</p>
-            <!-- Optional subtitle can be added here if needed -->
+            <h1 class="product-title" id="product-name">Product Name</h1>
+            <p class="product-category" id="product-category">Category</p>
           </section>
           <section class="price-section" aria-label="Harga produk">
-            <div class="discounted-price">Rp 70.000</div>
+            <div class="discounted-price" id="product-price">Price</div>
             <section class="cta-buttons sticky-cta" aria-label="Tombol aksi produk" style="margin-top: 1rem;">
-    <a href="https://wa.me/6285179981122?text=Hai%2C%20Apakah%2024%20Women%20by%20Adfa%20Parfum%20masih%20ready%3F" class="btn btn-chat" target="_blank" rel="noopener noreferrer" aria-label="Tanya via WA">
+              <a href="#" class="btn btn-chat" target="_blank" rel="noopener noreferrer" aria-label="Tanya via WA" id="btn-chat">
                 Tanya via WA
               </a>
-              <button class="btn btn-buy" type="button" aria-label="Beli Sekarang">Beli Sekarang</button>
+              <button class="btn btn-buy" type="button" aria-label="Beli Sekarang" id="btn-buy">Beli Sekarang</button>
             </section>
           </section>
           <section class="description-section" aria-label="Deskripsi produk" style="display: flex; flex-direction: column;">
@@ -370,8 +375,8 @@ a {
               <span class="toggle-icon" aria-hidden="true">&#9656;</span>
             </h2>
             <div id="reason-content" class="collapsible-content" hidden style="flex: 1 1 auto;">
-              <p class="description-text">
-                24 Women adalah tentang keanggunan yang tak lekang oleh waktu. Manis, lembut, dan memikat. Seperti wanita yang tersenyum dalam diam, aromanya meninggalkan kesan yang anggun dan abadi.
+              <p class="description-text" id="product-reason">
+                Reason text
               </p>
             </div>
             <h2 class="description-title collapsible-header" tabindex="0" role="button" aria-expanded="false" aria-controls="description-content" style="flex: 1 1 auto;">
@@ -379,8 +384,8 @@ a {
               <span class="toggle-icon" aria-hidden="true">&#9656;</span>
             </h2>
             <div id="description-content" class="collapsible-content" hidden style="flex: 1 1 auto;">
-              <p class="description-text">
-                24 Women by Adfa Parfum adalah parfum yang dirancang khusus untuk mereka yang mencari keharuman elegan yang memikat. Parfum ini dibuka dengan sentuhan awal dari saffron, cedar, warm spicy, dan raspberry yang memberikan kesan hangat dan segar. Di bagian tengah, keharuman amberwood, ambergris, serta peony menciptakan aroma yang lembut dan mewah. Diakhiri dengan sentuhan dasar fir resin dan praline, memberikan keharuman yang tahan lama dan menggoda.
+              <p class="description-text" id="product-description">
+                Description text
               </p>
             </div>
             <h2 class="description-title collapsible-header" tabindex="0" role="button" aria-expanded="false" aria-controls="notes-content" style="margin-top: 1rem; flex: 1 1 auto;">
@@ -388,10 +393,8 @@ a {
               <span class="toggle-icon" aria-hidden="true">&#9656;</span>
             </h2>
             <div id="notes-content" class="collapsible-content" hidden style="flex: 1 1 auto;">
-              <ul>
-                <li><strong>Top:</strong> Saffron, Cedar, Warm Spicy, Raspberry</li>
-                <li><strong>Mid:</strong> Amberwood, Ambergris, Peony</li>
-                <li><strong>Base:</strong> Fir Resin, Praline</li>
+              <ul id="product-notes" style="padding-left: 0; margin-left: 0;">
+                <!-- Notes list items will be inserted here -->
               </ul>
             </div>
           </section>
@@ -796,132 +799,127 @@ a {
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const products = [
-        {
-          name: "24 Women",
-          category: "Fruity Sweet Gourmand",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/24_Women.webp",
-          page: "24-women.html"
-        },
-        {
-          name: "27 Girl",
-          category: "Floral Green Fresh",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/27_Girl.webp",
-          page: "27-girl.html"
-        },
-        {
-          name: "Castanea",
-          category: "Woody Floral Sweet",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/Castanea.webp",
-          page: "castanea.html"
-        },
-        {
-          name: "Costata",
-          category: "Aromatic Woody",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/Costata.webp",
-          page: "costata.html"
-        },
-        {
-          name: "Fagus",
-          category: "Fresh Green Floral Woody",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/Fagus.webp",
-          page: "fagus.html"
-        },
-        {
-          name: "MW Royal",
-          category: "Woody Amber Aromatic",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/MW_Royal.webp",
-          page: "mw-royal.html"
-        },
-        {
-          name: "NG Inspiration",
-          category: "Sweet Gourmand Powdery",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/NG_Inspiration.webp",
-          page: "ng-inspiration.html"
-        },
-        {
-          name: "NN Good Women",
-          category: "Oriental Floral Gourmand",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/NN_Good_Women.webp",
-          page: "nn-good-women.html"
-        },
-        {
-          name: "Quercus",
-          category: "Woody Floral Musk",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/Quercus.webp",
-          page: "quercus.html"
-        },
-        {
-          name: "RN Original",
-          category: "Spicy Woody Oriental",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/RN_Original.webp",
-          page: "rn-original.html"
-        },
-        {
-          name: "Sept Romance",
-          category: "Floral Fruity Gourmand",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/Sept_Romance.webp",
-          page: "sept-romance.html"
-        },
-        {
-          name: "SW Best",
-          category: "Woody Aromatic Fresh",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/SW_Best.webp",
-          page: "sw-best.html"
-        },
-        {
-          name: "Three One",
-          category: "Oriental Gourmand Spicy",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/Three_One.webp",
-          page: "three-one.html"
-        },
-        {
-          name: "Vatika Rassak",
-          category: "Sweet Spicy Gourmand",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/Vatika_Rassak.webp",
-          page: "vatika-rassak.html"
-        },
-        {
-          name: "Feb Man",
-          category: "Woody Aromatic Fresh",
-          price: "Rp 70.000",
-          image: "../assets/images/products/BG_Ingredients/Feb_Man.webp",
-          page: "feb-man.html"
-        }
-      ];
+      let productsData = [];
+      const productSelect = document.getElementById('product-select');
+      const productImage = document.getElementById('product-image');
+      const productName = document.getElementById('product-name');
+      const productCategory = document.getElementById('product-category');
+      const productPrice = document.getElementById('product-price');
+      const productReason = document.getElementById('product-reason');
+      const productDescription = document.getElementById('product-description');
+      const productNotes = document.getElementById('product-notes');
+      const btnChat = document.getElementById('btn-chat');
+      const btnBuy = document.getElementById('btn-buy');
+      const relatedProductsContainer = document.getElementById('related-products-container');
+      const buyPopupOverlay = document.getElementById('buy-popup-overlay');
+      const buyPopupClose = document.getElementById('buy-popup-close');
 
-      // Exclude current product "24 Women" only
-      const filteredProducts = products.filter(p => p.name !== "24 Women");
+      // Fetch products data from external JSON file
+      fetch('products.json')
+        .then(response => response.json())
+        .then(data => {
+          productsData = data;
+          populateProductSelect(productsData);
+          // Load first product by default
+          if (productsData.length > 0) {
+            loadProduct(productsData[0].id);
+          }
+        })
+        .catch(error => {
+          console.error('Error loading products data:', error);
+        });
 
-      // Retrieve recent products from localStorage or initialize
-      let recentProducts = JSON.parse(localStorage.getItem('recentProducts24Women')) || {};
-
-      // Decrement counts and remove products that are no longer recent
-      for (const key in recentProducts) {
-        recentProducts[key]--;
-        if (recentProducts[key] <= 0) {
-          delete recentProducts[key];
-        }
+      // Populate product selector dropdown
+      function populateProductSelect(products) {
+        products.forEach(product => {
+          const option = document.createElement('option');
+          option.value = product.id;
+          option.textContent = product.name;
+          productSelect.appendChild(option);
+        });
       }
 
-      // Filter out recent products from filteredProducts
-      const availableProducts = filteredProducts.filter(p => !(p.name in recentProducts));
+      // Load product details into the page
+      function loadProduct(productId) {
+        const product = productsData.find(p => p.id === productId);
+        if (!product) return;
 
-      // Function to get 4 random unique products using Fisher-Yates shuffle
+        // Update page title
+        document.title = product.title;
+
+        // Update product main details
+        productImage.src = product.image;
+        productImage.alt = `Produk ${product.name}`;
+        productName.textContent = product.name;
+        productCategory.textContent = product.category;
+        productPrice.textContent = product.price;
+        productReason.textContent = product.reason;
+        productDescription.textContent = product.description;
+
+        // Clear and populate notes list
+        productNotes.innerHTML = '';
+        product.notes.forEach(note => {
+          const li = document.createElement('li');
+          li.innerHTML = `<strong>${note.type}:</strong> ${note.value}`;
+          productNotes.appendChild(li);
+        });
+
+        // Update WA chat link with product name
+        btnChat.href = `https://wa.me/6285179981122?text=Hai%2C%20Apakah%20${encodeURIComponent(product.name)}%20by%20Adfa%20Parfum%20masih%20ready%3F`;
+
+        // Show buy popup on buy button click
+        btnBuy.onclick = () => {
+          buyPopupOverlay.style.display = 'flex';
+        };
+
+        // Update related products section
+        updateRelatedProducts(product.id);
+
+        // Reset collapsible sections to collapsed state
+        resetCollapsibles();
+      }
+
+      // Update related products section excluding current product
+      function updateRelatedProducts(currentProductId) {
+        // Filter out current product
+        const relatedProducts = productsData.filter(p => p.id !== currentProductId);
+
+        // Clear container
+        relatedProductsContainer.innerHTML = '';
+
+        // Select up to 4 random related products
+        const selectedProducts = getRandomProducts(relatedProducts, 4);
+
+        selectedProducts.forEach(product => {
+          const card = document.createElement('div');
+          card.className = 'related-product-card';
+          card.tabIndex = 0;
+          card.setAttribute('role', 'button');
+          card.setAttribute('aria-pressed', 'false');
+          card.addEventListener('click', () => {
+            productSelect.value = product.id;
+            loadProduct(product.id);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              card.click();
+            }
+          });
+
+          card.innerHTML = `
+            <img src="${product.image}" alt="Produk ${product.name}" />
+            <div class="related-product-name">${product.name}</div>
+            <div class="related-product-category">${product.category}</div>
+            <div class="related-product-price">${product.price}</div>
+          `;
+
+          relatedProductsContainer.appendChild(card);
+        });
+      }
+
+      // Utility: get n random unique products from array
       function getRandomProducts(arr, num) {
         const arrayCopy = arr.slice();
         for (let i = arrayCopy.length - 1; i > 0; i--) {
@@ -931,51 +929,57 @@ a {
         return arrayCopy.slice(0, num);
       }
 
-      // If availableProducts less than 4, allow recent products to fill the gap
-      let selectedProducts = [];
-      if (availableProducts.length >= 4) {
-        selectedProducts = getRandomProducts(availableProducts, 4);
-      } else {
-        selectedProducts = getRandomProducts(filteredProducts, 4);
-      }
-
-      // Update recentProducts with selected products, set count to 2
-      selectedProducts.forEach(p => {
-        recentProducts[p.name] = 2;
-      });
-
-      // Save updated recentProducts to localStorage
-      localStorage.setItem('recentProducts24Women', JSON.stringify(recentProducts));
-
-      const container = document.getElementById('related-products-container');
-
-      // Clear container before appending new cards to avoid duplicates on refresh
-      container.innerHTML = '';
-
-      selectedProducts.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'related-product-card';
-        card.tabIndex = 0;
-        card.setAttribute('role', 'button');
-        card.setAttribute('aria-pressed', 'false');
-        card.addEventListener('click', () => {
-          window.location.href = product.page;
-        });
-        card.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            card.click();
+      // Reset collapsible sections to collapsed state
+      function resetCollapsibles() {
+        const headers = document.querySelectorAll('.collapsible-header');
+        headers.forEach(header => {
+          header.setAttribute('aria-expanded', 'false');
+          const contentId = header.getAttribute('aria-controls');
+          const content = document.getElementById(contentId);
+          if (content) {
+            content.hidden = true;
+            content.style.maxHeight = '0';
+          }
+          const toggleIcon = header.querySelector('.toggle-icon');
+          if (toggleIcon) {
+            toggleIcon.classList.remove('fade-in');
           }
         });
+      }
 
-        card.innerHTML = `
-          <img src="${product.image}" alt="Produk ${product.name}" />
-          <div class="related-product-name">${product.name}</div>
-          <div class="related-product-category">${product.category}</div>
-          <div class="related-product-price">${product.price}</div>
-        `;
+      // Handle product selection change
+      productSelect.addEventListener('change', (e) => {
+        loadProduct(e.target.value);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
 
-        container.appendChild(card);
+      // Buy popup close button
+      if (buyPopupClose && buyPopupOverlay) {
+        buyPopupClose.addEventListener('click', () => {
+          buyPopupOverlay.style.display = 'none';
+        });
+        buyPopupOverlay.addEventListener('click', (e) => {
+          if (e.target === buyPopupOverlay) {
+            buyPopupOverlay.style.display = 'none';
+          }
+        });
+      }
+
+      // Add alert for soon buttons Tokopedia and TikTok Shop
+      const soonButtons = document.querySelectorAll('#buy-popup a.soon');
+      soonButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (button.classList.contains('soon')) {
+            if (button.textContent.includes('Tokopedia')) {
+              alert('Tokopedia coming soon');
+            } else if (button.textContent.includes('TikTok Shop')) {
+              alert('TikTok Shop coming soon');
+            } else {
+              alert('Fitur ini akan segera hadir. Terima kasih atas kesabaran Anda!');
+            }
+          }
+        });
       });
     });
   </script>

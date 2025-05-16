@@ -1,0 +1,32 @@
+[
+  {
+    "id": "24-women",
+    "title": "24 Women by Adfa Parfum",
+    "name": "24 Women",
+    "category": "Fruity Sweet Gourmand",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/24_Women.webp",
+    "reason": "24 Women adalah tentang keanggunan yang tak lekang oleh waktu. Manis, lembut, dan memikat. Seperti wanita yang tersenyum dalam diam, aromanya meninggalkan kesan yang anggun dan abadi.",
+    "description": "24 Women by Adfa Parfum adalah parfum yang dirancang khusus untuk mereka yang mencari keharuman elegan yang memikat. Parfum ini dibuka dengan sentuhan awal dari saffron, cedar, warm spicy, dan raspberry yang memberikan kesan hangat dan segar. Di bagian tengah, keharuman amberwood, ambergris, serta peony menciptakan aroma yang lembut dan mewah. Diakhiri dengan sentuhan dasar fir resin dan praline, memberikan keharuman yang tahan lama dan menggoda.",
+    "notes": [
+      {"type": "Top", "value": "Saffron, Cedar, Warm Spicy, Raspberry"},
+      {"type": "Mid", "value": "Amberwood, Ambergris, Peony"},
+      {"type": "Base", "value": "Fir Resin, Praline"}
+    ]
+  },
+  {
+    "id": "27-girl",
+    "title": "27 Girl by Adfa Parfum",
+    "name": "27 Girl",
+    "category": "Floral Green Fresh",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/27_Girl.webp",
+    "reason": "Alasan memilih aroma 27 Girl ... (isi sesuai produk)",
+    "description": "Deskripsi produk 27 Girl ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  }
+]
