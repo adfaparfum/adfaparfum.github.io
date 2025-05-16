@@ -820,9 +820,12 @@ a {
         .then(data => {
           productsData = data;
           populateProductSelect(productsData);
-          // Load first product by default
-          if (productsData.length > 0) {
-            loadProduct(productsData[0].id);
+          // Load product from URL hash if present, else first product
+          const hash = window.location.hash.substring(1);
+          const productId = hash && productsData.some(p => p.id === hash) ? hash : (productsData.length > 0 ? productsData[0].id : null);
+          if (productId) {
+            loadProduct(productId);
+            productSelect.value = productId;
           }
         })
         .catch(error => {
