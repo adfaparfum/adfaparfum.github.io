@@ -894,17 +894,18 @@ a {
           price: "Rp 70.000",
           image: "../assets/images/products/BG_Ingredients/Vatika_Rassak.webp",
           page: "vatika-rassak.html"
+        },
+        {
+          name: "Feb Man",
+          category: "Woody Aromatic Fresh",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Feb_Man.webp",
+          page: "feb-man.html"
         }
       ];
 
-      // Exclude current product "24 Women" and include "Feb Man"
+      // Exclude current product "24 Women" only
       const filteredProducts = products.filter(p => p.name !== "24 Women");
-
-      // Add "Feb Man" product explicitly if not already in filteredProducts
-      const febManProduct = products.find(p => p.name === "Feb Man");
-      if (febManProduct && !filteredProducts.some(p => p.name === "Feb Man")) {
-        filteredProducts.push(febManProduct);
-      }
 
       // Function to get 4 random unique products using Fisher-Yates shuffle
       function getRandomProducts(arr, num) {
