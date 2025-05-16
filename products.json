@@ -28,5 +28,200 @@
       {"type": "Mid", "value": "Isi notes mid"},
       {"type": "Base", "value": "Isi notes base"}
     ]
+  },
+  {
+    "id": "castanea",
+    "title": "Castanea by Adfa Parfum",
+    "name": "Castanea",
+    "category": "Woody Floral Sweet",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Castanea.webp",
+    "reason": "Alasan memilih aroma Castanea ... (isi sesuai produk)",
+    "description": "Deskripsi produk Castanea ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "costata",
+    "title": "Costata by Adfa Parfum",
+    "name": "Costata",
+    "category": "Aromatic Woody",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Costata.webp",
+    "reason": "Alasan memilih aroma Costata ... (isi sesuai produk)",
+    "description": "Deskripsi produk Costata ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "fagus",
+    "title": "Fagus by Adfa Parfum",
+    "name": "Fagus",
+    "category": "Fresh Green Floral Woody",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Fagus.webp",
+    "reason": "Alasan memilih aroma Fagus ... (isi sesuai produk)",
+    "description": "Deskripsi produk Fagus ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "mw-royal",
+    "title": "MW Royal by Adfa Parfum",
+    "name": "MW Royal",
+    "category": "Woody Amber Aromatic",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/MW_Royal.webp",
+    "reason": "Alasan memilih aroma MW Royal ... (isi sesuai produk)",
+    "description": "Deskripsi produk MW Royal ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "ng-inspiration",
+    "title": "NG Inspiration by Adfa Parfum",
+    "name": "NG Inspiration",
+    "category": "Sweet Gourmand Powdery",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/NG_Inspiration.webp",
+    "reason": "Alasan memilih aroma NG Inspiration ... (isi sesuai produk)",
+    "description": "Deskripsi produk NG Inspiration ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "nn-good-women",
+    "title": "NN Good Women by Adfa Parfum",
+    "name": "NN Good Women",
+    "category": "Oriental Floral Gourmand",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/NN_Good_Women.webp",
+    "reason": "Alasan memilih aroma NN Good Women ... (isi sesuai produk)",
+    "description": "Deskripsi produk NN Good Women ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "quercus",
+    "title": "Quercus by Adfa Parfum",
+    "name": "Quercus",
+    "category": "Woody Floral Musk",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Quercus.webp",
+    "reason": "Alasan memilih aroma Quercus ... (isi sesuai produk)",
+    "description": "Deskripsi produk Quercus ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "rn-original",
+    "title": "RN Original by Adfa Parfum",
+    "name": "RN Original",
+    "category": "Spicy Woody Oriental",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/RN_Original.webp",
+    "reason": "Alasan memilih aroma RN Original ... (isi sesuai produk)",
+    "description": "Deskripsi produk RN Original ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "sept-romance",
+    "title": "Sept Romance by Adfa Parfum",
+    "name": "Sept Romance",
+    "category": "Floral Fruity Gourmand",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Sept_Romance.webp",
+    "reason": "Alasan memilih aroma Sept Romance ... (isi sesuai produk)",
+    "description": "Deskripsi produk Sept Romance ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "sw-best",
+    "title": "SW Best by Adfa Parfum",
+    "name": "SW Best",
+    "category": "Woody Aromatic Fresh",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/SW_Best.webp",
+    "reason": "Alasan memilih aroma SW Best ... (isi sesuai produk)",
+    "description": "Deskripsi produk SW Best ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "three-one",
+    "title": "Three One by Adfa Parfum",
+    "name": "Three One",
+    "category": "Oriental Gourmand Spicy",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Three_One.webp",
+    "reason": "Alasan memilih aroma Three One ... (isi sesuai produk)",
+    "description": "Deskripsi produk Three One ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "vatika-rassak",
+    "title": "Vatika Rassak by Adfa Parfum",
+    "name": "Vatika Rassak",
+    "category": "Sweet Spicy Gourmand",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Vatika_Rassak.webp",
+    "reason": "Alasan memilih aroma Vatika Rassak ... (isi sesuai produk)",
+    "description": "Deskripsi produk Vatika Rassak ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
+  },
+  {
+    "id": "feb-man",
+    "title": "Feb Man by Adfa Parfum",
+    "name": "Feb Man",
+    "category": "Woody Aromatic Fresh",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Feb_Man.webp",
+    "reason": "Alasan memilih aroma Feb Man ... (isi sesuai produk)",
+    "description": "Deskripsi produk Feb Man ... (isi sesuai produk)",
+    "notes": [
+      {"type": "Top", "value": "Isi notes top"},
+      {"type": "Mid", "value": "Isi notes mid"},
+      {"type": "Base", "value": "Isi notes base"}
+    ]
   }
 ]
