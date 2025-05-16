@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>24 Women by Adfa Parfum</title>
+  <title>24 Women by Adfa Pafum</title>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Inter&display=swap" rel="stylesheet" />
   <style>
     /* Reset and base */
@@ -347,8 +347,8 @@ a {
       </nav>
     </header>
     <main style="padding-top: 60px;">
-      <section aria-label="Gambar produk 24 Women">
-        <img src="../assets/images/products/BG_Ingredients/24_Women.webp" alt="Produk 24 Women" />
+      <section aria-label="Gambar produk Feb Man">
+        <img src="../assets/images/products/BG_Black&Wood/24_Women.webp" alt="Produk 24 Women" />
         <div>
           <section class="product-title-section">
             <h1 class="product-title">24 Women</h1>
@@ -389,9 +389,9 @@ a {
             </h2>
             <div id="notes-content" class="collapsible-content" hidden style="flex: 1 1 auto;">
               <ul>
-                <li><strong>Top :</strong> Saffron, Cedar, Warm Spicy, Raspberry</li>
-                <li><strong>Mid :</strong> Amberwood, Ambergris, Peony</li>
-                <li><strong>Base :</strong> Fir Resin, Praline</li>
+                <li><strong>Top:</strong> Saffron, Cedar, Warm Spicy, Raspberry</li>
+                <li><strong>Mid:</strong> Amberwood, Ambergris, Peony</li>
+                <li><strong>Base:</strong> Fir Resin, Praline</li>
               </ul>
             </div>
           </section>
@@ -407,10 +407,10 @@ a {
   <div id="buy-popup-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:2000; justify-content:center; align-items:center;">
     <div id="buy-popup" role="dialog" aria-modal="true" aria-labelledby="buy-popup-title" style="background:#000000; border-radius:8px; padding:1.5rem; width:90%; max-width:400px; box-shadow:0 4px 12px rgba(0,0,0,0.3); display:flex; flex-direction:column; gap:1rem; color:#d9b45c;">
       <h2 id="buy-popup-title" style="margin:0 0 1rem 0; font-size:1.25rem; font-weight:700; text-align:center; color:#d9b45c;">Mau Beli Dimana?</h2>
-          <a href="https://s.shopee.co.id/xHDL3T59" target="_blank" rel="noopener noreferrer" style="background:#FE5722; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Shopee</a>
+          <a href="https://s.shopee.co.id/4VPgZbmKx6" target="_blank" rel="noopener noreferrer" style="background:#FE5722; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Shopee</a>
           <a href="https://tokopedia.com/adfaparfum" target="_blank" rel="noopener noreferrer" class="soon" style="background:#03AC0E; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Tokopedia <span style="font-size: 0.75rem; font-weight: normal;">soon 😊</span></a>
           <a href="https://tiktok.com/@adfaparfum" target="_blank" rel="noopener noreferrer" class="soon tiktok-shop" style="background:#000000; color:#ffffff; border: 2px solid #ffffff; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">TikTok Shop <span style="font-size: 0.75rem; font-weight: normal;">soon 😊</span></a>
-          <a href="https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Feb%20Man%20by%20Adfa%20Parfum%20masih%20ready%3F" target="_blank" rel="noopener noreferrer" style="background:#25D366; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Chat via Whatsapp</a>
+          <a href="https://wa.me/6285179981122?text=Hai%2C%20Apakah%2024%20Women%20by%20Adfa%20Parfum%20masih%20ready%3F" target="_blank" rel="noopener noreferrer" style="background:#25D366; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Chat via Whatsapp</a>
       <button id="buy-popup-close" style="background:#d9b45c; color:#000000; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; margin-top:1rem;">Tutup</button>
     </div>
   </div>
@@ -897,8 +897,14 @@ a {
         }
       ];
 
-      // Exclude current product "24 Women"
+      // Exclude current product "24 Women" and include "Feb Man"
       const filteredProducts = products.filter(p => p.name !== "24 Women");
+
+      // Add "Feb Man" product explicitly if not already in filteredProducts
+      const febManProduct = products.find(p => p.name === "Feb Man");
+      if (febManProduct && !filteredProducts.some(p => p.name === "Feb Man")) {
+        filteredProducts.push(febManProduct);
+      }
 
       // Function to get 4 random unique products using Fisher-Yates shuffle
       function getRandomProducts(arr, num) {
