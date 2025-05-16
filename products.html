@@ -347,12 +347,8 @@ a {
       </nav>
     </header>
     <main style="padding-top: 60px;">
-      <section aria-label="Product Selector" style="margin-bottom: 1rem;">
-        <label for="product-select" style="font-weight: 700; font-size: 1.25rem;">Pilih Produk:</label>
-        <select id="product-select" aria-label="Pilih produk parfum" style="font-size: 1rem; padding: 0.5rem; margin-left: 0.5rem;">
-          <!-- Options will be populated dynamically -->
-        </select>
-      </section>
+      <!-- Removed product selector dropdown as per user request -->
+      
       <section aria-label="Gambar produk" id="product-main-section" style="display: flex; flex-direction: row; align-items: flex-start; gap: 1rem;">
         <img id="product-image" src="" alt="Produk" style="width: 40%; aspect-ratio: 1 / 1; object-fit: cover; flex-shrink: 0; display: block; margin-left: 0; align-self: flex-start; border-radius: 0;" />
         <div style="flex-grow: 1; flex-shrink: 0; flex-basis: 60%; width: 60%; min-width: 0; padding-left: 2rem;">
@@ -800,7 +796,7 @@ a {
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       let productsData = [];
-      const productSelect = document.getElementById('product-select');
+      // const productSelect = document.getElementById('product-select'); // Removed product selector element reference
       const productImage = document.getElementById('product-image');
       const productName = document.getElementById('product-name');
       const productCategory = document.getElementById('product-category');
@@ -819,13 +815,13 @@ a {
         .then(response => response.json())
         .then(data => {
           productsData = data;
-          populateProductSelect(productsData);
+          // populateProductSelect(productsData); // Removed population of product selector dropdown
           // Load product from URL hash if present, else first product
           const hash = window.location.hash.substring(1);
           const productId = hash && productsData.some(p => p.id === hash) ? hash : (productsData.length > 0 ? productsData[0].id : null);
           if (productId) {
             loadProduct(productId);
-            productSelect.value = productId;
+            // productSelect.value = productId; // Removed setting value of product selector dropdown
           }
         })
         .catch(error => {
@@ -833,6 +829,7 @@ a {
         });
 
       // Populate product selector dropdown
+      /*
       function populateProductSelect(products) {
         products.forEach(product => {
           const option = document.createElement('option');
@@ -841,6 +838,7 @@ a {
           productSelect.appendChild(option);
         });
       }
+      */
 
       // Load product details into the page
       function loadProduct(productId) {
@@ -900,7 +898,7 @@ a {
           card.setAttribute('role', 'button');
           card.setAttribute('aria-pressed', 'false');
           card.addEventListener('click', () => {
-            productSelect.value = product.id;
+            // productSelect.value = product.id; // Removed setting value of product selector dropdown
             loadProduct(product.id);
             window.scrollTo({ top: 0, behavior: 'smooth' });
           });
@@ -951,10 +949,10 @@ a {
       }
 
       // Handle product selection change
-      productSelect.addEventListener('change', (e) => {
-        loadProduct(e.target.value);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+      // productSelect.addEventListener('change', (e) => {
+      //   loadProduct(e.target.value);
+      //   window.scrollTo({ top: 0, behavior: 'smooth' });
+      // });
 
       // Buy popup close button
       if (buyPopupClose && buyPopupOverlay) {
