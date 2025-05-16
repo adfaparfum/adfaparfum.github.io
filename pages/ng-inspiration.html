@@ -2,16 +2,960 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NG Inspiration - Adfa Parfum</title>
-  <link rel="stylesheet" href="../style.css" />
-</head>
-<body>
-  <header>
-    <h1>NG Inspiration</h1>
-  </header>
-  <main>
-    <p>Halaman untuk varian NG Inspiration.</p>
-  </main>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feb Man by Adfa Pafum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Inter&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      overflow-x: hidden;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+a {
+      color: #007BFF;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    a:hover, a:focus {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Header */
+    header {
+      background-color: #000000;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      border-bottom: 1px solid #333;
+      flex-shrink: 0;
+    }
+    header img {
+      max-height: 60px;
+      width: auto;
+    }
+    /* Main content */
+    main {
+      flex-grow: 1;
+      margin: 2rem 0 6rem 0;
+      padding: 0 4rem; /* Increased left and right padding to double */
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    /* Product title */
+    .product-title-section {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    .product-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      text-align: left;
+    }
+    .product-category {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #000000; /* Changed color to black as per user feedback */
+      margin-top: 0;
+      margin-bottom: 0.1rem; /* Further reduced margin-bottom to bring closer to product title */
+      text-align: left;
+    }
+    @media (max-width: 600px) {
+      .product-category {
+        text-align: center;
+      }
+    }
+    .product-subtitle {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #333;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+    /* Price section */
+    .price-section {
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+    .original-price {
+      font-size: 0.875rem;
+      color: #888;
+      text-decoration: line-through;
+      margin-right: 0.5rem;
+    }
+    .discount-label {
+      font-weight: 700;
+      color: #d9b45c;
+      font-size: 1rem;
+      vertical-align: middle;
+    }
+    .discounted-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #000000;
+      margin-top: 0.25rem;
+    }
+    /* Description */
+    .description-section {
+      margin-bottom: 2rem;
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left;
+    }
+    .description-section ul li {
+      text-align: left;
+      list-style-position: inside;
+    }
+    @media (max-width: 600px) {
+      .description-section ul,
+      .description-section ul li {
+        padding-left: 0;
+        margin-left: 0;
+      }
+    }
+    /* Also remove left padding and margin on desktop */
+    .description-section ul,
+    .description-section ul li {
+      padding-left: 0;
+      margin-left: 0;
+    }
+    .description-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .description-text {
+      font-size: 1rem;
+      color: #222;
+      margin-bottom: 0.25rem;
+      width: 100%;
+      margin-right: 0;
+    }
+    .read-more {
+      font-size: 0.875rem;
+      color: #d9b45c;
+      cursor: pointer;
+      user-select: none;
+    }
+    .read-more:hover, .read-more:focus {
+      text-decoration: underline;
+    }
+    /* CTA buttons */
+    .cta-buttons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: nowrap;
+    }
+    .btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      min-width: 140px;
+    }
+    .btn-chat {
+      background-color: transparent;
+      color: #000000;
+      border: 2px solid #000000;
+    }
+    .btn-chat:hover, .btn-chat:focus {
+      background-color: #f0f0f0;
+      outline: none;
+    }
+    .btn-buy {
+      background-color: #d9b45c;
+      color: #000000;
+      font-size: 16px; /* Set font size to 16px */
+    }
+    .btn-buy:hover, .btn-buy:focus {
+      background-color: #b38a1f;
+      outline: none;
+    }
+    /* Chat icon (simple SVG) */
+    .chat-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+    /* Responsive */
+      @media (max-width: 600px) {
+      main {
+        margin: 1rem auto 6rem;
+        padding: 0 1rem;
+        padding-bottom: 80px; /* space for sticky buttons */
+      }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+      }
+      .hero img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      .hero-right-content {
+        width: 100%;
+        padding: 0 0.5rem;
+      }
+      .product-title {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .price-section {
+        text-align: center;
+      }
+      .description-section {
+        padding: 0 0.5rem;
+      }
+      .cta-buttons {
+        gap: 1rem;
+        justify-content: center;
+        padding: 0 1rem;
+      }
+      .btn {
+        flex: 1 1 50%; /* Make buttons take equal width side by side */
+        justify-content: center;
+        min-width: unset;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        border-radius: 8px;
+      }
+      .btn-chat, .btn-buy {
+        font-size: 1rem !important; /* Increase font size to max that fits in button */
+        white-space: nowrap; /* Prevent text wrapping to keep text in one line */
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      /* New styles to put product image on top and fill screen width on mobile */
+      section[aria-label="Gambar produk Feb Man"] {
+        flex-direction: column !important;
+      }
+      section[aria-label="Gambar produk Feb Man"] > img {
+        width: 100% !important;
+        aspect-ratio: auto !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        margin-bottom: 1rem;
+      }
+      section[aria-label="Gambar produk Feb Man"] > div {
+        width: 100% !important;
+        padding-left: 0 !important;
+      }
+    /* Sticky buttons at bottom on mobile */
+      .btn {
+        font-size: 0.25rem; /* 25% font size for mobile only */
+      }
+      .btn-chat {
+        color: #000000 !important;
+      }
+      .chat-icon {
+        width: 40px !important;
+        height: 40px !important;
+        fill: currentColor !important;
+        display: inline-block !important;
+      }
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      background: #fff;
+      padding: 1rem 1.5rem;
+      box-shadow: none;
+      display: flex;
+      gap: 1rem;
+      z-index: 1000;
+    }
+      }
+    section[aria-label="Gambar produk Feb Man"] {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    section[aria-label="Gambar produk Feb Man"] > img {
+      width: 40%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+      margin-left: 0;
+      align-self: flex-start;
+    }
+    section[aria-label="Gambar produk Feb Man"] > div {
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 60%;
+      width: 60%;
+      min-width: 0;
+      padding-left: 2rem;
+    }
+    .description-section {
+      padding-right: 2rem;
+      max-width: none;
+      width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo-container">
+          <a href="https://adfaparfum.com" target="_self" rel="noopener noreferrer">
+            <img src="../assets/images/logo_adfa_navbar.png" alt="Adfa Parfum Logo" style="filter: none;" />
+          </a>
+        </div>
+        <button class="back-button" aria-label="Kembali" onclick="history.back()">
+          <img src="../assets/images/navigation/back_button.png" alt="Back" />
+        </button>
+      </nav>
+    </header>
+    <main style="padding-top: 60px;">
+      <section aria-label="Gambar produk Feb Man">
+        <img src="../assets/images/products/BG_Black&Wood/Feb_Man.webp" alt="Produk Feb Man" />
+        <div>
+          <section class="product-title-section">
+            <h1 class="product-title">Feb Man</h1>
+            <p class="product-category">Fresh Woody Aquatic</p>
+            <!-- Optional subtitle can be added here if needed -->
+          </section>
+          <section class="price-section" aria-label="Harga produk">
+            <div class="discounted-price">Rp 70.000</div>
+            <section class="cta-buttons sticky-cta" aria-label="Tombol aksi produk" style="margin-top: 1rem;">
+    <a href="https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Feb%20Man%20by%20Adfa%20Parfum%20masih%20ready%3F" class="btn btn-chat" target="_blank" rel="noopener noreferrer" aria-label="Tanya via WA">
+                Tanya via WA
+              </a>
+              <button class="btn btn-buy" type="button" aria-label="Beli Sekarang">Beli Sekarang</button>
+            </section>
+          </section>
+          <section class="description-section" aria-label="Deskripsi produk" style="display: flex; flex-direction: column;">
+            <h2 class="description-title collapsible-header" tabindex="0" role="button" aria-expanded="false" aria-controls="reason-content" style="margin-top: 1rem; flex: 1 1 auto;">
+              Alasan Memilih Aroma Ini
+              <span class="toggle-icon" aria-hidden="true">&#9656;</span>
+            </h2>
+            <div id="reason-content" class="collapsible-content" hidden style="flex: 1 1 auto;">
+              <p class="description-text">
+                Bayangkan hembusan angin pagi yang segar, membawa semangat baru saat kamu melangkah keluar dari pintu rumah.
+                Itu kesan pertama dari Feb Man — ringan, bersih, dan penuh energi.
+              </p>
+              <p class="description-text">
+                Seiring waktu berjalan, aromanya berubah. Seperti ombak yang datang satu demi satu, wangi ini membawa kesan kuat dan bebas, membuat setiap langkah terasa lebih pasti.
+                Ada rasa petualangan, ada ketegasan dalam setiap hembusan aroma.
+              </p>
+              <p class="description-text">
+                Dan ketika hari mulai beranjak senja, wangi itu menghangat. Bukan sekadar keharuman, tapi seperti genggaman erat — tenang, dalam, dan meninggalkan jejak yang sulit dilupakan.
+              </p>
+              <p class="description-text">
+                Feb Man bukan hanya parfum.
+                Ia adalah perjalanan, dari awal yang segar hingga akhir yang penuh wibawa.
+              </p>
+            </div>
+            <h2 class="description-title collapsible-header" tabindex="0" role="button" aria-expanded="false" aria-controls="description-content" style="flex: 1 1 auto;">
+              Deskripsi Produk
+              <span class="toggle-icon" aria-hidden="true">&#9656;</span>
+            </h2>
+            <div id="description-content" class="collapsible-content" hidden style="flex: 1 1 auto;">
+              <p class="description-text">
+                Feb Man by Adfa Parfum adalah parfum yang dirancang khusus untuk mereka yang menginginkan kesegaran dan ketangguhan dalam satu botol. Parfum ini dibuka dengan sentuhan awal dari bergamot, lotus, dan litchi yang memberikan aroma segar dan eksotis. Di bagian tengah, keharuman sea notes, Brazilian rosewood, dan orange menciptakan aroma yang maskulin dan energik. Diakhiri dengan sentuhan dasar tonka bean, musk, amber, dan benzoin, memberikan keharuman yang hangat dan memikat.
+              </p>
+            </div>
+            <h2 class="description-title collapsible-header" tabindex="0" role="button" aria-expanded="false" aria-controls="notes-content" style="margin-top: 1rem; flex: 1 1 auto;">
+              Notes
+              <span class="toggle-icon" aria-hidden="true">&#9656;</span>
+            </h2>
+            <div id="notes-content" class="collapsible-content" hidden style="flex: 1 1 auto;">
+              <ul>
+                <li><strong>Top :</strong> Bergamot, Lotus, Litchi</li>
+                <li><strong>Mid :</strong> Sea Notes, Brazilian Rosewood, Orange</li>
+                <li><strong>Base :</strong> Tonka Bean, Musk, Amber, Benzoin</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <section id="related-products-section" style="background-color: #000000; color: #d9b45c;">
+      <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">Mungkin Kamu Suka Aroma Yang Ini Juga</h2>
+      <div id="related-products-container" style="display: grid; gap: 1.5rem;">
+        <!-- Product cards will be injected here by JavaScript -->
+      </div>
+    </section>
+  <div id="buy-popup-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:2000; justify-content:center; align-items:center;">
+    <div id="buy-popup" role="dialog" aria-modal="true" aria-labelledby="buy-popup-title" style="background:#000000; border-radius:8px; padding:1.5rem; width:90%; max-width:400px; box-shadow:0 4px 12px rgba(0,0,0,0.3); display:flex; flex-direction:column; gap:1rem; color:#d9b45c;">
+      <h2 id="buy-popup-title" style="margin:0 0 1rem 0; font-size:1.25rem; font-weight:700; text-align:center; color:#d9b45c;">Mau Beli Dimana?</h2>
+          <a href="https://s.shopee.co.id/xHDL3T59" target="_blank" rel="noopener noreferrer" style="background:#FE5722; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Shopee</a>
+          <a href="https://tokopedia.com/adfaparfum" target="_blank" rel="noopener noreferrer" class="soon" style="background:#03AC0E; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Tokopedia <span style="font-size: 0.75rem; font-weight: normal;">soon 😊</span></a>
+          <a href="https://tiktok.com/@adfaparfum" target="_blank" rel="noopener noreferrer" class="soon tiktok-shop" style="background:#000000; color:#ffffff; border: 2px solid #ffffff; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">TikTok Shop <span style="font-size: 0.75rem; font-weight: normal;">soon 😊</span></a>
+          <a href="https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Feb%20Man%20by%20Adfa%20Parfum%20masih%20ready%3F" target="_blank" rel="noopener noreferrer" style="background:#25D366; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Chat via Whatsapp</a>
+      <button id="buy-popup-close" style="background:#d9b45c; color:#000000; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; margin-top:1rem;">Tutup</button>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Existing code omitted for brevity...
+
+      // Show popup on "Beli Sekarang" button click
+      const buyNowBtn = document.querySelector('.btn-buy');
+      const popupOverlay = document.getElementById('buy-popup-overlay');
+      const popupCloseBtn = document.getElementById('buy-popup-close');
+
+      if (buyNowBtn && popupOverlay && popupCloseBtn) {
+        buyNowBtn.addEventListener('click', () => {
+          popupOverlay.style.display = 'flex';
+        });
+
+        popupCloseBtn.addEventListener('click', () => {
+          popupOverlay.style.display = 'none';
+        });
+
+        // Close popup if clicking outside the popup content
+        popupOverlay.addEventListener('click', (e) => {
+          if (e.target === popupOverlay) {
+            popupOverlay.style.display = 'none';
+          }
+        });
+      }
+
+      // Add alert for soon buttons Tokopedia and TikTok Shop
+      const soonButtons = document.querySelectorAll('#buy-popup a.soon');
+      soonButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (button.classList.contains('soon')) {
+            if (button.textContent.includes('Tokopedia')) {
+              alert('Tokopedia coming soon');
+            } else if (button.textContent.includes('TikTok Shop')) {
+              alert('TikTok Shop coming soon');
+            } else {
+              alert('Fitur ini akan segera hadir. Terima kasih atas kesabaran Anda!');
+            }
+          }
+        });
+      });
+    });
+    // Removed sticky navbar toggle on scroll to keep navbar always fixed
+  </script>
+  <style>
+    header {
+      background-color: #000000;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      border-bottom: 1px solid #333;
+      flex-shrink: 0;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      z-index: 100000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    /* Removed header.sticky-active styles */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      height: 60px;
+      background-color: transparent;
+      border-bottom: none;
+      padding: 0 1rem;
+    }
+    .back-button {
+      position: absolute;
+      left: 10px;
+      background-color: #d9b45c;
+      border-radius: 50%;
+      border: none;
+      padding: 3px;
+      cursor: pointer;
+      display: none;
+      filter: none;
+      box-shadow: 0 0 5px rgba(217, 180, 92, 0.7);
+    }
+    .back-button img {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+    .logo-container img {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    @media (max-width: 768px) {
+      .navbar {
+        justify-content: center;
+        padding: 0 1rem;
+      }
+      .back-button {
+        display: block;
+      }
+    }
+    @media (max-width: 600px) {
+      .navbar.sticky-active {
+        position: relative !important;
+        box-shadow: none !important;
+      }
+    }
+    /* Collapsible styles */
+    .collapsible-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      color: #000000;
+      font-weight: 700;
+      font-size: 1.25rem;
+      /* Removed border-bottom as per user feedback */
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background-color: #f0e6b6; /* light background similar to button */
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    /* Removed mobile full-width collapsible header styles as per user request to cancel */
+    .collapsible-header:hover, .collapsible-header:focus {
+      background-color: #d9b45c; /* highlight background on hover/focus */
+      color: #000000;
+      outline: none;
+    }
+    .collapsible-header:focus {
+      outline: 2px solid #d9b45c;
+      outline-offset: 2px;
+    }
+    .collapsible-header[aria-expanded="true"] {
+      /* Keep font color black when expanded as per user feedback */
+      color: #000000;
+    }
+    .toggle-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      font-size: 1.25rem;
+      color: #000000; /* Changed arrow color to black as per user feedback */
+      user-select: none;
+      margin-left: 0.5rem;
+    }
+    .collapsible-header[aria-expanded="true"] .toggle-icon {
+      transform: rotate(90deg);
+    }
+    .collapsible-content {
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      max-height: 0;
+      padding-left: 0.5rem;
+      margin-top: 0.5rem;
+      color: #222222;
+      font-size: 1rem;
+    }
+    .collapsible-content[hidden] {
+      display: none;
+      max-height: 0;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <style>
+    /* Popup buttons hover effect with gold outline */
+    #buy-popup button:hover,
+    #buy-popup button:focus,
+    #buy-popup a:hover,
+    #buy-popup a:focus {
+      outline: 2px solid #d9b45c !important;
+      outline-offset: 2px;
+      box-shadow: 0 0 8px #d9b45c;
+      transition: box-shadow 0.3s ease;
+      /* Removed background-color and color changes as per user feedback */
+      text-decoration: none;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+      collapsibleHeaders.forEach(header => {
+        const toggleIcon = header.querySelector('.toggle-icon');
+        header.addEventListener('click', () => {
+          const expanded = header.getAttribute('aria-expanded') === 'true';
+          header.setAttribute('aria-expanded', String(!expanded));
+          const contentId = header.getAttribute('aria-controls');
+          const content = document.getElementById(contentId);
+          if (!expanded) {
+            content.hidden = false;
+            content.style.maxHeight = content.scrollHeight + 'px';
+            // Add fade-in class to toggle icon after fade-out
+            toggleIcon.classList.remove('fade-in');
+            setTimeout(() => {
+              toggleIcon.classList.add('fade-in');
+            }, 150);
+          } else {
+            content.style.maxHeight = '0';
+            // Remove fade-in class to start fade-out
+            toggleIcon.classList.remove('fade-in');
+            setTimeout(() => {
+              content.hidden = true;
+            }, 300);
+          }
+        });
+        header.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            header.click();
+          }
+        });
+      });
+    });
+  </script>
+  <style>
+    /* Related Products Section */
+    #related-products-section {
+      background-color: #000;
+      color: #d9b45c;
+      padding: 2rem 4rem;
+    }
+    @media (max-width: 768px) {
+      #related-products-section {
+        padding: 1rem 1rem 2rem 1rem;
+      }
+    }
+    #related-products-section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    #related-products-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 1rem;
+    }
+    .related-product-card {
+      background-color: #1a1a1a;
+      border: 1px solid #d9b45c;
+      border-radius: 8px;
+      padding: 0.75rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #d9b45c;
+      transition: transform 0.3s ease;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+      height: 280px;
+      min-height: 280px;
+      max-height: 280px;
+    }
+    @media (max-width: 768px) {
+      .related-product-card {
+        height: 260px;
+        min-height: 260px;
+        max-height: 260px;
+        padding: 0.5rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .related-product-card {
+        height: 240px;
+        min-height: 240px;
+        max-height: 240px;
+        padding: 0.5rem;
+        border-width: 0.5px;
+      }
+    }
+    .related-product-name {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.15rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .related-product-category {
+      font-size: 0.85rem;
+      margin-bottom: 0;
+      color: #d9b45c;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .related-product-price {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0;
+      color: #d9b45c;
+    }
+    .related-product-card:hover,
+    .related-product-card:focus {
+      transform: scale(1.02);
+      outline: none;
+      border-color: #fff;
+      color: #fff;
+    }
+    .related-product-card img {
+      width: 100%;
+      height: 140px;
+      max-height: 140px;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+    @media (max-width: 768px) {
+      .related-product-card img {
+        height: 130px;
+        max-height: 130px;
+        aspect-ratio: 1 / 1;
+      }
+    }
+    @media (max-width: 480px) {
+      .related-product-card img {
+        height: 110px;
+        max-height: 110px;
+        aspect-ratio: 1 / 1;
+      }
+    }
+    .related-product-name {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .related-product-category {
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      color: #d9b45c;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .related-product-price {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #d9b45c;
+    }
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      #related-products-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 0.5rem 0 0;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 480px) {
+      .related-product-card {
+        padding: 0.5rem;
+        border-width: 0.5px;
+      }
+      .related-product-card img {
+        max-height: 120px;
+        margin-bottom: 0.5rem;
+      }
+      .related-product-name {
+        font-size: 0.9rem;
+      }
+      .related-product-category {
+        font-size: 0.55rem;
+      }
+      .related-product-price {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const products = [
+        {
+          name: "24 Women",
+          category: "Fruity Sweet Gourmand",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/24_Women.webp",
+          page: "24-women.html"
+        },
+        {
+          name: "27 Girl",
+          category: "Floral Green Fresh",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/27_Girl.webp",
+          page: "27-girl.html"
+        },
+        {
+          name: "Castanea",
+          category: "Woody Floral Sweet",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Castanea.webp",
+          page: "castanea.html"
+        },
+        {
+          name: "Costata",
+          category: "Aromatic Woody",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Costata.webp",
+          page: "costata.html"
+        },
+        {
+          name: "Fagus",
+          category: "Fresh Green Floral Woody",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Fagus.webp",
+          page: "fagus.html"
+        },
+        {
+          name: "MW Royal",
+          category: "Woody Amber Aromatic",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/MW_Royal.webp",
+          page: "mw-royal.html"
+        },
+        {
+          name: "NG Inspiration",
+          category: "Sweet Gourmand Powdery",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/NG_Inspiration.webp",
+          page: "ng-inspiration.html"
+        },
+        {
+          name: "NN Good Women",
+          category: "Oriental Floral Gourmand",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/NN_Good_Women.webp",
+          page: "nn-good-women.html"
+        },
+        {
+          name: "Quercus",
+          category: "Woody Floral Musk",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Quercus.webp",
+          page: "quercus.html"
+        },
+        {
+          name: "RN Original",
+          category: "Spicy Woody Oriental",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/RN_Original.webp",
+          page: "rn-original.html"
+        },
+        {
+          name: "Sept Romance",
+          category: "Floral Fruity Gourmand",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Sept_Romance.webp",
+          page: "sept-romance.html"
+        },
+        {
+          name: "SW Best",
+          category: "Woody Aromatic Fresh",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/SW_Best.webp",
+          page: "sw-best.html"
+        },
+        {
+          name: "Three One",
+          category: "Oriental Gourmand Spicy",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Three_One.webp",
+          page: "three-one.html"
+        },
+        {
+          name: "Vatika Rassak",
+          category: "Sweet Spicy Gourmand",
+          price: "Rp 70.000",
+          image: "../assets/images/products/BG_Ingredients/Vatika_Rassak.webp",
+          page: "vatika-rassak.html"
+        }
+      ];
+
+      // Exclude current product "Feb Man"
+      const filteredProducts = products.filter(p => p.name !== "Feb Man");
+
+      // Function to get 4 random unique products using Fisher-Yates shuffle
+      function getRandomProducts(arr, num) {
+        const arrayCopy = arr.slice();
+        for (let i = arrayCopy.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arrayCopy[i], arrayCopy[j]] = [arrayCopy[j], arrayCopy[i]];
+        }
+        return arrayCopy.slice(0, num);
+      }
+
+      const selectedProducts = getRandomProducts(filteredProducts, 4);
+
+      const container = document.getElementById('related-products-container');
+
+      // Clear container before appending new cards to avoid duplicates on refresh
+      container.innerHTML = '';
+
+      selectedProducts.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'related-product-card';
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-pressed', 'false');
+        card.addEventListener('click', () => {
+          window.location.href = product.page;
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+          }
+        });
+
+        card.innerHTML = `
+          <img src="${product.image}" alt="Produk ${product.name}" />
+          <div class="related-product-name">${product.name}</div>
+          <div class="related-product-category">${product.category}</div>
+          <div class="related-product-price">${product.price}</div>
+        `;
+
+        container.appendChild(card);
+      });
+    });
+  </script>
+  <section id="new-bottom-section" style="height: 70px; background-color: #000000;"></section>
 </body>
 </html>
