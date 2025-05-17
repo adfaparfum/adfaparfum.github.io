@@ -993,6 +993,8 @@ a {
             const prevProductId = viewedStack[viewedStack.length - 1];
             sessionStorage.setItem('viewedProductsStack', JSON.stringify(viewedStack));
             loadProduct(prevProductId, false);
+            // Scroll to top after loading previous product
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           } else {
             // No more products in stack, go back in browser history
             history.back();
@@ -1005,6 +1007,9 @@ a {
         if (event.state && event.state.productId) {
           // Load product from state without pushing new state
           loadProduct(event.state.productId, false);
+
+          // Scroll to top after loading product on popstate
+          window.scrollTo({ top: 0, behavior: 'smooth' });
 
           // Update viewed stack accordingly
           let viewedStack = JSON.parse(sessionStorage.getItem('viewedProductsStack') || '[]');
