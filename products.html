@@ -841,7 +841,7 @@ a {
       */
 
       // Load product details into the page
-      function loadProduct(productId) {
+      function loadProduct(productId, pushState = true) {
         const product = productsData.find(p => p.id === productId);
         if (!product) return;
 
@@ -878,6 +878,20 @@ a {
 
         // Reset collapsible sections to collapsed state
         resetCollapsibles();
+
+        // Manage history stack and pushState
+        if (pushState) {
+          // Push state to history
+          history.pushState({ productId: productId }, product.name, `#${productId}`);
+
+          // Manage sessionStorage stack of viewed products
+          let viewedStack = JSON.parse(sessionStorage.getItem('viewedProductsStack') || '[]');
+          // Avoid duplicate consecutive entries
+          if (viewedStack.length === 0 || viewedStack[viewedStack.length - 1] !== productId) {
+            viewedStack.push(productId);
+            sessionStorage.setItem('viewedProductsStack', JSON.stringify(viewedStack));
+          }
+        }
       }
 
       // Update related products section excluding current product
@@ -965,6 +979,66 @@ a {
           }
         });
       }
+
+      // Handle back button click to navigate product history first
+      const backButton = document.querySelector('.back-button');
+      if (backButton) {
+        backButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          let viewedStack = JSON.parse(sessionStorage.getItem('viewedProductsStack') || '[]');
+          if (viewedStack.length > 1) {
+            // Pop current product
+            viewedStack.pop();
+            // Get previous product
+            const prevProductId = viewedStack[viewedStack.length - 1];
+            sessionStorage.setItem('viewedProductsStack', JSON.stringify(viewedStack));
+            loadProduct(prevProductId, false);
+          } else {
+            // No more products in stack, go back in browser history
+            history.back();
+          }
+        });
+      }
+
+      // Handle browser back/forward navigation
+      window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.productId) {
+          // Load product from state without pushing new state
+          loadProduct(event.state.productId, false);
+
+          // Update viewed stack accordingly
+          let viewedStack = JSON.parse(sessionStorage.getItem('viewedProductsStack') || '[]');
+          const productId = event.state.productId;
+          // If productId not at top of stack, push it
+          if (viewedStack.length === 0 || viewedStack[viewedStack.length - 1] !== productId) {
+            viewedStack.push(productId);
+            sessionStorage.setItem('viewedProductsStack', JSON.stringify(viewedStack));
+          }
+        } else {
+          // No productId in state, fallback to default behavior
+          // Optionally clear stack or do nothing
+        }
+      });
+
+      // On page load, initialize history state and stack if empty
+      window.addEventListener('load', () => {
+        let viewedStack = JSON.parse(sessionStorage.getItem('viewedProductsStack') || '[]');
+        const hash = window.location.hash.substring(1);
+        if (hash && productsData.some(p => p.id === hash)) {
+          if (viewedStack.length === 0 || viewedStack[viewedStack.length - 1] !== hash) {
+            viewedStack.push(hash);
+            sessionStorage.setItem('viewedProductsStack', JSON.stringify(viewedStack));
+          }
+          history.replaceState({ productId: hash }, '', `#${hash}`);
+        } else if (productsData.length > 0) {
+          const firstProductId = productsData[0].id;
+          if (viewedStack.length === 0 || viewedStack[viewedStack.length - 1] !== firstProductId) {
+            viewedStack.push(firstProductId);
+            sessionStorage.setItem('viewedProductsStack', JSON.stringify(viewedStack));
+          }
+          history.replaceState({ productId: firstProductId }, '', `#${firstProductId}`);
+        }
+      });
 
       // Add alert for soon buttons Tokopedia and TikTok Shop
       const soonButtons = document.querySelectorAll('#buy-popup a.soon');
