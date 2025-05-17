@@ -1,5 +1,141 @@
 [
   {
+    "id": "vatika-rassak",
+    "title": "Vatika Rassak by Adfa Parfum",
+    "name": "Vatika Rassak",
+    "category": "Sweet Spicy Gourmand",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Vatika_Rassak.webp",
+    "reason": "Vatika Rassak adalah kisah tentang keberanian dan daya tarik. Aroma buah dan bunga di awal menciptakan kesan segar dan ceria, sementara sentuhan kopi dan almond di tengah memberikan kedalaman dan kehangatan. Akhirnya, vanilla dan kayu-kayuan menutup dengan keharuman yang elegan dan tahan lama.",
+    "description": "Vatika Rassak by Adfa Parfum adalah parfum yang menawarkan keharuman yang kaya dan kompleks dengan perpaduan aroma buah, bunga, dan rempah. Parfum ini memulai perjalanan aromatik dengan sentuhan pear, pink pepper, dan orange blossom yang memberikan kesan segar, ceria, dan sedikit pedas. Di tengahnya, aroma coffee, jasmine, bitter almond, dan licorice menyatu untuk menciptakan keharuman yang dalam dan menggoda, menggabungkan kehangatan kopi dengan kelembutan bunga dan sentuhan manis. Pada akhirnya, vanilla, patchouli, cashmere wood, dan cedar menyempurnakan parfum dengan keharuman yang hangat, kayu, dan sedikit manis, menambah dimensi yang elegan dan tahan lama.",
+    "notes": [
+      {"type": "Top", "value": "Pear, Pink Pepper, Orange Blossom"},
+      {"type": "Mid", "value": "Coffee, Jasmine, Bitter Almond, Licorice"},
+      {"type": "Base", "value": "Vanilla, Patchouli, Cashmere Wood, Cedar"}
+    ],
+    "shopeeLink": "https://s.shopee.co.id/5Kz33Q8Sga",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Vatika%20Rassak%20by%20Adfa%20Parfum%20masih%20ready%3F"
+  },
+  {
+    "id": "quercus",
+    "title": "Quercus by Adfa Parfum",
+    "name": "Quercus",
+    "category": "Woody Floral Musk",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Quercus.webp",
+    "reason": "Quercus adalah simbol keanggunan yang tidak mencolok. Aroma awal dari plum dan pepper memberikan kesan manis dan pedas yang menggoda. Violet dan gardenia di tengah menciptakan aroma bunga yang lembut, diakhiri dengan musk dan agarwood yang hangat dan bertahan lama.",
+    "description": "Quercus by Adfa Parfum adalah parfum yang memadukan keharuman buah dan bunga dengan sentuhan kayu yang mewah. Parfum ini dibuka dengan sentuhan awal dari plum dan pepper yang memberikan aroma manis dan pedas yang menggoda. Di bagian tengah, keharuman violet dan gardenia menciptakan aroma bunga yang lembut dan memikat. Diakhiri dengan sentuhan dasar musk, agarwood, dan ambergris, memberikan keharuman yang hangat, kaya, dan bertahan lama.",
+    "notes": [
+      {"type": "Top", "value": "Plum, Pepper"},
+      {"type": "Mid", "value": "Violet, Gardenia"},
+      {"type": "Base", "value": "Musk, Agarwood, Ambergris"}
+    ],
+    "shopeeLink": "https://s.shopee.co.id/qWOCs0IOM",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Quercus%20by%20Adfa%20Parfum%20masih%20ready%3F"
+  },
+  {
+    "id": "costata",
+    "title": "Costata by Adfa Parfum",
+    "name": "Costata",
+    "category": "Aromatic Woody",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Costata.webp",
+    "reason": "Costata adalah pelukan hangat di hari yang dingin. Vanilla di awal memberikan aroma manis dan hangat, lavender di tengah menenangkan, dan vetiver di akhir memberikan kesegaran yang elegan.",
+    "description": "Costata by Adfa Parfum adalah parfum yang menawarkan keharuman sederhana namun memikat, dengan kombinasi aroma yang harmonis dan menenangkan. Parfum ini dibuka dengan sentuhan awal dari vanilla yang memberikan aroma manis dan hangat. Di bagian tengah, keharuman lavender menciptakan aroma bunga yang lembut dan menenangkan. Diakhiri dengan sentuhan dasar vetiver, memberikan keharuman yang segar dan sedikit beraroma kayu, memberikan dimensi yang dalam dan elegan.",
+    "notes": [
+      {"type": "Top", "value": "Vanilla"},
+      {"type": "Mid", "value": "Lavender"},
+      {"type": "Base", "value": "Vetiver"}
+    ],
+    "shopeeLink": "https://s.shopee.co.id/10poPAzf3N",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
+  },
+  {
+    "id": "castanea",
+    "title": "Castanea by Adfa Parfum",
+    "name": "Castanea",
+    "category": "Woody Floral Sweet",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Castanea.webp",
+    "reason": "Castanea adalah perpaduan antara kelembutan dan kekuatan. Peony dan bergamot di awal memberikan kesegaran bunga, tonka bean dan sandalwood di tengah memberikan kehangatan, dan vanilla serta musk di akhir memberikan keharuman yang lembut dan tahan lama.",
+    "description": "Castanea by Adfa Parfum adalah parfum yang memadukan keharuman elegan dan menggoda. Parfum ini dibuka dengan sentuhan awal dari peony dan bergamot yang memberikan aroma segar dan bunga yang memikat. Di bagian tengah, keharuman tonka bean dan sandalwood menciptakan aroma yang kaya dan hangat. Diakhiri dengan sentuhan dasar vanilla, musk, dan patchouli, memberikan keharuman yang lembut, tahan lama, dan memikat.",
+    "notes": [
+      {"type": "Top", "value": "Peony, Bergamot"},
+      {"type": "Mid", "value": "Tonka Bean, Sandalwood"},
+      {"type": "Base", "value": "Vanilla, Musk, Patchouli"}
+    ],
+    "shopeeLink": "https://s.shopee.co.id/20iLb0vr1T",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Castanea%20by%20Adfa%20Parfum%20masih%20ready%3F"
+  },
+  {
+    "id": "fagus",
+    "title": "Fagus by Adfa Parfum",
+    "name": "Fagus",
+    "category": "Fresh Green Floral Woody",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Fagus.webp",
+    "reason": "Fagus adalah perjalanan melalui hutan yang segar dan penuh kehidupan. Aroma awal dari lavender dan mint memberikan kesegaran, bunga-bunga di tengah memberikan kelembutan, dan kayu-kayuan di akhir memberikan kehangatan yang memikat.",
+    "description": "Fagus by Adfa Parfum adalah parfum yang menggabungkan keharuman segar dan alami dengan sentuhan elegan. Parfum ini dibuka dengan sentuhan awal dari lavender, green notes, bergamot, mint, juniper, dan mandarin orange yang memberikan aroma segar dan menenangkan. Di bagian tengah, keharuman green grass, peach, jasmine, freesia, magnolia, dan orchid menciptakan aroma bunga yang lembut dan memikat. Diakhiri dengan sentuhan dasar musk, sandalwood, cedar, vanilla, amber, dan opoponax, memberikan keharuman yang hangat dan memikat.",
+    "notes": [
+      {"type": "Top", "value": "Lavender, Green Notes, Bergamot, Mint, Juniper, Mandarin Orange"},
+      {"type": "Mid", "value": "Green Grass, Peach, Jasmine, Freesia, Magnolia, Orchid"},
+      {"type": "Base", "value": "Musk, Sandalwood, Cedar, Vanilla, Amber, Opoponax"}
+    ],
+    "shopeeLink": "https://s.shopee.co.id/1B9EbTz1iO",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Fagus%20by%20Adfa%20Parfum%20masih%20ready%3F"
+  },
+  {
+    "id": "three-one",
+    "title": "Three One by Adfa Parfum",
+    "name": "Three One",
+    "category": "Oriental Gourmand Spicy",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Three_One.webp",
+    "reason": "Three One adalah aroma kepercayaan diri yang lembut namun pasti. Wangi segar di awal seperti sapaan ramah, lalu perlahan berubah menjadi kehangatan yang tenang dan maskulin. Ia tidak mencolok, tapi hadir dengan kesan yang dalam dan tak mudah dilupakan.",
+    "description": "Three One by Adfa Parfum adalah parfum yang memadukan keharuman kaya dan berlapis, dirancang untuk mereka yang menghargai kemewahan dan keanggunan. Parfum ini dibuka dengan sentuhan awal dari almond, coffee, lemon, dan cardamom yang memberikan aroma yang hangat dan menggugah selera. Di bagian tengah, keharuman Bulgarian rose, jasmine sambac, orange blossom, dan geranium menciptakan aroma bunga yang kaya dan memikat. Diakhiri dengan sentuhan dasar praline, tonka bean, leather, dan patchouli, memberikan keharuman yang dalam dan sensual.",
+    "notes": [
+      {"type": "Top", "value": "Almond, Coffee, Lemon, Cardamom"},
+      {"type": "Mid", "value": "Bulgarian Rose, Jasmine Sambac, Orange Blossom, Geranium"},
+      {"type": "Base", "value": "Praline, Tonka Bean, Leather, Patchouli"}
+    ],
+    "shopeeLink": "https://s.shopee.co.id/4L6GNImyI5",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Three%20One%20by%20Adfa%20Parfum%20masih%20ready%3F"
+  },
+  {
+    "id": "sept-romance",
+    "title": "Sept Romance by Adfa Parfum",
+    "name": "Sept Romance",
+    "category": "Floral Fruity Gourmand",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Sept_Romance.webp",
+    "reason": "Sept Romance adalah tentang momen tak terlupakan di bulan yang tenang. Manis, lembut, dan sedikit misterius. Ia seperti kenangan yang indah — ringan, tapi meninggalkan kesan yang dalam.",
+    "description": "Sept Romance by Adfa Parfum adalah parfum yang memadukan keharuman eksotis dan menggoda. Parfum ini dibuka dengan sentuhan awal dari praline, italian mandarin, sandalwood, saffron, dan orange blossom yang memberikan aroma yang manis, segar, dan sedikit pedas. Di bagian tengah, keharuman raspberry, peach, blood grapefruit, dan ambergris menciptakan aroma yang kaya dan berlapis. Diakhiri dengan sentuhan dasar peony, vanilla, dan amber, memberikan keharuman yang lembut dan tahan lama.",
+    "notes": [
+      {"type": "Top", "value": "Praline, Italian Mandarin, Sandalwood, Saffron, Orange Blossom"},
+      {"type": "Mid", "value": "Raspberry, Peach, Blood Grapefruit, Ambergris"},
+      {"type": "Base", "value": "Peony, Vanilla, Amber"}
+    ],
+    "shopeeLink": "https://s.shopee.co.id/La7bx2CPB",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Sept%20Romance%20by%20Adfa%20Parfum%20masih%20ready%3F"
+  },
+  {
+    "id": "feb-man",
+    "title": "Feb Man by Adfa Parfum",
+    "name": "Feb Man",
+    "category": "Fresh Woody Aquatic",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/Feb_Man.webp",
+    "reason": "Bayangkan hembusan angin pagi yang segar, membawa semangat baru saat kamu melangkah keluar dari pintu rumah. Itu kesan pertama dari Feb Man, ringan, bersih, dan penuh energi. Seiring waktu berjalan, aromanya berubah. Seperti ombak yang datang satu demi satu, wangi ini membawa kesan kuat dan bebas, membuat setiap langkah terasa lebih pasti. Ada rasa petualangan, ada ketegasan dalam setiap hembusan aroma. Dan ketika hari mulai beranjak senja, wangi itu menghangat. Bukan sekadar keharuman, tapi seperti genggaman erat — tenang, dalam, dan meninggalkan jejak yang sulit dilupakan. Feb Man bukan hanya parfum. Ia adalah perjalanan, dari awal yang segar hingga akhir yang penuh wibawa.",
+    "description": "Feb Man by Adfa Parfum adalah parfum yang dirancang khusus untuk mereka yang menginginkan kesegaran dan ketangguhan dalam satu botol. Parfum ini dibuka dengan sentuhan awal dari bergamot, lotus, dan litchi yang memberikan aroma segar dan eksotis. Di bagian tengah, keharuman sea notes, Brazilian rosewood, dan orange menciptakan aroma yang maskulin dan energik. Diakhiri dengan sentuhan dasar tonka bean, musk, amber, dan benzoin, memberikan keharuman yang hangat dan memikat.",
+    "notes": [
+      {"type": "Top", "value": "Bergamot, Lotus, Litchi"},
+      {"type": "Mid", "value": "Sea Notes, Brazilian Rosewood, Orange"},
+      {"type": "Base", "value": "Tonka Bean, Musk, Amber, Benzoin"}
+    ],
+    "shopeeLink": "https://s.shopee.co.id/xHDL3T59",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Feb%20Man%20by%20Adfa%20Parfum%20masih%20ready%3F"
+  },
+  {
     "id": "24-women",
     "title": "24 Women by Adfa Parfum",
     "name": "24 Women",
@@ -23,168 +159,15 @@
     "category": "Floral Green Fresh",
     "price": "Rp 70.000",
     "image": "../assets/images/products/BG_Black&Wood/27_Girl.webp",
-    "reason": "Alasan memilih aroma 27 Girl ... (isi sesuai produk)",
-    "description": "Deskripsi produk 27 Girl ... (isi sesuai produk)",
+    "reason": "27 Girl menggambarkan semangat muda yang ceria dan percaya diri. Manis dan segar, ia mengingatkan kita pada hari-hari penuh harapan dan tawa yang tulus. Aroma yang ringan namun berkarakter.",
+    "description": "27 Girl by Adfa Parfum adalah parfum yang dirancang untuk mereka yang dinamis dan penuh energi. Parfum ini dibuka dengan sentuhan awal dari pepper, bergamot, pineapple, dan floral notes yang memberikan aroma segar dan memikat. Di bagian tengah, keharuman patchouli, Moroccan jasmine, dan cucumber menciptakan aroma yang eksotis dan menenangkan. Diakhiri dengan sentuhan dasar musk, ambroxan, oak moss, birch, dan freesia, memberikan keharuman yang lembut dan bertahan lama.",
     "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
+      {"type": "Top", "value": "Pepper, Bergamot, Pineapple, Floral Notes"},
+      {"type": "Mid", "value": "Patchouli, Moroccan Jasmine, Cucumber"},
+      {"type": "Base", "value": "Musk, Ambroxan, Oak Moss, Birch, Freesia"}
     ],
-    "shopeeLink": "https://s.shopee.co.id/27GirlLink",
+    "shopeeLink": "https://s.shopee.co.id/gCy0Z0vjL",
     "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%2027%20Girl%20by%20Adfa%20Parfum%20masih%20ready%3F"
-  },
-  {
-    "id": "castanea",
-    "title": "Castanea by Adfa Parfum",
-    "name": "Castanea",
-    "category": "Woody Floral Sweet",
-    "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/Castanea.webp",
-    "reason": "Alasan memilih aroma Castanea ... (isi sesuai produk)",
-    "description": "Deskripsi produk Castanea ... (isi sesuai produk)",
-    "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
-    ],
-    "shopeeLink": "https://s.shopee.co.id/CastaneaLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Castanea%20by%20Adfa%20Parfum%20masih%20ready%3F"
-  },
-  {
-    "id": "costata",
-    "title": "Costata by Adfa Parfum",
-    "name": "Costata",
-    "category": "Aromatic Woody",
-    "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/Costata.webp",
-    "reason": "Alasan memilih aroma Costata ... (isi sesuai produk)",
-    "description": "Deskripsi produk Costata ... (isi sesuai produk)",
-    "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
-    ],
-    "shopeeLink": "https://s.shopee.co.id/CostataLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
-  },
-  {
-    "id": "fagus",
-    "title": "Fagus by Adfa Parfum",
-    "name": "Fagus",
-    "category": "Fresh Green Floral Woody",
-    "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/Fagus.webp",
-    "reason": "Alasan memilih aroma Fagus ... (isi sesuai produk)",
-    "description": "Deskripsi produk Fagus ... (isi sesuai produk)",
-    "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
-    ],
-    "shopeeLink": "https://s.shopee.co.id/FagusLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
-  },
-  {
-    "id": "mw-royal",
-    "title": "MW Royal by Adfa Parfum",
-    "name": "MW Royal",
-    "category": "Woody Amber Aromatic",
-    "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/MW_Royal.webp",
-    "reason": "Alasan memilih aroma MW Royal ... (isi sesuai produk)",
-    "description": "Deskripsi produk MW Royal ... (isi sesuai produk)",
-    "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
-    ],
-    "shopeeLink": "https://s.shopee.co.id/MWRoyalLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
-  },
-  {
-    "id": "ng-inspiration",
-    "title": "NG Inspiration by Adfa Parfum",
-    "name": "NG Inspiration",
-    "category": "Sweet Gourmand Powdery",
-    "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/NG_Inspiration.webp",
-    "reason": "Alasan memilih aroma NG Inspiration ... (isi sesuai produk)",
-    "description": "Deskripsi produk NG Inspiration ... (isi sesuai produk)",
-    "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
-    ],
-    "shopeeLink": "https://s.shopee.co.id/NGInspirationLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
-  },
-  {
-    "id": "nn-good-women",
-    "title": "NN Good Women by Adfa Parfum",
-    "name": "NN Good Women",
-    "category": "Oriental Floral Gourmand",
-    "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/NN_Good_Women.webp",
-    "reason": "Alasan memilih aroma NN Good Women ... (isi sesuai produk)",
-    "description": "Deskripsi produk NN Good Women ... (isi sesuai produk)",
-    "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
-    ],
-    "shopeeLink": "https://s.shopee.co.id/NNGoodWomenLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
-  },
-  {
-    "id": "quercus",
-    "title": "Quercus by Adfa Parfum",
-    "name": "Quercus",
-    "category": "Woody Floral Musk",
-    "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/Quercus.webp",
-    "reason": "Alasan memilih aroma Quercus ... (isi sesuai produk)",
-    "description": "Deskripsi produk Quercus ... (isi sesuai produk)",
-    "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
-    ],
-    "shopeeLink": "https://s.shopee.co.id/QuercusLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
-  },
-  {
-    "id": "rn-original",
-    "title": "RN Original by Adfa Parfum",
-    "name": "RN Original",
-    "category": "Spicy Woody Oriental",
-    "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/RN_Original.webp",
-    "reason": "Alasan memilih aroma RN Original ... (isi sesuai produk)",
-    "description": "Deskripsi produk RN Original ... (isi sesuai produk)",
-    "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
-    ],
-    "shopeeLink": "https://s.shopee.co.id/RNOriginalLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
-  },
-  {
-    "id": "sept-romance",
-    "title": "Sept Romance by Adfa Parfum",
-    "name": "Sept Romance",
-    "category": "Floral Fruity Gourmand",
-    "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/Sept_Romance.webp",
-    "reason": "Alasan memilih aroma Sept Romance ... (isi sesuai produk)",
-    "description": "Deskripsi produk Sept Romance ... (isi sesuai produk)",
-    "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
-    ],
-    "shopeeLink": "https://s.shopee.co.id/SeptRomanceLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
   },
   {
     "id": "sw-best",
@@ -193,65 +176,82 @@
     "category": "Woody Aromatic Fresh",
     "price": "Rp 70.000",
     "image": "../assets/images/products/BG_Black&Wood/SW_Best.webp",
-    "reason": "Alasan memilih aroma SW Best ... (isi sesuai produk)",
-    "description": "Deskripsi produk SW Best ... (isi sesuai produk)",
+    "reason": "SW Best adalah wangi yang tidak mencari perhatian, tapi justru mencuri perhatian. Aroma ini terasa bersih dan sederhana, namun menyimpan kedalaman. Ia seperti seseorang yang tenang tapi memikat, hadir dengan cara yang membuat orang ingin lebih dekat.",
+    "description": "SW Best by Adfa Parfum menghadirkan perpaduan aroma yang berkelas, dimulai dari segarnya cardamom, fig, dan black tea, yang kemudian berkembang dengan sentuhan iris dan vetiver. Base notes dari sandalwood dan tonka bean memberikan keharuman lembut yang tahan lama.",
     "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
+      {"type": "Top", "value": "Cardamom, Fig, Black Tea"},
+      {"type": "Mid", "value": "Iris, Vetiver"},
+      {"type": "Base", "value": "Sandalwood, Tonka Bean"}
     ],
-    "shopeeLink": "https://s.shopee.co.id/SWBestLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
+    "shopeeLink": "https://s.shopee.co.id/60EjqfViCH",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20SW%20Best%20by%20Adfa%20Parfum%20masih%20ready%3F"
   },
   {
-    "id": "three-one",
-    "title": "Three One by Adfa Parfum",
-    "name": "Three One",
-    "category": "Oriental Gourmand Spicy",
+    "id": "ng-inspiration",
+    "title": "NG Inspiration by Adfa Parfum",
+    "name": "NG Inspiration",
+    "category": "Sweet Gourmand Powdery",
     "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/Three_One.webp",
-    "reason": "Alasan memilih aroma Three One ... (isi sesuai produk)",
-    "description": "Deskripsi produk Three One ... (isi sesuai produk)",
+    "image": "../assets/images/products/BG_Black&Wood/NG_Inspiration.webp",
+    "reason": "NG Inspiration adalah tentang kepercayaan diri yang lahir dari ketenangan. Wangi yang lembut tapi dalam, seperti motivasi yang datang dari hati. Ia tidak terburu-buru, tapi hadir dengan keyakinan dan inspirasi yang kuat.",
+    "description": "Menghadirkan wangi yang manis dan lembut ada di NG Inspiration. Memadukan aroma creamy dari coconut, vanilla, dan ice cream di awal yang segar dan lezat. Diikuti oleh wangi floral yang dingin dari snow dan freesia di middle notes, serta ditutup dengan sentuhan hangat dari woodsy notes.",
     "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
+      {"type": "Top", "value": "Coconut, Vanilla, Ice Cream"},
+      {"type": "Mid", "value": "Snow, Freesia"},
+      {"type": "Base", "value": "Woodsy Notes"}
     ],
-    "shopeeLink": "https://s.shopee.co.id/ThreeOneLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
+    "shopeeLink": "https://s.shopee.co.id/BGhPe2pkA",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20NG%20Inspiration%20by%20Adfa%20Parfum%20masih%20ready%3F"
   },
   {
-    "id": "vatika-rassak",
-    "title": "Vatika Rassak by Adfa Parfum",
-    "name": "Vatika Rassak",
-    "category": "Sweet Spicy Gourmand",
+    "id": "nn-good-women",
+    "title": "NN Good Women by Adfa Parfum",
+    "name": "NN Good Women",
+    "category": "Oriental Floral Gourmand",
     "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/Vatika_Rassak.webp",
-    "reason": "Alasan memilih aroma Vatika Rassak ... (isi sesuai produk)",
-    "description": "Deskripsi produk Vatika Rassak ... (isi sesuai produk)",
+    "image": "../assets/images/products/BG_Black&Wood/NN_Good_Women.webp",
+    "reason": "NN Good Women adalah tentang kelembutan yang kuat. Aromanya seperti pelukan hangat — tidak hanya harum, tapi juga menenangkan. Ia hadir dengan kasih yang tulus dan pesona yang lembut.",
+    "description": "NN Good Women by Adfa Parfum adalah parfum dengan keharuman yang mewah dan elegan. Dibuka dengan top notes yang memikat dari almond, coffee, dan sentuhan segar bergamot serta lemon, parfum ini langsung menarik perhatian. Middle notes dengan tuberose, jasmine sambac, dan orange blossom memberikan wangi floral yang kaya, sementara base notes dari tonka bean, vanilla, dan praline menutup dengan sentuhan manis dan hangat.",
     "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
+      {"type": "Top", "value": "Almond, Coffee, Bergamot, Lemon"},
+      {"type": "Mid", "value": "Tuberose, Jasmine Sambac, Orange Blossom, Orris, Bulgarian Rose"},
+      {"type": "Base", "value": "Tonka Bean, Cacao, Vanilla, Praline, Sandalwood, Musk, Amber, Cashmere Wood, Cinnamon, Patchouli, Cedar"}
     ],
-    "shopeeLink": "https://s.shopee.co.id/VatikaRassakLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
+    "shopeeLink": "https://s.shopee.co.id/8fFV1TwhTk",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20NN%20Good%20Women%20by%20Adfa%20Parfum%20masih%20ready%3F"
   },
   {
-    "id": "feb-man",
-    "title": "Feb Man by Adfa Parfum",
-    "name": "Feb Man",
-    "category": "Woody Aromatic Fresh",
+    "id": "rn-original",
+    "title": "RN Original by Adfa Parfum",
+    "name": "RN Original",
+    "category": "Spicy Woody Oriental",
     "price": "Rp 70.000",
-    "image": "../assets/images/products/BG_Black&Wood/Feb_Man.webp",
-    "reason": "Alasan memilih aroma Feb Man ... (isi sesuai produk)",
-    "description": "Deskripsi produk Feb Man ... (isi sesuai produk)",
+    "image": "../assets/images/products/BG_Black&Wood/RN_Original.webp",
+    "reason": "RN Original adalah tentang kembali ke diri sendiri. Aroma ini jujur, bersih, dan tak dibuat-buat. Seperti udara pagi yang segar, wangi ini memberi ruang untuk bernapas dan merasa damai.",
+    "description": "RN Original by Adfa Parfum adalah parfum dengan aroma yang memikat dan kaya. Kombinasi top notes dari cloves, pink pepper, dan orange blossom memberikan sentuhan spicy dan segar di awal, sementara heart notes yang meliputi chestnut, guaiac wood, dan lavender menambahkan dimensi kehangatan dan keunikan. Base notes dari vanilla, peru balsam, dan amber menghadirkan keharuman yang dalam dan bertahan lama.",
     "notes": [
-      {"type": "Top", "value": "Isi notes top"},
-      {"type": "Mid", "value": "Isi notes mid"},
-      {"type": "Base", "value": "Isi notes base"}
+      {"type": "Top", "value": "Cloves, Pink Pepper, Orange Blossom, Heliotrope, Cumin, Bergamot"},
+      {"type": "Mid", "value": "Chestnut, Guaiac Wood, Juniper, Bitter Almond, Lavender, Jasmine"},
+      {"type": "Base", "value": "Vanilla, Peru Balsam, Cashmeran, Sandalwood, Amber"}
     ],
-    "shopeeLink": "https://s.shopee.co.id/FebManLink",
-    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20Costata%20by%20Adfa%20Parfum%20masih%20ready%3F"
+    "shopeeLink": "https://s.shopee.co.id/VtXoG1Z4C",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20RN%20Original%20by%20Adfa%20Parfum%20masih%20ready%3F"
+  },
+  {
+    "id": "mw-royal",
+    "title": "MW Royal by Adfa Parfum",
+    "name": "MW Royal",
+    "category": "Woody Amber Aromatic",
+    "price": "Rp 70.000",
+    "image": "../assets/images/products/BG_Black&Wood/MW_Royal.webp",
+    "reason": "MW Royal adalah tentang keanggunan yang tak terbantahkan. Wangi ini mewah tapi tidak berlebihan, berwibawa tapi tetap hangat. Seperti raja yang rendah hati — kuat tapi tidak sombong.",
+    "description": "MW Royal by Adfa Parfum merupakan perpaduan wangi yang mewah dan memikat. Top notes dibuka dengan campuran menyegarkan dari saffron, jasmine, star anise, dan buah-buahan seperti lemon, bergamot, serta apple. Heart notes yang kaya dengan amberwood, ambergris, lavender, dan violet memberikan kesan elegan yang berlapis. Base notes yang dalam, menampilkan fir resin, cedar, sugar, ambroxan, oakmoss, patchouli, vanilla, tonka bean, dan musk, menutup dengan keharuman hangat yang tahan lama.",
+    "notes": [
+      {"type": "Top", "value": "Saffron, Jasmine, Star Anise, Lemon, Bergamot, Apple"},
+      {"type": "Mid", "value": "Amberwood, Ambergris, Hedione, Lavender, Violet"},
+      {"type": "Base", "value": "Fir Resin, Cedar, Sugar, Ambroxan, Oakmoss, Patchouli, Vanilla, Tonka Bean, Musk"}
+    ],
+    "shopeeLink": "https://s.shopee.co.id/4AmqAznbd4",
+    "whatsappLink": "https://wa.me/6285179981122?text=Hai%2C%20Apakah%20MW%20Royal%20by%20Adfa%20Parfum%20masih%20ready%3F"
   }
 ]
