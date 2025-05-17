@@ -127,6 +127,22 @@ a {
       text-align: left;
       list-style-position: inside;
     }
+    /* Align colon vertically after note type */
+    .description-section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+    .description-section ul li .note-type {
+      min-width: 40px; /* fixed width for note type */
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+    .description-section ul li .colon {
+      min-width: 10px;
+      font-weight: 700;
+      text-align: center;
+    }
     @media (max-width: 600px) {
       .description-section ul,
       .description-section ul li {
@@ -862,12 +878,12 @@ a {
         productDescription.textContent = product.description;
 
         // Clear and populate notes list
-        productNotes.innerHTML = '';
-        product.notes.forEach(note => {
-          const li = document.createElement('li');
-          li.innerHTML = `<strong>${note.type}:</strong> ${note.value}`;
-          productNotes.appendChild(li);
-        });
+          productNotes.innerHTML = '';
+          product.notes.forEach(note => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span class="note-type">${note.type}</span><span class="colon">:</span> ${note.value}`;
+            productNotes.appendChild(li);
+          });
 
         // Update WA chat link with product name and dynamic whatsapp link if available
         if (product.whatsappLink) {
