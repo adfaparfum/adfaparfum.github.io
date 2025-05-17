@@ -869,8 +869,13 @@ a {
           productNotes.appendChild(li);
         });
 
-        // Update WA chat link with product name
-        btnChat.href = `https://wa.me/6285179981122?text=Hai%2C%20Apakah%20${encodeURIComponent(product.name)}%20by%20Adfa%20Parfum%20masih%20ready%3F`;
+        // Update WA chat link with product name and dynamic whatsapp link if available
+        if (product.whatsappLink) {
+          btnChat.href = product.whatsappLink;
+        } else {
+          const whatsappNumber = '6285179981122';
+          btnChat.href = `https://wa.me/${whatsappNumber}?text=Hai%2C%20Apakah%20${encodeURIComponent(product.name)}%20by%20Adfa%20Parfum%20masih%20ready%3F`;
+        }
 
         // Show buy popup on buy button click
         btnBuy.onclick = () => {
