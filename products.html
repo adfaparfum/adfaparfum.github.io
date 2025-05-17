@@ -409,7 +409,6 @@ a {
           <a href="https://s.shopee.co.id/4VPgZbmKx6" target="_blank" rel="noopener noreferrer" style="background:#FE5722; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Shopee</a>
           <a href="https://tokopedia.com/adfaparfum" target="_blank" rel="noopener noreferrer" class="soon" style="background:#03AC0E; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Tokopedia <span style="font-size: 0.75rem; font-weight: normal;">soon 😊</span></a>
           <a href="https://tiktok.com/@adfaparfum" target="_blank" rel="noopener noreferrer" class="soon tiktok-shop" style="background:#000000; color:#ffffff; border: 2px solid #ffffff; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">TikTok Shop <span style="font-size: 0.75rem; font-weight: normal;">soon 😊</span></a>
-          <a href="https://wa.me/6285179981122?text=Hai%2C%20Apakah%2024%20Women%20by%20Adfa%20Parfum%20masih%20ready%3F" target="_blank" rel="noopener noreferrer" style="background:#25D366; color:#ffffff; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; display: inline-block; text-align: center; text-decoration: none;">Chat via Whatsapp</a>
       <button id="buy-popup-close" style="background:#d9b45c; color:#000000; border:none; border-radius:4px; padding:0.75rem; font-weight:700; cursor:pointer; margin-top:1rem;">Tutup</button>
     </div>
   </div>
@@ -823,6 +822,8 @@ a {
             loadProduct(productId);
             // productSelect.value = productId; // Removed setting value of product selector dropdown
           }
+          // Store current product for use in buy button click
+          window.currentProduct = null;
         })
         .catch(error => {
           console.error('Error loading products data:', error);
@@ -844,6 +845,9 @@ a {
       function loadProduct(productId, pushState = true) {
         const product = productsData.find(p => p.id === productId);
         if (!product) return;
+
+        // Store current product globally for buy button use
+        window.currentProduct = product;
 
         // Update page title
         document.title = product.title;
@@ -870,6 +874,12 @@ a {
 
         // Show buy popup on buy button click
         btnBuy.onclick = () => {
+          // Set Shopee link dynamically based on current product
+          const shopeeLink = currentProduct?.shopeeLink || 'https://s.shopee.co.id/4VPgZbmKx6';
+          const shopeeAnchor = document.querySelector('#buy-popup a[href^="https://s.shopee.co.id"]');
+          if (shopeeAnchor) {
+            shopeeAnchor.href = shopeeLink;
+          }
           buyPopupOverlay.style.display = 'flex';
         };
 
