@@ -129,6 +129,11 @@
       <!-- Product cards will be dynamically injected here -->
     </section>
     <style>
+      #product-cards-container .product-card:hover {
+        box-shadow: 0 0 5px 1px #d9b45c;
+        transform: scale(1.01);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
       @media (max-width: 768px) {
         #product-cards-container {
           flex-direction: column !important;
