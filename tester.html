@@ -128,6 +128,19 @@
     <section id="product-cards-container" aria-label="Product Cards" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: nowrap;">
       <!-- Product cards will be dynamically injected here -->
     </section>
+    <style>
+      @media (max-width: 768px) {
+        #product-cards-container {
+          flex-direction: column !important;
+          align-items: center !important;
+        }
+        #product-cards-container .product-card {
+          width: 100% !important;
+          max-width: 300px;
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
   </main>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
