@@ -132,59 +132,66 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('product-cards-container');
-      fetch('products.json')
-        .then(response => response.json())
-        .then(products => {
-          const testerIds = ['Bloom', 'Breeze', 'Ember'];
-          const testerProducts = products.filter(p => testerIds.includes(p.name));
-          testerProducts.forEach(product => {
-            const card = document.createElement('article');
-            card.className = 'product-card';
-            card.style.border = '1px solid #d9b45c';
-            card.style.borderRadius = '8px';
-            card.style.padding = '1rem';
-            card.style.width = '32%';
-            card.style.textAlign = 'center';
-            card.style.color = '#d9b45c';
-            card.style.backgroundColor = '#000';
-            card.style.cursor = 'pointer';
-            card.tabIndex = 0;
-            card.setAttribute('role', 'button');
-            card.setAttribute('aria-pressed', 'false');
+        const testerProducts = [
+        {
+          id: 'bloom',
+          name: 'Bloom Discovery Kit',
+          image: 'assets/images/products/Tester/Bloom.webp'
+        },
+        {
+          id: 'breeze',
+          name: 'Breeze Discovery Kit',
+          image: 'assets/images/products/Tester/Breeze.webp'
+        },
+        {
+          id: 'ember',
+          name: 'Ember Discovery Kit',
+          image: 'assets/images/products/Tester/Ember.webp'
+        }
+      ];
+      testerProducts.forEach(product => {
+        const card = document.createElement('article');
+        card.className = 'product-card';
+        card.style.border = '1px solid #d9b45c';
+        card.style.borderRadius = '8px';
+        card.style.padding = '1rem';
+        card.style.width = '32%';
+        card.style.textAlign = 'center';
+        card.style.color = '#d9b45c';
+        card.style.backgroundColor = '#000';
+        card.style.cursor = 'pointer';
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-pressed', 'false');
 
-            card.addEventListener('click', () => {
-              window.location.href = `#${product.id}`;
-            });
-            card.addEventListener('keydown', (e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                card.click();
-              }
-            });
-
-            const img = document.createElement('img');
-            img.src = product.image.replace('../', '');
-            img.alt = `${product.name} by Adfa Parfum`;
-            img.style.width = '100%';
-            img.style.borderRadius = '6px';
-            img.style.marginBottom = '0.5rem';
-
-            const title = document.createElement('h3');
-            title.style.margin = '0';
-            title.style.fontWeight = '700';
-            title.style.lineHeight = '1.2';
-            title.innerHTML = `${product.name} <br>by<br> Adfa Parfum`;
-
-            card.appendChild(img);
-            card.appendChild(title);
-            container.appendChild(card);
-          });
-        })
-        .catch(error => {
-          console.error('Error loading products:', error);
+        card.addEventListener('click', () => {
+          window.location.href = `#${product.id}`;
         });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+          }
+        });
+
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = `${product.name} by Adfa Parfum`;
+        img.style.width = '100%';
+        img.style.borderRadius = '6px';
+        img.style.marginBottom = '0.5rem';
+
+        const title = document.createElement('h3');
+        title.style.margin = '0';
+        title.style.fontWeight = '700';
+        title.style.lineHeight = '1.2';
+        title.innerHTML = `${product.name} <br>by<br> Adfa Parfum`;
+
+        card.appendChild(img);
+        card.appendChild(title);
+        container.appendChild(card);
+      });
     });
   </script>
-  </main>
 </body>
 </html>
