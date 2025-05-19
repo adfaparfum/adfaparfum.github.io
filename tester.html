@@ -156,27 +156,116 @@
       <p id="modal-description"></p>
       <div id="modal-purchase" style="margin-top: 1rem;">
         <h3>Beli Sekarang:</h3>
-        <ul style="list-style: none; padding: 0;">
-          <li><a id="modal-whatsapp" href="#" target="_blank" style="color: #d9b45c; text-decoration: underline;">Chat via WhatsApp</a></li>
-          <li><a id="modal-shopee" href="#" target="_blank" style="color: #d9b45c; text-decoration: underline;">Shopee</a></li>
-        </ul>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <button id="modal-whatsapp" style="background-color: #25D366; color: #fff; border: none; border-radius: 6px; padding: 0.5rem 1rem; cursor: pointer; font-weight: 700; flex: 1; min-width: 120px; transition: filter 0.3s ease;">Chat via WhatsApp</button>
+          <button id="modal-shopee" style="background-color: #FF5722; color: #fff; border: none; border-radius: 6px; padding: 0.5rem 1rem; cursor: pointer; font-weight: 700; flex: 1; min-width: 120px; transition: filter 0.3s ease;">Shopee</button>
+        </div>
       </div>
+      <style>
+        #modal-whatsapp:hover {
+          filter: brightness(0.9);
+        }
+        #modal-shopee:hover {
+          filter: brightness(0.9);
+        }
+      </style>
     </div>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const container = document.getElementById('product-cards-container');
-      const modal = document.getElementById('product-modal');
-      const modalTitle = document.getElementById('modal-title');
-      const modalDescription = document.getElementById('modal-description');
-      const modalWhatsapp = document.getElementById('modal-whatsapp');
-      const modalShopee = document.getElementById('modal-shopee');
-      const modalClose = document.getElementById('modal-close');
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const container = document.getElementById('product-cards-container');
+          const modal = document.getElementById('product-modal');
+          const modalTitle = document.getElementById('modal-title');
+          const modalDescription = document.getElementById('modal-description');
+          const modalWhatsapp = document.getElementById('modal-whatsapp');
+          const modalShopee = document.getElementById('modal-shopee');
+          const modalClose = document.getElementById('modal-close');
 
-      fetch('tester.json')
-        .then(response => response.json())
-        .then(testerProducts => {
+          fetch('tester.json')
+            .then(response => response.json())
+            .then(testerProducts => {
+              testerProducts.forEach(product => {
+                const card = document.createElement('article');
+                card.className = 'product-card';
+                card.style.border = '1px solid #d9b45c';
+                card.style.borderRadius = '8px';
+                card.style.padding = '1rem';
+                card.style.width = '32%';
+                card.style.textAlign = 'center';
+                card.style.color = '#d9b45c';
+                card.style.backgroundColor = '#000';
+                card.style.cursor = 'pointer';
+                card.tabIndex = 0;
+                card.setAttribute('role', 'button');
+                card.setAttribute('aria-pressed', 'false');
+
+                card.addEventListener('click', () => {
+                  openModal(product);
+                });
+                card.addEventListener('keydown', (e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                  }
+                });
+
+                const img = document.createElement('img');
+                img.src = product.image;
+                img.alt = `${product.name} by Adfa Parfum`;
+                img.style.width = '100%';
+                img.style.borderRadius = '6px';
+                img.style.marginBottom = '0.5rem';
+
+                const title = document.createElement('h3');
+                title.style.margin = '0';
+                title.style.fontWeight = '700';
+                title.style.lineHeight = '1.2';
+                title.innerHTML = `${product.name} <br>by<br> Adfa Parfum`;
+
+                card.appendChild(img);
+                card.appendChild(title);
+                container.appendChild(card);
+              });
+            });
+
+          function openModal(product) {
+            modalTitle.textContent = product.name;
+            modalDescription.textContent = product.description;
+            // Remove href setting since these are buttons now
+            // modalWhatsapp.href = product.whatsappLink;
+            // modalShopee.href = product.shopeeLink;
+            modal.style.display = 'block';
+            modal.setAttribute('aria-hidden', 'false');
+
+            // Set onclick handlers for buttons to open links in new tabs
+            modalWhatsapp.onclick = () => {
+              window.open(product.whatsappLink, '_blank');
+            };
+            modalShopee.onclick = () => {
+              window.open(product.shopeeLink, '_blank');
+            };
+          }
+
+          function closeModal() {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+          }
+
+          modalClose.addEventListener('click', closeModal);
+
+          window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+              closeModal();
+            }
+          });
+
+          window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+              closeModal();
+            }
+          });
+
           testerProducts.forEach(product => {
             const card = document.createElement('article');
             card.className = 'product-card';
@@ -220,78 +309,6 @@
             container.appendChild(card);
           });
         });
-
-      function openModal(product) {
-        modalTitle.textContent = product.name;
-        modalDescription.textContent = product.description;
-        modalWhatsapp.href = product.whatsappLink;
-        modalShopee.href = product.shopeeLink;
-        modal.style.display = 'block';
-        modal.setAttribute('aria-hidden', 'false');
-      }
-
-      function closeModal() {
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden', 'true');
-      }
-
-      modalClose.addEventListener('click', closeModal);
-
-      window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-          closeModal();
-        }
-      });
-
-      window.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && modal.style.display === 'block') {
-          closeModal();
-        }
-      });
-
-      testerProducts.forEach(product => {
-        const card = document.createElement('article');
-        card.className = 'product-card';
-        card.style.border = '1px solid #d9b45c';
-        card.style.borderRadius = '8px';
-        card.style.padding = '1rem';
-        card.style.width = '32%';
-        card.style.textAlign = 'center';
-        card.style.color = '#d9b45c';
-        card.style.backgroundColor = '#000';
-        card.style.cursor = 'pointer';
-        card.tabIndex = 0;
-        card.setAttribute('role', 'button');
-        card.setAttribute('aria-pressed', 'false');
-
-        card.addEventListener('click', () => {
-          openModal(product);
-        });
-        card.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            card.click();
-          }
-        });
-
-        const img = document.createElement('img');
-        img.src = product.image;
-        img.alt = `${product.name} by Adfa Parfum`;
-        img.style.width = '100%';
-        img.style.borderRadius = '6px';
-        img.style.marginBottom = '0.5rem';
-
-        const title = document.createElement('h3');
-        title.style.margin = '0';
-        title.style.fontWeight = '700';
-        title.style.lineHeight = '1.2';
-        title.innerHTML = `${product.name} <br>by<br> Adfa Parfum`;
-
-        card.appendChild(img);
-        card.appendChild(title);
-        container.appendChild(card);
-      });
-    });
-  </script>
+      </script>
 </body>
 </html>
