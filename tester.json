@@ -1,0 +1,26 @@
+[
+  {
+    "id": "bloom",
+    "name": "Bloom Discovery Kit",
+    "image": "assets/images/products/Tester/Bloom.webp",
+    "description": "Deskripsi Produk: Aroma segar dan bunga yang memikat, cocok untuk hari-hari cerah.",
+    "whatsappLink": "https://wa.me/6281234567890?text=Hai%2C%20Apakah%20Bloom%20Discovery%20Kit%20masih%20ready%3F",
+    "shopeeLink": "https://shopee.co.id/bloom-discovery-kit"
+  },
+  {
+    "id": "breeze",
+    "name": "Breeze Discovery Kit",
+    "image": "assets/images/products/Tester/Breeze.webp",
+    "description": "Deskripsi Produk: Aroma ringan dan menyegarkan, membawa kesejukan alami.",
+    "whatsappLink": "https://wa.me/6281234567891?text=Hai%2C%20Apakah%20Breeze%20Discovery%20Kit%20masih%20ready%3F",
+    "shopeeLink": "https://shopee.co.id/breeze-discovery-kit"
+  },
+  {
+    "id": "ember",
+    "name": "Ember Discovery Kit",
+    "image": "assets/images/products/Tester/Ember.webp",
+    "description": "Deskripsi Produk: Aroma hangat dan menggoda, sempurna untuk malam yang istimewa.",
+    "whatsappLink": "https://wa.me/6281234567892?text=Hai%2C%20Apakah%20Ember%20Discovery%20Kit%20masih%20ready%3F",
+    "shopeeLink": "https://shopee.co.id/ember-discovery-kit"
+  }
+]

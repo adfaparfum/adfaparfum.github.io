@@ -174,32 +174,52 @@
       const modalShopee = document.getElementById('modal-shopee');
       const modalClose = document.getElementById('modal-close');
 
-      const testerProducts = [
-        {
-          id: 'bloom',
-          name: 'Bloom Discovery Kit',
-          image: 'assets/images/products/Tester/Bloom.webp',
-          description: 'Deskripsi Produk: Aroma segar dan bunga yang memikat, cocok untuk hari-hari cerah.',
-          whatsappLink: 'https://wa.me/6281234567890?text=Hai%2C%20Apakah%20Bloom%20Discovery%20Kit%20masih%20ready%3F',
-          shopeeLink: 'https://shopee.co.id/bloom-discovery-kit'
-        },
-        {
-          id: 'breeze',
-          name: 'Breeze Discovery Kit',
-          image: 'assets/images/products/Tester/Breeze.webp',
-          description: 'Deskripsi Produk: Aroma ringan dan menyegarkan, membawa kesejukan alami.',
-          whatsappLink: 'https://wa.me/6281234567891?text=Hai%2C%20Apakah%20Breeze%20Discovery%20Kit%20masih%20ready%3F',
-          shopeeLink: 'https://shopee.co.id/breeze-discovery-kit'
-        },
-        {
-          id: 'ember',
-          name: 'Ember Discovery Kit',
-          image: 'assets/images/products/Tester/Ember.webp',
-          description: 'Deskripsi Produk: Aroma hangat dan menggoda, sempurna untuk malam yang istimewa.',
-          whatsappLink: 'https://wa.me/6281234567892?text=Hai%2C%20Apakah%20Ember%20Discovery%20Kit%20masih%20ready%3F',
-          shopeeLink: 'https://shopee.co.id/ember-discovery-kit'
-        }
-      ];
+      fetch('tester.json')
+        .then(response => response.json())
+        .then(testerProducts => {
+          testerProducts.forEach(product => {
+            const card = document.createElement('article');
+            card.className = 'product-card';
+            card.style.border = '1px solid #d9b45c';
+            card.style.borderRadius = '8px';
+            card.style.padding = '1rem';
+            card.style.width = '32%';
+            card.style.textAlign = 'center';
+            card.style.color = '#d9b45c';
+            card.style.backgroundColor = '#000';
+            card.style.cursor = 'pointer';
+            card.tabIndex = 0;
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-pressed', 'false');
+
+            card.addEventListener('click', () => {
+              openModal(product);
+            });
+            card.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                card.click();
+              }
+            });
+
+            const img = document.createElement('img');
+            img.src = product.image;
+            img.alt = `${product.name} by Adfa Parfum`;
+            img.style.width = '100%';
+            img.style.borderRadius = '6px';
+            img.style.marginBottom = '0.5rem';
+
+            const title = document.createElement('h3');
+            title.style.margin = '0';
+            title.style.fontWeight = '700';
+            title.style.lineHeight = '1.2';
+            title.innerHTML = `${product.name} <br>by<br> Adfa Parfum`;
+
+            card.appendChild(img);
+            card.appendChild(title);
+            container.appendChild(card);
+          });
+        });
 
       function openModal(product) {
         modalTitle.textContent = product.name;
