@@ -362,10 +362,22 @@ body {
     }
   }
 
-.popup-content h3 {
-  color: #d9b45c;
-  margin-bottom: 20px;
-}
+  .popup-content h3 {
+    color: #d9b45c;
+    margin-bottom: 20px;
+  }
+
+  #popupMarketplace .popup-content p {
+    white-space: nowrap;
+    margin: 0 0 20px 0;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    #popupMarketplace .popup-content p {
+      font-size: 0.8rem;
+    }
+  }
 
   .popup-content a {
     display: block;
